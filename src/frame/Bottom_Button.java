@@ -29,7 +29,7 @@ public class Bottom_Button extends JLabel {
       btn1.setContentAreaFilled(false);// 투명
       btn1.setBorderPainted(false); // 버튼의 외곽선 없에기
       btn1.setRolloverIcon(Imgbtnone2);
-      btn1.setPreferredSize(new Dimension(116, 66));
+      btn1.setPreferredSize(new Dimension(116, 72));
       btn1.addActionListener(new ActionListener() {
 
          @Override
@@ -46,7 +46,7 @@ public class Bottom_Button extends JLabel {
       btn2.setContentAreaFilled(false);// 투명
       btn2.setBorderPainted(false); // 버튼의 외곽선 없에기
       btn2.setRolloverIcon(Imgbtntwo2);
-      btn2.setPreferredSize(new Dimension(116, 66));
+      btn2.setPreferredSize(new Dimension(116, 72));
       btn2.addActionListener(new ActionListener() {
 
          @Override
@@ -63,7 +63,7 @@ public class Bottom_Button extends JLabel {
       btn3.setContentAreaFilled(false);// 투명
       btn3.setBorderPainted(false); // 버튼의 외곽선 없에기
       btn3.setRolloverIcon(Imgbtnthree2);
-      btn3.setPreferredSize(new Dimension(116, 66));
+      btn3.setPreferredSize(new Dimension(116, 72));
       btn3.addActionListener(new ActionListener() {
 
          @Override
@@ -80,7 +80,7 @@ public class Bottom_Button extends JLabel {
       btn4.setContentAreaFilled(false);// 투명
       btn4.setBorderPainted(false); // 버튼의 외곽선 없에기
       btn4.setRolloverIcon(Imgbtnfpr2);
-      btn4.setPreferredSize(new Dimension(116, 66));
+      btn4.setPreferredSize(new Dimension(116, 72));
       btn4.addActionListener(new ActionListener() {
 
          @Override
