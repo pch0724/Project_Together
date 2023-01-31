@@ -1,6 +1,9 @@
 package frame;
 
+import java.awt.Button;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -63,6 +66,56 @@ public class Frame_Work extends JPanel{
 		add(cpic);
 		add(cpre);
 		add(cnxt);
+		
+        //버튼
+       // frame.setLayout(new FlowLayout());
+       Button btnhome = new Button("홈");
+       Button btnwork = new Button("산책");
+       Button btnshowping = new Button("쇼핑");
+       Button btnmy = new Button("마이페이지");
+        
+       btnhome.setBounds(0,501,450/4,50);
+       btnwork.setBounds(450/4,501,450/4,50);
+       btnshowping.setBounds(220,501,450/4,50);
+       btnmy.setBounds(330,501,450/4,50);
+       
+       
+       add(btnhome);
+       add(btnwork);
+       add(btnshowping);
+       add(btnmy);
+       
+       btnhome.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			Frame_Base.getInstance(new Frame_Home());
+		}
+	});
+       
+       btnwork.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			Frame_Base.getInstance(new Frame_Work());
+		}
+	});
+       
+       btnshowping.addActionListener(new ActionListener() {
+    	   
+    	   @Override
+    	   public void actionPerformed(ActionEvent e) {
+    		   //Frame_Base.getInstance(new);
+    	   }
+       });
+       
+       btnmy.addActionListener(new ActionListener() {
+    	   
+    	   @Override
+    	   public void actionPerformed(ActionEvent e) {
+    		   Frame_Base.getInstance(new Frame_MyPage());
+    	   }
+       });
 		
 		
 	}

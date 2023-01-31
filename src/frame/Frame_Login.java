@@ -83,7 +83,7 @@ public class Frame_Login extends JPanel {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			new sign2();
+			new Frame_Register();
 		}
 	});
       

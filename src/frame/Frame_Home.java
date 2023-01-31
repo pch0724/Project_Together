@@ -3,8 +3,11 @@ package frame;
 import java.awt.BorderLayout;
 import java.awt.Button;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -18,7 +21,7 @@ public class Frame_Home extends JPanel{
 	public Frame_Home() {
 		
 		//JPanel 구조
-		setSize(450, 500);
+		setSize(500, 730);
 	    setBackground(Color.GREEN);
 	    setLayout(null);
 		
@@ -55,7 +58,33 @@ public class Frame_Home extends JPanel{
         add(n);
         
         
-        //버튼
+        JPanel bbp= new JPanel();
+        bbp.setSize(500, 70);
+        bbp.setLocation(0, 700);
+        add(bbp);
+        bbp.setBackground(Color.black);
+        bbp.setLayout(new FlowLayout());
+        
+        JButton btn1 = new JButton("BTN1");
+        btn1.setPreferredSize(new Dimension(116,66));
+        
+        JButton btn2 = new JButton("BTN2");
+        btn2.setPreferredSize(new Dimension(116, 66));
+        
+        JButton btn3 = new JButton("BTN3");
+        btn3.setPreferredSize(new Dimension(116,66));
+        
+        JButton btn4 = new JButton("BTN4");
+        btn4.setPreferredSize(new Dimension(116,66));
+        
+        bbp.add(btn1);
+        bbp.add(btn2);
+        bbp.add(btn3);
+        bbp.add(btn4);
+
+        
+       /* 
+       //버튼
        // frame.setLayout(new FlowLayout());
        Button btnhome = new Button("홈");
        Button btnwork = new Button("산책");
@@ -73,5 +102,37 @@ public class Frame_Home extends JPanel{
        add(btnshowping);
        add(btnmy);
        
+       btnhome.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			Frame_Base.getInstance(new Frame_Home());
+		}
+	});
+       
+       btnwork.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			Frame_Base.getInstance(new Frame_Work());
+		}
+	});
+       
+       btnshowping.addActionListener(new ActionListener() {
+    	   
+    	   @Override
+    	   public void actionPerformed(ActionEvent e) {
+    		   //Frame_Base.getInstance(new);
+    	   }
+       });
+       
+       btnmy.addActionListener(new ActionListener() {
+    	   
+    	   @Override
+    	   public void actionPerformed(ActionEvent e) {
+    		   Frame_Base.getInstance(new Frame_MyPage());
+    	   }
+       });
+       */
   }
 }

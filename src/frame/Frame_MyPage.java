@@ -1,5 +1,6 @@
 package frame;
 
+import java.awt.Button;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -36,32 +37,40 @@ public class Frame_MyPage extends JPanel{
 	      JLabel Dinfo = new JLabel("반려견 정보");
 	      Dinfo.setVerticalAlignment(SwingConstants.TOP);
 	      Dinfo.setHorizontalAlignment(SwingConstants.CENTER);
-	      Dinfo.setBounds(141, 24, 88, 97);
+	      Dinfo.setBounds(250, 50, 190, 130);
 	      add(Dinfo);
+	      
+	      Dinfo.setOpaque(true);
+          Dinfo.setBackground(Color.black);
+
 	      
 	      // 사진 label
 	      JLabel dogpic = new JLabel("");
-	      dogpic.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\120.png"));
+	      dogpic.setIcon(new ImageIcon("images.jpg"));
 	      dogpic.setHorizontalAlignment(SwingConstants.CENTER); // 사진 정렬 - 가운데
-	      dogpic.setBounds(25, 35, 100, 100); // 사진 위치 조절 x,y,w,h
+	      dogpic.setBounds(40, 40, 180, 160); // 사진 위치 조절 x,y,w,h
 	      add(dogpic);
 	      
 	      // 수정버튼
 	      JButton DregiBtn = new JButton("등록");
 	      DregiBtn.addActionListener(new ActionListener() {
-	         public void actionPerformed(ActionEvent e) {
-	         }
-	      });
-	      DregiBtn.setBounds(350, 40, 60, 30);
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Frame_Base.getInstance(new Frame_RegisterDog());
+			}
+		});
+	      DregiBtn.setBounds(60, 230, 90, 40);
 	      add(DregiBtn);
 	      
 	      // 삭제버튼
 	      JButton DmodifyBtn = new JButton("수정");
 	      DmodifyBtn.addActionListener(new ActionListener() {
 	         public void actionPerformed(ActionEvent e) {
+	        	 Frame_Base.getInstance(new Frame_UpdateDog());
 	         }
 	      });
-	      DmodifyBtn.setBounds(350, 80, 60, 30);
+	      DmodifyBtn.setBounds(200, 230, 90, 40);
 	      add(DmodifyBtn);
 	      
 	      // 일지작성
@@ -70,13 +79,13 @@ public class Frame_MyPage extends JPanel{
 	         public void actionPerformed(ActionEvent e) {
 	         }
 	      });
-	      writediary.setBounds(335, 120, 90, 30);
+	      writediary.setBounds(340, 230, 90, 40);
 	      add(writediary);
 
 	      // diarylist 라벨
 	      JLabel diarylistL = new JLabel("diarylist");
 	      diarylistL.setHorizontalAlignment(SwingConstants.CENTER); // 라벨 정렬 | 가운데
-	      diarylistL.setBounds(50, 180, 300, 25);
+	      diarylistL.setBounds(70, 310, 350, 220);
 	      add(diarylistL); // 패널에 라벨 추가
 
 	      JButton PmodifyBtn = new JButton("정보수정");
@@ -84,7 +93,7 @@ public class Frame_MyPage extends JPanel{
 	         public void actionPerformed(ActionEvent e) {
 	         }
 	      });
-	      PmodifyBtn.setBounds(30, 380, 100, 30);
+	      PmodifyBtn.setBounds(50, 580, 100, 50);
 	      add(PmodifyBtn);
 
 	      JButton logoutBtn = new JButton("로그아웃");
@@ -113,7 +122,7 @@ public class Frame_MyPage extends JPanel{
 	            
 	         }
 	      });
-	      logoutBtn.setBounds(170, 380, 100, 30);
+	      logoutBtn.setBounds(200, 580, 100, 50);
 	      add(logoutBtn);
 
 	      JButton withdrawalBtn = new JButton("탈퇴");
@@ -142,7 +151,57 @@ public class Frame_MyPage extends JPanel{
 	            
 	         }
 	      });
-	      withdrawalBtn.setBounds(310, 380, 100, 30);
+	      withdrawalBtn.setBounds(340, 580, 100, 50);
 	      add(withdrawalBtn);
+	      
+	        //버튼
+	       // frame.setLayout(new FlowLayout());
+	       Button btnhome = new Button("홈");
+	       Button btnwork = new Button("산책");
+	       Button btnshowping = new Button("쇼핑");
+	       Button btnmy = new Button("마이페이지");
+	        
+	       btnhome.setBounds(0,501,450/4,50);
+	       btnwork.setBounds(450/4,501,450/4,50);
+	       btnshowping.setBounds(220,501,450/4,50);
+	       btnmy.setBounds(330,501,450/4,50);
+	       
+	       
+	       add(btnhome);
+	       add(btnwork);
+	       add(btnshowping);
+	       add(btnmy);
+	       
+	       btnhome.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Frame_Base.getInstance(new Frame_Home());
+			}
+		});
+	       
+	       btnwork.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Frame_Base.getInstance(new Frame_Work());
+			}
+		});
+	       
+	       btnshowping.addActionListener(new ActionListener() {
+	    	   
+	    	   @Override
+	    	   public void actionPerformed(ActionEvent e) {
+	    		   //Frame_Base.getInstance(new);
+	    	   }
+	       });
+	       
+	       btnmy.addActionListener(new ActionListener() {
+	    	   
+	    	   @Override
+	    	   public void actionPerformed(ActionEvent e) {
+	    		   Frame_Base.getInstance(new Frame_MyPage());
+	    	   }
+	       });
 	   }
 }
