@@ -3,7 +3,7 @@ package main;
 import frame.Frame_Base;
 import frame.Frame_Home;
 import frame.Frame_Login;
-import frame.Frame_Work;
+import frame.Frame_Walk;
 import frame.Frame_MyPage;
 
 public class Together_Main {

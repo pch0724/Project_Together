@@ -11,9 +11,18 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
-public class Frame_UpdateDog extends JPanel{
+public class Frame_MyPage_UpdateDog extends JFrame {
 
-	public Frame_UpdateDog() {
+	public Frame_MyPage_UpdateDog() {
+
+		// 프레임=======================
+		JFrame jjf = new JFrame("반려견 수정");
+		jjf.setVisible(true);
+
+		jjf.setSize(300, 450);
+		jjf.setLocationRelativeTo(null);
+		// jjf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		jjf.getContentPane().setLayout(null);
 		setLayout(null);
 		// ==============================================
 
@@ -28,7 +37,7 @@ public class Frame_UpdateDog extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-
+				jjf.dispose();
 			}
 		});
 		// ==============================================
@@ -90,7 +99,7 @@ public class Frame_UpdateDog extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				Frame_Base.getInstance(new Frame_MyPage());
-
+				jjf.dispose();
 			}
 		});
 
@@ -100,20 +109,12 @@ public class Frame_UpdateDog extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Frame_Base.getInstance(new Frame_MyPage());
+				// Frame_Base.getInstance(new Frame_MyPage());
+				jjf.dispose();
 
 			}
 		});
-		/*
-		// 프레임=======================
-		JFrame jjf = new JFrame("반려견 수정");
-		jjf.setVisible(true);
 
-		jjf.setSize(300, 450);
-		jjf.setLocationRelativeTo(null);
-		jjf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		jjf.getContentPane().setLayout(null);
-		*/
 		JLabel JJpro = new JLabel("=========== 프로젝트 명 ============");
 		JJpro.setOpaque(true);
 		// Jpro.setBackground(Color.red);
@@ -124,24 +125,19 @@ public class Frame_UpdateDog extends JPanel{
 		// Jupdate.setBackground(Color.red);
 		JJupdate.setBounds(20, 80, 150, 50);
 
-		add(JJpro);// 프로젝트[라벨]
-		add(JJupdate);// 반려견 수정[라벨]
-		add(JJpic1);
-		add(JJname1);// 반려견 이름[라벨]
-		add(JJage1);// 반려견 나이[라벨]
-		add(JJgender1);// 반려견 성별[라벨]
-		add(JJname);// 이름 텍스트 필드
-		add(JJage);// 나이 텍스트 필드
-		add(JJgender);// 성별 텍스트 버튼
-		add(JEnroll);
-		add(JCancle);
-		add(Jpicin);
+		jjf.add(JJpro);// 프로젝트[라벨]
+		jjf.add(JJupdate);// 반려견 수정[라벨]
+		jjf.add(JJpic1);
+		jjf.add(JJname1);// 반려견 이름[라벨]
+		jjf.add(JJage1);// 반려견 나이[라벨]
+		jjf.add(JJgender1);// 반려견 성별[라벨]
+		jjf.add(JJname);// 이름 텍스트 필드
+		jjf.add(JJage);// 나이 텍스트 필드
+		jjf.add(JJgender);// 성별 텍스트 버튼
+		jjf.add(JEnroll);
+		jjf.add(JCancle);
+		jjf.add(Jpicin);
 
 	}
-	/*
-	public static void main(String[] args) {
 
-		new update();
-	}
-	*/
 }

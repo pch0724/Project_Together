@@ -13,24 +13,23 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class Frame_Register extends JFrame{
-	
-	public Frame_Register() {
+public class Frame_Login_Register extends JFrame {
+
+	public Frame_Login_Register() {
 		// =============================================
 		JFrame sf = new JFrame("회원가입");
 		sf.setVisible(true);
 		sf.setSize(500, 700);
 		sf.setLocationRelativeTo(null);
-		//sf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		// sf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		sf.getContentPane().setLayout(null);
-		
-		
+
 		// ============================================= 아디
 		JLabel Spro = new JLabel();
 		Spro.setOpaque(true);
 		Spro.setBackground(Color.BLACK);
 		Spro.setBounds(80, 40, 320, 60);
-		
+
 		JLabel SID1 = new JLabel(" 아이디   ");
 		SID1.setOpaque(true);
 		SID1.setBounds(90, 120, 50, 20);
@@ -75,18 +74,14 @@ public class Frame_Register extends JFrame{
 		JTextField Sname2 = new JTextField(null, 26);
 		Sname.add(Sname2);
 		/*
-		// ============================================= 생년
-		JLabel Sbir1 = new JLabel(" 생년월일");
-		Sbir1.setOpaque(true);
-		Sbir1.setBounds(90, 400, 60, 20);
-
-		JPanel Sbir = new JPanel();
-		Sbir.setOpaque(true);
-		Sbir.setBounds(90, 420, 300, 30);
-
-		JTextField Sbir2 = new JTextField(null, 26);
-		Sbir.add(Sbir2);
-		*/
+		 * // ============================================= 생년 JLabel Sbir1 = new
+		 * JLabel(" 생년월일"); Sbir1.setOpaque(true); Sbir1.setBounds(90, 400, 60, 20);
+		 * 
+		 * JPanel Sbir = new JPanel(); Sbir.setOpaque(true); Sbir.setBounds(90, 420,
+		 * 300, 30);
+		 * 
+		 * JTextField Sbir2 = new JTextField(null, 26); Sbir.add(Sbir2);
+		 */
 		// ============================================= 박스
 		JLabel Sad1 = new JLabel(" 거주하고 있는 인근지역");
 		Sad1.setOpaque(true);
@@ -104,7 +99,7 @@ public class Frame_Register extends JFrame{
 		// ============================================= 버튼
 		JButton Enroll1 = new JButton("가입하기");
 		Enroll1.setBounds(120, 570, 90, 40);
-		
+
 		Enroll1.addActionListener(new ActionListener() {
 
 			@Override
@@ -112,19 +107,19 @@ public class Frame_Register extends JFrame{
 				sf.dispose();
 			}
 		});
-		
+
 		JButton Cancle1 = new JButton("나가기");
 		Cancle1.setBounds(270, 570, 90, 40);
-		
+
 		Cancle1.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//Frame_Base.getInstance(new Frame_Login());
+				// Frame_Base.getInstance(new Frame_Login());
 				sf.dispose();
 			}
 		});
-		
+
 		sf.add(Spro);// 프로젝트[라벨]
 		sf.add(SID1);// 아이디[라벨]
 		sf.add(SID);// 아이디 [텍스트]
@@ -134,8 +129,8 @@ public class Frame_Register extends JFrame{
 		sf.add(SPWch);// 비밀번호 확인 [텍스트]
 		sf.add(Sname1);// 이름[라벨]
 		sf.add(Sname);// 이름 [텍스트]
-		//sf.add(Sbir1);// 생년월일[라벨]
-		//sf.add(Sbir);// 생년월일 [텍스트]
+		// sf.add(Sbir1);// 생년월일[라벨]
+		// sf.add(Sbir);// 생년월일 [텍스트]
 		sf.add(Sad1);// 주소[라밸]
 		sf.add(Sad);// 주소 [콤보박스]
 		sf.add(Enroll1);// 가입하기 [버튼]

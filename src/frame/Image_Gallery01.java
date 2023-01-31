@@ -1,23 +1,22 @@
 package frame;
 
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
 public class Image_Gallery01 extends JFrame {
 
-	private ImageIcon[] images = { new ImageIcon("images/apple.png"), new ImageIcon("images/banana.png"),
-			new ImageIcon("images/kiwi.png"), new ImageIcon("images/mango.png") };
-    //이미지를 images 배열에 저장
+	private ImageIcon[] images = { new ImageIcon("닭고기육포.png"), new ImageIcon("도기넛칩.png"),
+			new ImageIcon("당근밭노즈워크.png"), new ImageIcon("images.jpg") };
+	// 이미지를 images 배열에 저장
 
 	private int index = 0;
 	private JLabel imageLabel = new JLabel(images[index]);
-    //레이블의 초기 이미지는 images 배열의 첫번째 요소로 설정
+	// 레이블의 초기 이미지는 images 배열의 첫번째 요소로 설정
 
 	private JButton left = new JButton(new ImageIcon("images/leftArrow.png"));
 	private JButton right = new JButton(new ImageIcon("images/rightArrow.png"));
-    //왼쪽 화살표, 오른쪽 화살표 버튼
+	// 왼쪽 화살표, 오른쪽 화살표 버튼
 
 	public Image_Gallery01() {
 		setTitle("이미지 갤러리 만들기");
@@ -25,42 +24,42 @@ public class Image_Gallery01 extends JFrame {
 		Container c = getContentPane();
 		c.setLayout(new BorderLayout());
 
-		c.add(imageLabel, BorderLayout.CENTER); //이미지 라벨은 CENTER에
-		c.add(new MenuPanel(), BorderLayout.SOUTH); //메뉴는 SOUTH에 부착
+		c.add(imageLabel, BorderLayout.CENTER); // 이미지 라벨은 CENTER에
+		c.add(new MenuPanel(), BorderLayout.SOUTH); // 메뉴는 SOUTH에 부착
 
 		setSize(500, 500);
 		setVisible(true);
 	}
 
-	class MenuPanel extends JPanel { //JPanel을 상속받은 MenuPanel
-		public MenuPanel() { //생성자
+	class MenuPanel extends JPanel { // JPanel을 상속받은 MenuPanel
+		public MenuPanel() { // 생성자
 			setBackground(Color.GRAY);
 			setLayout(new FlowLayout());
 
-			add(left); //왼쪽 화살표 버튼 추가
-			add(right); //오른쪽 화살표 버튼 추가
+			add(left); // 왼쪽 화살표 버튼 추가
+			add(right); // 오른쪽 화살표 버튼 추가
 
 			left.addActionListener(new MyActionListener());
 			right.addActionListener(new MyActionListener());
-            //두 버튼에 Action 리스너 추가
+			// 두 버튼에 Action 리스너 추가
 		}
 	}
 
 	class MyActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			JButton jb = (JButton) e.getSource(); //클릭된 소스 알아내기
-			if (jb == left) { //왼쪽 화살표 버튼이 클릭된 경우
+			JButton jb = (JButton) e.getSource(); // 클릭된 소스 알아내기
+			if (jb == left) { // 왼쪽 화살표 버튼이 클릭된 경우
 				if (index == 0)
-					index = images.length - 1; //index가 0이었다면 인덱스 최댓값으로 설정
+					index = images.length - 1; // index가 0이었다면 인덱스 최댓값으로 설정
 				else
-					index -= 1; //나머지 경우는 인덱스 1 감소
-			} else { //오른쪽 화살표 버튼이 클릭된 경우
+					index -= 1; // 나머지 경우는 인덱스 1 감소
+			} else { // 오른쪽 화살표 버튼이 클릭된 경우
 				if (index == images.length - 1)
-					index = 0; //index가 최댓값이었다면 0으로 설정
+					index = 0; // index가 최댓값이었다면 0으로 설정
 				else
-					index += 1; //나머지 경우는 인덱스 1 증가
+					index += 1; // 나머지 경우는 인덱스 1 증가
 			}
-			imageLabel.setIcon(images[index]); //index 수정 후 해당 인덱스의 이미지로 라벨 변경
+			imageLabel.setIcon(images[index]); // index 수정 후 해당 인덱스의 이미지로 라벨 변경
 		}
 	}
 
@@ -68,4 +67,3 @@ public class Image_Gallery01 extends JFrame {
 		new Image_Gallery01();
 	}
 }
-

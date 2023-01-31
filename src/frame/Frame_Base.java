@@ -12,31 +12,30 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class Frame_Base extends JFrame{
-		
-	private static Frame_Base instance= new Frame_Base();
-		
-	private Frame_Base() {	
-		//기본 프레임 구조
+public class Frame_Base extends JFrame {
+
+	private static Frame_Base instance = new Frame_Base();
+
+	private Frame_Base() {
+		// 기본 프레임 구조
 		setTitle("Together");
-		setSize(500,800);
+		setSize(500, 800);
 
 		setVisible(true);
 		setResizable(false);
-		
+
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
-	public static void getInstance (JPanel e) {
-		
+	public static void getInstance(JPanel e) {
+
 		instance.getContentPane().removeAll();
 		instance.getContentPane().add(e);
-		
+
 		instance.revalidate();
 		instance.repaint();
-		
-	}
-	
-}
 
+	}
+
+}
