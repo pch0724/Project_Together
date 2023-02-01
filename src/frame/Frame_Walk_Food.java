@@ -1,12 +1,14 @@
 package frame;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class Frame_Walk_Food {
+public class Frame_Walk_Food extends JFrame{
    
    public Frame_Walk_Food() {
       
@@ -14,7 +16,7 @@ public class Frame_Walk_Food {
       ff.setVisible(true);
       ff.setSize(1000, 700);
       ff.setLocationRelativeTo(null);
-      ff.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      //ff.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       ff.getContentPane().setLayout(null);
       //======================================================
       
@@ -43,13 +45,15 @@ public class Frame_Walk_Food {
       Pclose.setOpaque(true);
       Pclose.setBackground(Color.RED);
       Pclose.setBounds(900,600,50,30);
-      
+      Pclose.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			ff.dispose();
+			
+		}
+	});
       ff.add(Pclose);
-   }
-
-   public static void main(String[] args) {
-      
-      new Frame_Walk_Food();
       
    }
    
