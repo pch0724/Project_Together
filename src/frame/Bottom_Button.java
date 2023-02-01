@@ -68,7 +68,7 @@ public class Bottom_Button extends JLabel {
 
          @Override
          public void actionPerformed(ActionEvent e) {
-            Frame_Base.getInstance(new Frame_Home());
+            Frame_Base.getInstance(new Frame_Shopping());
 
          }
       });

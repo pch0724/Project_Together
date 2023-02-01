@@ -172,10 +172,10 @@ public class Frame_Login extends JPanel {
 		
 		//로그인
 		btnLogin.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				Frame_Base.getInstance(new Frame_Home());
+				/*
 				if(!(custom.loginCheck(txtId.getText(), String.valueOf(txtPw.getPassword())).getId().equals(""))) {
 					
 					MyInfo m = custom.loginCheck(txtId.getText(), String.valueOf(txtPw.getPassword()));
@@ -184,8 +184,10 @@ public class Frame_Login extends JPanel {
 					
 					Frame_Base.getInstance(new Frame_Home());
 				}
+			 */
 				
 			}
+			
 		}); 
 		
 		//회원가입

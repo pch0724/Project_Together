@@ -8,7 +8,7 @@ public class Together_Main {
 
 	public static void main(String[] args) {
 
-		Frame_Base.getInstance(new Frame_MyPage());
+		Frame_Base.getInstance(new Frame_Login());
 		
 	}
 
