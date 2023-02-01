@@ -11,9 +11,16 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import customDAO.CartDAO;
+import customDAO.MyInfo;
+import customDAO.SellDAO;
+
 public class Bottom_Button extends JLabel {
 
-   public Bottom_Button() {
+	public Bottom_Button() {
+	}
+	
+   public Bottom_Button(MyInfo m, CartDAO cart, SellDAO history) {
       // TODO Auto-generated constructor stub
       // JLabel bbp = new JLabel();
 
@@ -34,7 +41,7 @@ public class Bottom_Button extends JLabel {
 
          @Override
          public void actionPerformed(ActionEvent e) {
-            Frame_Base.getInstance(new Frame_Home());
+            Frame_Base.getInstance(new Frame_Home(m, cart, history));
 
          }
       });
@@ -51,7 +58,7 @@ public class Bottom_Button extends JLabel {
 
          @Override
          public void actionPerformed(ActionEvent e) {
-            Frame_Base.getInstance(new Frame_Walk());
+            Frame_Base.getInstance(new Frame_Walk(m, cart, history));
 
          }
       });
@@ -68,7 +75,7 @@ public class Bottom_Button extends JLabel {
 
          @Override
          public void actionPerformed(ActionEvent e) {
-            Frame_Base.getInstance(new Frame_Shopping());
+            Frame_Base.getInstance(new Frame_Shopping(m, cart, history));
 
          }
       });
@@ -85,7 +92,7 @@ public class Bottom_Button extends JLabel {
 
          @Override
          public void actionPerformed(ActionEvent e) {
-            Frame_Base.getInstance(new Frame_MyPage());
+            Frame_Base.getInstance(new Frame_MyPage(m, cart, history));
 
          }
       });

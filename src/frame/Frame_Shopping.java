@@ -13,11 +13,17 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
+import customDAO.CartDAO;
+import customDAO.MyInfo;
+import customDAO.SellDAO;
 import frame.Frame_Base;
 
 public class Frame_Shopping extends JPanel {
 
 	public Frame_Shopping() {
+	}
+	
+	public Frame_Shopping(MyInfo m, CartDAO cart, SellDAO history) {
 		setLayout(null);
 		setSize(500, 730);
 		setBackground(Color.WHITE);
@@ -105,7 +111,7 @@ public class Frame_Shopping extends JPanel {
 			}// walk로 연결
 		});
 
-		Bottom_Button bb = new Bottom_Button();
+		Bottom_Button bb = new Bottom_Button(m, cart, history);
 		add(bb);
 	}
 

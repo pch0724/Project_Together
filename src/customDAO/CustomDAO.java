@@ -25,7 +25,7 @@ public class CustomDAO {
 	private void init() { // 초기 정보
 
 		customList = new ArrayList<>();
-		
+		customList.add(new CustomerInfo("박창훈", "a", "a", 1));
 		/*customList.add(new CustomerInfo("1", "1", "1",0,"NORMAL"));
 		customList.add(new CustomerInfo("2", "2", "2",0, "NORMAL"));
 		customList.add(new CustomerInfo("3", "3", "3",0,"NORMAL"));
@@ -90,4 +90,5 @@ public class CustomDAO {
 
 	}
 	
+			
 }

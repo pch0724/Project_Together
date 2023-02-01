@@ -16,9 +16,16 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-public class Frame_Home extends JPanel {
+import customDAO.CartDAO;
+import customDAO.MyInfo;
+import customDAO.SellDAO;
 
+public class Frame_Home extends JPanel {
+	
 	public Frame_Home() {
+	}
+	
+	public Frame_Home(MyInfo m, CartDAO cart, SellDAO history) {
 
 		// JPanel 구조
 		setSize(500, 730);
@@ -73,7 +80,7 @@ public class Frame_Home extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new Frame_Diary();
+				new Frame_Diary(m, cart, history);
 			}
 		});
 		
@@ -84,7 +91,7 @@ public class Frame_Home extends JPanel {
 		workphoto.setBackground(Color.LIGHT_GRAY);
 		add(workphoto);
 
-		Bottom_Button bb = new Bottom_Button();
+		Bottom_Button bb = new Bottom_Button(m, cart, history);
 		add(bb);
 	}
 

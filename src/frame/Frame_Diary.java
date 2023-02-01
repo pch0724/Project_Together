@@ -13,16 +13,26 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import customDAO.CartDAO;
+import customDAO.MyInfo;
+import customDAO.SellDAO;
+
 public class Frame_Diary extends JFrame {
+	
 	public Frame_Diary() {
+	}
+	
+	public Frame_Diary(MyInfo m, CartDAO cart, SellDAO history) {
 
-		JFrame d = new JFrame("산책일지");
 		JLabel w = new JLabel();
-
-		d.setVisible(true);
-		d.setSize(700, 500);
-		d.setLocationRelativeTo(null);
-		d.getContentPane().add(w);
+		
+		setTitle("산책일지");
+		setSize(700, 500);
+		setLocationRelativeTo(null);
+		getContentPane().add(w);
+		setVisible(true);
+		setResizable(false);
+		
 		ImageIcon back = new ImageIcon("img//배경화면.png");
 		Image img = back.getImage();
 		Image changeback = img.getScaledInstance(700, 500, Image.SCALE_SMOOTH);
@@ -51,7 +61,6 @@ public class Frame_Diary extends JFrame {
 		setLayout(null);
 		JLabel text = new JLabel("내용");
 		text.setBounds(10, 60, 30, 20);
-		t.setOpaque(true);
 		w.add(text);
 
 		// 본문 입력상자
@@ -76,19 +85,17 @@ public class Frame_Diary extends JFrame {
 		JButton btn2 = new JButton(cancel1);
 		btn2.setRolloverIcon(cancel2);
 		btn2.setBorderPainted(false); // 버튼의 외곽선 없에기
-		btn2.setContentAreaFilled(false);
+		btn2.setContentAreaFilled(false); // 투명 버튼
 		btn2.setBounds(495, 100, 150, 60);
 		btn2.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				d.dispose();
+				dispose();
 				
 			}
 		});
 		w.add(btn2);
-	
-		setVisible(true);
 		
 	}
 

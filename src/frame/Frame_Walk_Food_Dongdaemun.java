@@ -21,8 +21,8 @@ public class Frame_Walk_Food_Dongdaemun extends JFrame {
 		ff.setVisible(true);
 		ff.setSize(1000, 700);
 		ff.setLocationRelativeTo(null);
-		// pf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ff.getContentPane().setLayout(null);
+		ff.getContentPane().setBackground(Color.WHITE);
 	
 		// ======================================================
 

@@ -23,7 +23,8 @@ public class Frame_Walk_Food_Dobong extends JFrame {
 		ff.setLocationRelativeTo(null);
 		// pf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ff.getContentPane().setLayout(null);
-	
+		ff.getContentPane().setBackground(Color.WHITE);
+		setLayout(null);
 		// ======================================================
 
 		ImageIcon Dobong1 = new ImageIcon("img//도봉 카페 부기1.png");

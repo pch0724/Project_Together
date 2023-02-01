@@ -23,6 +23,8 @@ public class Frame_Walk_Food_Gwangjin extends JFrame {
 		ff.setLocationRelativeTo(null);
 		// pf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ff.getContentPane().setLayout(null);
+		ff.getContentPane().setLayout(null);
+		ff.getContentPane().setBackground(Color.WHITE);
 	
 		// ======================================================
 

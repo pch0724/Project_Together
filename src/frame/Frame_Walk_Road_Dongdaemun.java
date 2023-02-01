@@ -24,6 +24,8 @@ public class Frame_Walk_Road_Dongdaemun extends JFrame {
 		pf.setBackground(Color.white);
 		// pf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		pf.getContentPane().setLayout(null);
+		pf.getContentPane().setLayout(null);
+		pf.getContentPane().setBackground(Color.WHITE);
 	
 		// ======================================================
 

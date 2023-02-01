@@ -12,8 +12,16 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
+import customDAO.CartDAO;
+import customDAO.MyInfo;
+import customDAO.SellDAO;
+
 public class Frame_Shopping_Snack extends JPanel {
+
 	public Frame_Shopping_Snack() {
+	}
+	
+	public Frame_Shopping_Snack(MyInfo m, CartDAO cart, SellDAO history) {
 		setLayout(null);
 		setSize(500, 730);
 		setBackground(Color.WHITE);
@@ -130,7 +138,7 @@ public class Frame_Shopping_Snack extends JPanel {
 		add(btnSnack4);
 
 		// btnSnack4.addActionListener
-		Bottom_Button bb = new Bottom_Button();
+		Bottom_Button bb = new Bottom_Button(m, cart, history);
 		add(bb);
 	}
 }

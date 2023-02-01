@@ -1,4 +1,3 @@
-
 package frame;
 
 import java.awt.Color;
@@ -18,87 +17,98 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import customDAO.DogDAO;
+
 public class Frame_MyPage_RegisterDog extends JFrame {
+	
+	DogDAO dd;
+	
+   public Frame_MyPage_RegisterDog() {
+      // 프레임=======================
+      JFrame jf = new JFrame("반려견 등록");
+      jf.setVisible(true);
 
-	public Frame_MyPage_RegisterDog() {
-		// 프레임=======================
-		JFrame jf = new JFrame("반려견 등록");
-		jf.setVisible(true);
+      jf.setSize(400, 550);
+      jf.setLocationRelativeTo(null);
+      // jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      jf.getContentPane().setLayout(null);
+      jf.getContentPane().setBackground(Color.WHITE);
 
-		jf.setSize(400, 550);
-		jf.setLocationRelativeTo(null);
-		// jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		jf.getContentPane().setLayout(null);
 
-		// ==============================================
+      // ==============================================
 
-		JLabel Jpic1 = new JLabel(" 사진");
-		Jpic1.setBounds(90, 90, 40, 30);
-		Jpic1.setOpaque(true);
+      JLabel Jpic1 = new JLabel(" 사진");
+      Jpic1.setBounds(90, 90, 40, 30);
+      Jpic1.setOpaque(true);
+      Jpic1.setBackground(Color.WHITE);
 
-		JButton picin = new JButton("추가하기");
-		picin.setBounds(90, 120, 220, 30);
-		picin.addActionListener(new ActionListener() {
+      JButton picin = new JButton("추가하기");
+      picin.setBounds(90, 120, 220, 30);
+      picin.addActionListener(new ActionListener() {
 
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				jf.dispose();
-			}
-		});
+         @Override
+         public void actionPerformed(ActionEvent e) {
+            jf.dispose();
+         }
+      });
 
-		// ==============================================
-		// 라벨[이름]
-		JLabel Jname1 = new JLabel(" 이름");
-		Jname1.setBounds(90, 170, 40, 30);
-		Jname1.setOpaque(true);
-		// Jname1.setBackground(Color.red);
+      // ==============================================
+      // 라벨[이름]
+      JLabel Jname1 = new JLabel(" 이름");
+      Jname1.setBounds(90, 170, 40, 30);
+      Jname1.setOpaque(true);
+      Jname1.setBackground(Color.WHITE);
 
-		// 텍스트 필드
-		JPanel Jname = new JPanel();
-		Jname.setBounds(80, 200, 240, 30);
-		// Jname.setBackground(Color.blue);
+      // 텍스트 필드
+      JPanel Jname = new JPanel();
+      Jname.setBounds(80, 200, 240, 30);
+      Jname.setBackground(Color.WHITE);
 
-		JTextField Jname2 = new JTextField(null, 18);
+      JTextField Jname2 = new JTextField(null, 18);
 
-		Jname.add(Jname2);
-		// ===================================================
+      Jname.add(Jname2);
+      // ===================================================
 
-		// 라벨[나이]
-		JLabel Jage1 = new JLabel(" 나이");
-		Jage1.setBounds(90, 250, 40, 30);
-		Jage1.setOpaque(true);
-		// Jage1.setBackground(Color.red);
+      // 라벨[나이]
+      JLabel Jage1 = new JLabel(" 나이");
+      Jage1.setBounds(90, 250, 40, 30);
+      Jage1.setOpaque(true);
+      Jage1.setBackground(Color.WHITE);
 
-		// 텍스트 필드
-		JPanel Jage = new JPanel();
-		Jage.setBounds(80, 280, 240, 30);
-		// Jage.setBackground(Color.blue);
+      // 텍스트 필드
+      JPanel Jage = new JPanel();
+      Jage.setBounds(80, 280, 240, 30);
+      Jage.setBackground(Color.WHITE);
 
-		JTextField Jage2 = new JTextField(null, 18);
+      JTextField Jage2 = new JTextField(null, 18);
 
-		Jage.add(Jage2);
-		// ===================================================
+      Jage.add(Jage2);
+      // ===================================================
 
-		// 라벨 성별
-		JLabel Jgender1 = new JLabel(" 성별");
-		Jgender1.setOpaque(true);
-		// Jgender1.setBackground(Color.red);
-		Jgender1.setBounds(90, 330, 40, 30);
+      // 라벨 성별
+      JLabel Jgender1 = new JLabel(" 성별");
+      Jgender1.setOpaque(true);
+      Jgender1.setBackground(Color.WHITE);
+      Jgender1.setBounds(90, 330, 40, 30);
 
-		// 성별 라디오 버튼
-		JPanel Jgender = new JPanel();
-		// Jgender.setBackground(Color.BLUE);
-		Jgender.setBounds(80, 360, 240, 40);
+      // 성별 라디오 버튼
+      JPanel Jgender = new JPanel();
+      Jgender.setBackground(Color.WHITE);
+      Jgender.setBounds(80, 360, 240, 40);
 
-		JRadioButton JgenderFemale = new JRadioButton("암컷");
-		JRadioButton JgenderMale = new JRadioButton("수컷");
-		ButtonGroup JJgen = new ButtonGroup();
+      JRadioButton JgenderFemale = new JRadioButton("암컷");
+      JgenderFemale.setBackground(Color.WHITE);
+      JRadioButton JgenderMale = new JRadioButton("수컷");
+      JgenderMale.setBackground(Color.WHITE);
+      ButtonGroup JJgen = new ButtonGroup();
 
-		JJgen.add(JgenderFemale);
-		JJgen.add(JgenderMale);
+      JJgen.add(JgenderFemale);
+      JJgen.add(JgenderMale);
 
-		Jgender.add(JgenderFemale);
-		Jgender.add(JgenderMale);
+      Jgender.add(JgenderFemale);
+      Jgender.add(JgenderMale);
+
+		
 		// ===================================================
 		
 		// 등록 닫기 버튼
@@ -112,11 +122,14 @@ public class Frame_MyPage_RegisterDog extends JFrame {
 				
 				String dName = Jname2.getText();
 				int dAge = Integer.parseInt(Jage2.getText());
-				 
-				
-				
-				
-				
+				JgenderMale.addItemListener(new ItemListener() {
+					
+					@Override
+					public void itemStateChanged(ItemEvent e) {
+						boolean dGender = e.getStateChange() == 1? true : false;
+						dd.registDog(dName, dAge, dGender);					
+					}
+				});
 				jf.dispose();
 			}
 		});

@@ -14,17 +14,16 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
 
-public class Frame_MyPage extends JPanel {
+import customDAO.CartDAO;
+import customDAO.MyInfo;
+import customDAO.SellDAO;
 
+public class Frame_MyPage extends JPanel {
+	
 	public Frame_MyPage() {
-		// 프레임 기본 설정
-		// JFrame frame = new JFrame("마이페이지");
-		// frame.setVisible(true);
-		// frame.setSize(450, 600); // width, height
-		// frame.setLocationRelativeTo(null); // 화면 가운데 위치
-		// frame.setResizable(false); // 크기조절 X
-		// frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 닫으면 종료
-		// frame.getContentPane().setLayout(null); // 컴포넌트패인 추가
+	}
+	
+	public Frame_MyPage(MyInfo m, CartDAO cart, SellDAO history) {
 
 		// 기본 패널 설정
 		setLayout(null);
@@ -91,11 +90,13 @@ public class Frame_MyPage extends JPanel {
 		writediary.setBorderPainted(false); // 버튼의 외곽선 없에기
 		writediary.setRolloverIcon(btnwrite2);
 
+		/*
 		writediary.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				new Frame_Diary(m, cart, history);
 			}
 		});
+		*/
 		writediary.setBounds(325, 230, 125, 40);
 		add(writediary);
 
@@ -124,7 +125,9 @@ public class Frame_MyPage extends JPanel {
 
 		PmodifyBtn.addActionListener(new ActionListener() { // 버튼 수행동작
 			public void actionPerformed(ActionEvent e) {
-				new Frame_MyPage_UpdateP();
+				
+				new Frame_MyPage_UpdateP(m);
+				
 			}
 		});
 		PmodifyBtn.setBounds(40, 580, 125, 40);
@@ -235,7 +238,7 @@ public class Frame_MyPage extends JPanel {
 		withdrawalBtn.setBounds(325, 580, 125, 40);
 		add(withdrawalBtn);
 
-		Bottom_Button bb = new Bottom_Button();
+		Bottom_Button bb = new Bottom_Button(m, cart, history);
 		add(bb);
 	}
 }

@@ -13,9 +13,16 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
+import customDAO.CartDAO;
+import customDAO.MyInfo;
+import customDAO.SellDAO;
+
 public class Frame_Walk extends JPanel {
 
 	public Frame_Walk() {
+	}
+	
+	public Frame_Walk(MyInfo m, CartDAO cart, SellDAO history) {
 		setBounds(0, 0, 500, 730);
 		setBackground(Color.WHITE);
 		setLayout(null);
@@ -158,7 +165,7 @@ public class Frame_Walk extends JPanel {
 		map.add(loc6);
 		
 		// 버튼
-		Bottom_Button bb = new Bottom_Button();
+		Bottom_Button bb = new Bottom_Button(m, cart, history);
 		add(bb);
 	}
 
