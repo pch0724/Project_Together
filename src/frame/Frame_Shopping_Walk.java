@@ -20,7 +20,7 @@ public class Frame_Shopping_Walk extends JPanel {
 		Font font = new Font("맑은고딕", Font.BOLD, 15);
 
 		// 로고 라벨
-		ImageIcon logophoto = new ImageIcon("투개더로고2.png");
+		ImageIcon logophoto = new ImageIcon("img\\투개더로고2.png");
 		Image img = logophoto.getImage();
 		Image changelogophoto = img.getScaledInstance(250, 80, Image.SCALE_SMOOTH);
 		ImageIcon logophoto2 = new ImageIcon(changelogophoto);
@@ -51,7 +51,7 @@ public class Frame_Shopping_Walk extends JPanel {
 			}
 		});
 
-		ImageIcon walk1 = new ImageIcon("X자 하네스.PNG");
+		ImageIcon walk1 = new ImageIcon("img\\X자 하네스.PNG");
 		JButton btnWalk1 = new JButton(walk1);
 		btnWalk1.setName("X자 하네스");
 
@@ -71,7 +71,7 @@ public class Frame_Shopping_Walk extends JPanel {
 
 		// btnWalk1.addActionListener
 
-		ImageIcon walk2 = new ImageIcon("리드줄.PNG");
+		ImageIcon walk2 = new ImageIcon("img\\리드줄.PNG");
 		JButton btnWalk2 = new JButton(walk2);
 		btnWalk2.setName("리드줄");
 
@@ -91,7 +91,7 @@ public class Frame_Shopping_Walk extends JPanel {
 
 		// btnWalk2.addActionListener
 
-		ImageIcon walk3 = new ImageIcon("LED목걸이.PNG");
+		ImageIcon walk3 = new ImageIcon("img\\LED목걸이.PNG");
 		JButton btnWalk3 = new JButton(walk3);
 		btnWalk3.setName("LED목걸이");
 
@@ -111,7 +111,7 @@ public class Frame_Shopping_Walk extends JPanel {
 
 		// btnWalk3.addActionListener
 
-		ImageIcon walk4 = new ImageIcon("휴대용물병.PNG");
+		ImageIcon walk4 = new ImageIcon("img\\휴대용물병.PNG");
 		JButton btnWalk4 = new JButton(walk4);
 		btnWalk4.setName("휴대용물병");
 

@@ -23,8 +23,8 @@ public class Bottom_Button extends JLabel {
       setLayout(new FlowLayout());
       setBounds(0, 690, 500, 70);
 
-      ImageIcon Imgbtnone1 = new ImageIcon("home1.png");
-      ImageIcon Imgbtnone2 = new ImageIcon("home2.png");
+      ImageIcon Imgbtnone1 = new ImageIcon("img\\home1.png");
+      ImageIcon Imgbtnone2 = new ImageIcon("img\\home2.png");
       JButton btn1 = new JButton(Imgbtnone1);
       btn1.setContentAreaFilled(false);// 투명
       btn1.setBorderPainted(false); // 버튼의 외곽선 없에기
@@ -40,8 +40,8 @@ public class Bottom_Button extends JLabel {
       });
 
       // 버튼2
-      ImageIcon Imgbtntwo1 = new ImageIcon("work1.png");
-      ImageIcon Imgbtntwo2 = new ImageIcon("work2.png");
+      ImageIcon Imgbtntwo1 = new ImageIcon("img\\work1.png");
+      ImageIcon Imgbtntwo2 = new ImageIcon("img\\work2.png");
       JButton btn2 = new JButton(Imgbtntwo1);
       btn2.setContentAreaFilled(false);// 투명
       btn2.setBorderPainted(false); // 버튼의 외곽선 없에기
@@ -57,8 +57,8 @@ public class Bottom_Button extends JLabel {
       });
 
       // 버튼3
-      ImageIcon Imgbtnthree1 = new ImageIcon("showping1.png");
-      ImageIcon Imgbtnthree2 = new ImageIcon("showping2.png");
+      ImageIcon Imgbtnthree1 = new ImageIcon("img\\showping1.png");
+      ImageIcon Imgbtnthree2 = new ImageIcon("img\\showping2.png");
       JButton btn3 = new JButton(Imgbtnthree1);
       btn3.setContentAreaFilled(false);// 투명
       btn3.setBorderPainted(false); // 버튼의 외곽선 없에기
@@ -74,8 +74,8 @@ public class Bottom_Button extends JLabel {
       });
 
       // 버튼4
-      ImageIcon Imgbtnfor1 = new ImageIcon("my1.png");
-      ImageIcon Imgbtnfpr2 = new ImageIcon("my2.png");
+      ImageIcon Imgbtnfor1 = new ImageIcon("img\\my1.png");
+      ImageIcon Imgbtnfpr2 = new ImageIcon("img\\my2.png");
       JButton btn4 = new JButton(Imgbtnfor1);
       btn4.setContentAreaFilled(false);// 투명
       btn4.setBorderPainted(false); // 버튼의 외곽선 없에기

@@ -20,7 +20,7 @@ public class Frame_Shopping_Snack extends JPanel {
 		Font font = new Font("맑은고딕", Font.BOLD, 15);
 
 		// 로고 라벨
-		ImageIcon logophoto = new ImageIcon("투개더로고2.png");
+		ImageIcon logophoto = new ImageIcon("img\\투개더로고2.png");
 		Image img = logophoto.getImage();
 		Image changelogophoto = img.getScaledInstance(250, 80, Image.SCALE_SMOOTH);
 		ImageIcon logophoto2 = new ImageIcon(changelogophoto);
@@ -51,7 +51,7 @@ public class Frame_Shopping_Snack extends JPanel {
 			}
 		});
 
-		ImageIcon snack1 = new ImageIcon("오리목뼈.PNG");
+		ImageIcon snack1 = new ImageIcon("img\\오리목뼈.PNG");
 		JButton btnSnack1 = new JButton(snack1);
 		btnSnack1.setName("오리목뼈");
 
@@ -71,7 +71,7 @@ public class Frame_Shopping_Snack extends JPanel {
 
 		// btnSnack1.addActionListener
 
-		ImageIcon snack2 = new ImageIcon("닭고기육포.PNG");
+		ImageIcon snack2 = new ImageIcon("img\\닭고기육포.PNG");
 		JButton btnSnack2 = new JButton(snack2);
 		btnSnack2.setName("닭고기육포");
 
@@ -91,7 +91,7 @@ public class Frame_Shopping_Snack extends JPanel {
 
 		// btnSnack2.addActionListener
 
-		ImageIcon snack3 = new ImageIcon("도기넛칩.PNG");
+		ImageIcon snack3 = new ImageIcon("img\\도기넛칩.PNG");
 		JButton btnSnack3 = new JButton(snack3);
 		btnSnack3.setName("도기넛칩");
 
@@ -111,7 +111,7 @@ public class Frame_Shopping_Snack extends JPanel {
 
 		// btnSnack3.addActionListener
 
-		ImageIcon snack4 = new ImageIcon("소근스틱.PNG");
+		ImageIcon snack4 = new ImageIcon("img\\소근스틱.PNG");
 		JButton btnSnack4 = new JButton(snack4);
 		btnSnack4.setName("소근스틱");
 

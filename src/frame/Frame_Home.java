@@ -26,7 +26,7 @@ public class Frame_Home extends JPanel {
 		setLayout(null);
 
 		// 로고 라벨
-		ImageIcon logophoto = new ImageIcon("투개더로고2.png");
+		ImageIcon logophoto = new ImageIcon("img\\투개더로고2.png");
 		Image img = logophoto.getImage();
 		Image changelogophoto = img.getScaledInstance(250, 80, Image.SCALE_SMOOTH);
 		ImageIcon logophoto2 = new ImageIcon(changelogophoto);
@@ -61,8 +61,8 @@ public class Frame_Home extends JPanel {
 		n.setBackground(Color.LIGHT_GRAY);
 		add(n);
 		// 산책일지
-		ImageIcon day = new ImageIcon("산책일지.png");
-		ImageIcon day2 = new ImageIcon("산책일지2.png");
+		ImageIcon day = new ImageIcon("img\\산책일지.png");
+		ImageIcon day2 = new ImageIcon("img\\산책일지2.png");
 		JButton btnday = new JButton(day);
 		btnday.setRolloverIcon(day2);
 		btnday.setBorderPainted(false); // 버튼의 외곽선 없에기

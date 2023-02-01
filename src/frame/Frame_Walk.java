@@ -21,7 +21,7 @@ public class Frame_Walk extends JPanel {
 		setLayout(null);
 
 		// 로고 라벨
-		ImageIcon logophoto = new ImageIcon("투개더로고2.png");
+		ImageIcon logophoto = new ImageIcon("img\\투개더로고2.png");
 		Image img = logophoto.getImage();
 		Image changelogophoto = img.getScaledInstance(250, 80, Image.SCALE_SMOOTH);
 		ImageIcon logophoto2 = new ImageIcon(changelogophoto);
@@ -34,7 +34,7 @@ public class Frame_Walk extends JPanel {
 		add(logo);
 		
 		// 지도 이미지
-		ImageIcon seoul = new ImageIcon("서울.png");
+		ImageIcon seoul = new ImageIcon("img\\서울.png");
 		Image img2 = seoul.getImage();
 		Image changeseoul = img2.getScaledInstance(430, 430, Image.SCALE_SMOOTH);
 		ImageIcon seoul2 = new ImageIcon(changeseoul);
@@ -50,8 +50,8 @@ public class Frame_Walk extends JPanel {
 		add(map);
 
 		// 버튼 아이콘
-		ImageIcon imgloc1 = new ImageIcon("point1.png");
-		ImageIcon imgloc2 = new ImageIcon("point2.png");
+		ImageIcon imgloc1 = new ImageIcon("img\\point1.png");
+		ImageIcon imgloc2 = new ImageIcon("img\\point2.png");
 		
 		// 지역 버튼
 		//광진구

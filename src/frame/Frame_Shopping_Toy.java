@@ -20,7 +20,7 @@ public class Frame_Shopping_Toy extends JPanel {
 		Font font = new Font("맑은고딕", Font.BOLD, 15);
 
 		// 로고 라벨
-		ImageIcon logophoto = new ImageIcon("투개더로고2.png");
+		ImageIcon logophoto = new ImageIcon("img\\투개더로고2.png");
 		Image img = logophoto.getImage();
 		Image changelogophoto = img.getScaledInstance(250, 80, Image.SCALE_SMOOTH);
 		ImageIcon logophoto2 = new ImageIcon(changelogophoto);
@@ -51,7 +51,7 @@ public class Frame_Shopping_Toy extends JPanel {
 			}
 		});
 
-		ImageIcon toy1 = new ImageIcon("삑삑이공.PNG");
+		ImageIcon toy1 = new ImageIcon("img\\삑삑이공.PNG");
 		JButton btnToy1 = new JButton(toy1);
 		btnToy1.setName("삑삑이공");
 
@@ -71,7 +71,7 @@ public class Frame_Shopping_Toy extends JPanel {
 
 		// btnToy1.addActionListener
 
-		ImageIcon toy2 = new ImageIcon("우드스틱.PNG");
+		ImageIcon toy2 = new ImageIcon("img\\우드스틱.PNG");
 		JButton btnToy2 = new JButton(toy2);
 		btnToy2.setName("우드스틱");
 
@@ -91,7 +91,7 @@ public class Frame_Shopping_Toy extends JPanel {
 
 		// btnToy2.addActionListener
 
-		ImageIcon toy3 = new ImageIcon("터그볼.PNG");
+		ImageIcon toy3 = new ImageIcon("img\\터그볼.PNG");
 		JButton btnToy3 = new JButton(toy3);
 		btnToy3.setName("터그볼");
 
@@ -111,7 +111,7 @@ public class Frame_Shopping_Toy extends JPanel {
 
 		// btnToy3.addActionListener
 
-		ImageIcon toy4 = new ImageIcon("당근밭노즈워크.PNG");
+		ImageIcon toy4 = new ImageIcon("img\\당근밭노즈워크.PNG");
 		JButton btnToy4 = new JButton(toy4);
 		btnToy4.setName("당근밭 노즈워크");
 

@@ -20,7 +20,7 @@ public class Frame_Shopping_Clean extends JPanel {
 		Font font = new Font("맑은고딕", Font.BOLD, 15);
 
 		// 로고 라벨
-		ImageIcon logophoto = new ImageIcon("투개더로고2.png");
+		ImageIcon logophoto = new ImageIcon("img\\투개더로고2.png");
 		Image img = logophoto.getImage();
 		Image changelogophoto = img.getScaledInstance(250, 80, Image.SCALE_SMOOTH);
 		ImageIcon logophoto2 = new ImageIcon(changelogophoto);
@@ -51,7 +51,7 @@ public class Frame_Shopping_Clean extends JPanel {
 			}
 		});
 
-		ImageIcon clean1 = new ImageIcon("눈물자국시트30매.PNG");
+		ImageIcon clean1 = new ImageIcon("img\\눈물자국시트30매.PNG");
 		JButton btnClean1 = new JButton(clean1);
 		btnClean1.setName("눈물자국시트30매");
 
@@ -71,7 +71,7 @@ public class Frame_Shopping_Clean extends JPanel {
 
 		// btnClean1.addActionListener
 
-		ImageIcon clean2 = new ImageIcon("배변봉투(리필)120매.PNG");
+		ImageIcon clean2 = new ImageIcon("img\\배변봉투(리필)120매.PNG");
 		JButton btnClean2 = new JButton(clean2);
 		btnClean2.setName("배변봉투(리필)120매");
 
@@ -91,7 +91,7 @@ public class Frame_Shopping_Clean extends JPanel {
 
 		// btnClean2.addActionListener
 
-		ImageIcon clean3 = new ImageIcon("한장쓱패드400매.PNG");
+		ImageIcon clean3 = new ImageIcon("img\\한장쓱패드400매.PNG");
 		JButton btnClean3 = new JButton(clean3);
 		btnClean3.setName("한장쓱패드400매");
 
@@ -111,7 +111,7 @@ public class Frame_Shopping_Clean extends JPanel {
 
 		// btnClean3.addActionListener
 
-		ImageIcon clean4 = new ImageIcon("명품패드300매.PNG");
+		ImageIcon clean4 = new ImageIcon("img\\명품패드300매.PNG");
 		JButton btnClean4 = new JButton(clean4);
 		btnClean4.setName("명품패드300매");
 
