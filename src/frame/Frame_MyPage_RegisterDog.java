@@ -5,6 +5,8 @@ import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
@@ -98,14 +100,23 @@ public class Frame_MyPage_RegisterDog extends JFrame {
 		Jgender.add(JgenderFemale);
 		Jgender.add(JgenderMale);
 		// ===================================================
+		
 		// 등록 닫기 버튼
-
+		
 		JButton Enroll = new JButton("등록");
 		Enroll.setBounds(90, 430, 80, 40);
 		Enroll.addActionListener(new ActionListener() {
-
+			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
+				String dName = Jname2.getText();
+				int dAge = Integer.parseInt(Jage2.getText());
+				 
+				
+				
+				
+				
 				jf.dispose();
 			}
 		});

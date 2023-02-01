@@ -10,185 +10,232 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.SwingConstants;
 
 public class Frame_MyPage extends JPanel {
 
-   public Frame_MyPage() {
-      // 프레임 기본 설정
-      // JFrame frame = new JFrame("마이페이지");
-      // frame.setVisible(true);
-      // frame.setSize(450, 600); // width, height
-      // frame.setLocationRelativeTo(null); // 화면 가운데 위치
-      // frame.setResizable(false); // 크기조절 X
-      // frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 닫으면 종료
-      // frame.getContentPane().setLayout(null); // 컴포넌트패인 추가
+	public Frame_MyPage() {
+		// 프레임 기본 설정
+		// JFrame frame = new JFrame("마이페이지");
+		// frame.setVisible(true);
+		// frame.setSize(450, 600); // width, height
+		// frame.setLocationRelativeTo(null); // 화면 가운데 위치
+		// frame.setResizable(false); // 크기조절 X
+		// frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 닫으면 종료
+		// frame.getContentPane().setLayout(null); // 컴포넌트패인 추가
 
-      // 기본 패널 설정
-      setLayout(null);
-      // JPanel nav = new JPanel();
-      // nav.setBounds(0, 0, 450, 480);
-      setSize(450, 480);
-      // nav.setBackground(Color.GREEN);
-      setBackground(Color.white);
-      // 반려견 정보 라벨
+		// 기본 패널 설정
+		setLayout(null);
+		// JPanel nav = new JPanel();
+		// nav.setBounds(0, 0, 450, 480);
+		setSize(450, 480);
+		// nav.setBackground(Color.GREEN);
+		setBackground(Color.white);
+		// 반려견 정보 라벨
 
-      JLabel Dinfo = new JLabel("반려견 정보");
-      Dinfo.setVerticalAlignment(SwingConstants.TOP);
-      Dinfo.setHorizontalAlignment(SwingConstants.CENTER);
-      Dinfo.setBounds(250, 50, 190, 130);
-      add(Dinfo);
+		JLabel Dinfo = new JLabel("반려견 정보");
+		Dinfo.setVerticalAlignment(SwingConstants.TOP);
+		Dinfo.setHorizontalAlignment(SwingConstants.CENTER);
+		Dinfo.setBounds(250, 50, 190, 130);
+		add(Dinfo);
 
-      Dinfo.setOpaque(true);
-      Dinfo.setBackground(Color.black);
+		Dinfo.setOpaque(true);
+		Dinfo.setBackground(Color.black);
 
-      // 사진 label
-      JLabel dogpic = new JLabel("");
-      dogpic.setIcon(new ImageIcon("images.jpg"));
-      dogpic.setHorizontalAlignment(SwingConstants.CENTER); // 사진 정렬 - 가운데
-      dogpic.setBounds(40, 40, 180, 160); // 사진 위치 조절 x,y,w,h
-      add(dogpic);
+		// 사진 label
+		JLabel dogpic = new JLabel("");
+		dogpic.setIcon(new ImageIcon("img//images.jpg"));
+		dogpic.setHorizontalAlignment(SwingConstants.CENTER); // 사진 정렬 - 가운데
+		dogpic.setBounds(40, 40, 180, 160); // 사진 위치 조절 x,y,w,h
+		add(dogpic);
 
-      // 수정버튼
-      JButton DregiBtn = new JButton("등록");
-      DregiBtn.addActionListener(new ActionListener() {
+		// 수정버튼
+		ImageIcon btndreg1 = new ImageIcon("img//마이페이지등록버튼1.png");
+		ImageIcon btndreg2 = new ImageIcon("img//마이페이지등록버튼2.png");
+		JButton DregiBtn = new JButton(btndreg1);
+		DregiBtn.setContentAreaFilled(false);
+		DregiBtn.setBorderPainted(false); // 버튼의 외곽선 없에기
+		DregiBtn.setRolloverIcon(btndreg2);
+		DregiBtn.addActionListener(new ActionListener() {
 
-         @Override
-         public void actionPerformed(ActionEvent e) {
-            new Frame_MyPage_RegisterDog();
-            
-         }
-      });
-      DregiBtn.setBounds(60, 230, 90, 40);
-      add(DregiBtn);
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new Frame_MyPage_RegisterDog();
 
-      // 삭제버튼
-      JButton DmodifyBtn = new JButton("수정");
-      DmodifyBtn.addActionListener(new ActionListener() {
-         public void actionPerformed(ActionEvent e) {
-            new Frame_MyPage_UpdateDog();
-         }
-      });
-      DmodifyBtn.setBounds(200, 230, 90, 40);
-      add(DmodifyBtn);
+			}
+		});
+		DregiBtn.setBounds(40, 230, 125, 40);
+		add(DregiBtn);
 
-      // 일지작성
-      JButton writediary = new JButton("일지작성");
-      writediary.addActionListener(new ActionListener() {
-         public void actionPerformed(ActionEvent e) {
+		ImageIcon btndmo1 = new ImageIcon("img//수정버튼1.png");
+		ImageIcon btndmo2 = new ImageIcon("img//수정버튼2.png");
+		JButton DmodifyBtn = new JButton(btndmo1);
+		DmodifyBtn.setContentAreaFilled(false);
+		DmodifyBtn.setBorderPainted(false); // 버튼의 외곽선 없에기
+		DmodifyBtn.setRolloverIcon(btndmo2);
+		DmodifyBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new Frame_MyPage_UpdateDog();
+			}
+		});
+		DmodifyBtn.setBounds(185, 230, 125, 40);
+		add(DmodifyBtn);
 
-         }
-      });
-      writediary.setBounds(340, 230, 90, 40);
-      add(writediary);
+		// 일지작성
+		ImageIcon btnwrite1 = new ImageIcon("img//일지작성버튼1.png");
+		ImageIcon btnwrite2 = new ImageIcon("img//일지작성버튼2.png");
+		JButton writediary = new JButton(btnwrite1);
+		writediary.setContentAreaFilled(false);
+		writediary.setBorderPainted(false); // 버튼의 외곽선 없에기
+		writediary.setRolloverIcon(btnwrite2);
 
-      // diarylist 라벨
-      JLabel diarylistL = new JLabel("diarylist");
-      diarylistL.setHorizontalAlignment(SwingConstants.CENTER); // 라벨 정렬 | 가운데
-      diarylistL.setBounds(70, 310, 350, 220);
-      add(diarylistL); // 패널에 라벨 추가
+		writediary.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
 
-      JButton PmodifyBtn = new JButton("정보수정");
-      PmodifyBtn.addActionListener(new ActionListener() { // 버튼 수행동작
-         public void actionPerformed(ActionEvent e) {
-            new Frame_MyPage_UpdateP(); 
-         }
-      });
-      PmodifyBtn.setBounds(50, 580, 100, 50);
-      add(PmodifyBtn);
+			}
+		});
+		writediary.setBounds(325, 230, 125, 40);
+		add(writediary);
 
-      JButton logoutBtn = new JButton("로그아웃");
-      logoutBtn.addActionListener(new ActionListener() {
-         public void actionPerformed(ActionEvent e) {
-            JFrame logout = new JFrame("로그아웃");
+		// diarylist 라벨
+		// diarylist 라벨
+		String Heder[] = { "제목", "내용" };
+		Object[][] list = { { "짱귀여운강아지", "세상에 이렇게 귀여운 강아지가 있다. 솜이야!" },
+				{ "오늘도 너무나 귀여운 우리솜이", "세상에 벽을 뿌시고싶다 솜이야너무 귀여워!!!!!!!!!" }, { "어떻게해야 귀겨움을 멈출수 있죠?", "으아아아아아아아앙아ㅏ악" } };
 
-            logout.setVisible(true);
-            logout.setSize(300, 200); // width, height
-            logout.setLocationRelativeTo(null); // 화면 가운데 위치
-            logout.setResizable(false); // 크기조절 X
-            logout.getContentPane().setLayout(null);
-            logout.setBackground(Color.white);
-            JLabel LOlb = new JLabel("로그아웃하시겠습니까?");
-            
-            LOlb.setSize(300, 120);
-            LOlb.setHorizontalAlignment(SwingConstants.CENTER);
-            JButton LOb1 = new JButton("네");
-               LOb1.addActionListener(new ActionListener() {
-                  
-                  @Override
-                  public void actionPerformed(ActionEvent e) {
-                     logout.dispose();
-                      Frame_Base.getInstance(new Frame_Login());;      
-                  }
-               });
-            
-            JButton LOb2 = new JButton("아니오");
-            LOb2.addActionListener(new ActionListener() {
-               
-               @Override
-               public void actionPerformed(ActionEvent e) {
-            logout.dispose();      
-               }
-            });
-            LOb1.setBounds(40, 120, 90, 30);
-            LOb2.setBounds(150, 120, 90, 30);
-            logout.getContentPane().add(LOlb);
-            logout.getContentPane().add(LOb1);
-            logout.getContentPane().add(LOb2);
+		JTable table = new JTable(list, Heder);
+		JScrollPane s = new JScrollPane(table);
+		s.setBounds(70, 310, 350, 220);
+		add(s);
+		/*
+		 * JLabel diarylistL = new JLabel("diarylist");
+		 * diarylistL.setHorizontalAlignment(SwingConstants.CENTER); // 라벨 정렬 | 가운데
+		 * diarylistL.setBounds(70, 310, 350, 220); add(diarylistL); // 패널에 라벨 추가
+		 */
 
-         }
-      });
-      logoutBtn.setBounds(200, 580, 100, 50);
-      add(logoutBtn);
+		ImageIcon btnwpmod1 = new ImageIcon("img//정보수정버튼1.png");
+		ImageIcon btnwpmod2 = new ImageIcon("img//정보수정버튼2.png");
+		JButton PmodifyBtn = new JButton(btnwpmod1);
+		PmodifyBtn.setContentAreaFilled(false);
+		PmodifyBtn.setBorderPainted(false); // 버튼의 외곽선 없에기
+		PmodifyBtn.setRolloverIcon(btnwpmod2);
 
-      JButton withdrawalBtn = new JButton("탈퇴");
-      withdrawalBtn.addActionListener(new ActionListener() {
+		PmodifyBtn.addActionListener(new ActionListener() { // 버튼 수행동작
+			public void actionPerformed(ActionEvent e) {
+				new Frame_MyPage_UpdateP();
+			}
+		});
+		PmodifyBtn.setBounds(40, 580, 125, 40);
+		add(PmodifyBtn);
 
-         @Override
-         public void actionPerformed(ActionEvent e) {
-            JFrame Pwithdrawal = new JFrame("탈퇴");
-            
-            Pwithdrawal.setVisible(true);
-            Pwithdrawal.setSize(300, 200); // width, height
-            Pwithdrawal.setLocationRelativeTo(null); // 화면 가운데 위치
-            Pwithdrawal.setResizable(false); // 크기조절 X
-            Pwithdrawal.getContentPane().setLayout(null);
-            Pwithdrawal.setBackground(Color.white);
-            JLabel WDlb = new JLabel("정말로 탈퇴하시겠습니까?");
-            WDlb.setOpaque(true);
-            WDlb.setBackground(Color.white);
-            WDlb.setSize(300, 120);
-         
-            WDlb.setHorizontalAlignment(SwingConstants.CENTER);
-            JButton WDb1 = new JButton("네");
-            WDb1.addActionListener(new ActionListener() {
-               
-               @Override
-               public void actionPerformed(ActionEvent e) {
-                  Pwithdrawal.dispose();
-                  Frame_Base.getInstance(new Frame_Login());;
-               }
-            });
-            JButton WDb2 = new JButton("아니오");
-            WDb2.addActionListener(new ActionListener() {
-               
-               @Override
-               public void actionPerformed(ActionEvent e) {
-                Pwithdrawal.dispose();      
-               }
-            });
-            WDb1.setBounds(40, 120, 90, 30);
-            WDb2.setBounds(150, 120, 90, 30);
-            Pwithdrawal.add(WDlb);
-            Pwithdrawal.add(WDb1);
-            Pwithdrawal.add(WDb2);
+		ImageIcon btnlogout1 = new ImageIcon("img//로그아웃버튼1.png");
+		ImageIcon btnlogout2 = new ImageIcon("img//로그아웃버튼2.png");
+		JButton logoutBtn = new JButton(btnlogout1);
+		logoutBtn.setContentAreaFilled(false);
+		logoutBtn.setBorderPainted(false); // 버튼의 외곽선 없에기
+		logoutBtn.setRolloverIcon(btnlogout2);
 
-         }
-      });
-      withdrawalBtn.setBounds(340, 580, 100, 50);
-      add(withdrawalBtn);
+		logoutBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFrame logout = new JFrame("로그아웃");
 
-      Bottom_Button bb = new Bottom_Button();
-      add(bb);
-   }
+				logout.setVisible(true);
+				logout.setSize(300, 200); // width, height
+				logout.setLocationRelativeTo(null); // 화면 가운데 위치
+				logout.setResizable(false); // 크기조절 X
+				logout.getContentPane().setLayout(null);
+				logout.setBackground(Color.white);
+				JLabel LOlb = new JLabel("로그아웃하시겠습니까?");
+
+				LOlb.setSize(300, 120);
+				LOlb.setHorizontalAlignment(SwingConstants.CENTER);
+				JButton LOb1 = new JButton("네");
+				LOb1.addActionListener(new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						logout.dispose();
+						Frame_Base.getInstance(new Frame_Login());
+						;
+					}
+				});
+
+				JButton LOb2 = new JButton("아니오");
+				LOb2.addActionListener(new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						logout.dispose();
+					}
+				});
+				LOb1.setBounds(40, 120, 90, 30);
+				LOb2.setBounds(150, 120, 90, 30);
+				logout.getContentPane().add(LOlb);
+				logout.getContentPane().add(LOb1);
+				logout.getContentPane().add(LOb2);
+
+			}
+		});
+		logoutBtn.setBounds(185, 580, 125, 40);
+		add(logoutBtn);
+
+		ImageIcon btnwit1 = new ImageIcon("img//탈퇴버튼1.png");
+		ImageIcon btnwit2 = new ImageIcon("img//탈퇴버튼2.png");
+		JButton withdrawalBtn = new JButton(btnwit1);
+		withdrawalBtn.setContentAreaFilled(false);
+		withdrawalBtn.setBorderPainted(false); // 버튼의 외곽선 없에기
+		withdrawalBtn.setRolloverIcon(btnwit2);
+
+		withdrawalBtn.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JFrame Pwithdrawal = new JFrame("탈퇴");
+
+				Pwithdrawal.setVisible(true);
+				Pwithdrawal.setSize(300, 200); // width, height
+				Pwithdrawal.setLocationRelativeTo(null); // 화면 가운데 위치
+				Pwithdrawal.setResizable(false); // 크기조절 X
+				Pwithdrawal.getContentPane().setLayout(null);
+				Pwithdrawal.setBackground(Color.white);
+				JLabel WDlb = new JLabel("정말로 탈퇴하시겠습니까?");
+				WDlb.setOpaque(true);
+				WDlb.setBackground(Color.white);
+				WDlb.setSize(300, 120);
+
+				WDlb.setHorizontalAlignment(SwingConstants.CENTER);
+				JButton WDb1 = new JButton("네");
+				WDb1.addActionListener(new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						Pwithdrawal.dispose();
+						Frame_Base.getInstance(new Frame_Login());
+						;
+					}
+				});
+				JButton WDb2 = new JButton("아니오");
+				WDb2.addActionListener(new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						Pwithdrawal.dispose();
+					}
+				});
+				WDb1.setBounds(40, 120, 90, 30);
+				WDb2.setBounds(150, 120, 90, 30);
+				Pwithdrawal.add(WDlb);
+				Pwithdrawal.add(WDb1);
+				Pwithdrawal.add(WDb2);
+
+			}
+		});
+		withdrawalBtn.setBounds(325, 580, 125, 40);
+		add(withdrawalBtn);
+
+		Bottom_Button bb = new Bottom_Button();
+		add(bb);
+	}
 }

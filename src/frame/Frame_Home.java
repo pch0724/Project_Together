@@ -68,7 +68,15 @@ public class Frame_Home extends JPanel {
 		btnday.setBorderPainted(false); // 버튼의 외곽선 없에기
 		btnday.setBounds(170, 300, 130, 45);
 		add(btnday);
-
+		
+		btnday.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new Frame_Diary();
+			}
+		});
+		
 		// 추천산책로사진
 		JLabel workphoto = new JLabel("추천산책로");
 		workphoto.setBounds(20, 365, 450, 300);
