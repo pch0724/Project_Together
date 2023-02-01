@@ -4,14 +4,19 @@ import java.awt.Color;
 import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+
+import customDAO.CustomDAO;
+import customDAO.MyInfo;
 
 public class Frame_Login_Register extends JFrame {
 
@@ -96,8 +101,42 @@ public class Frame_Login_Register extends JFrame {
 
          @Override
          public void actionPerformed(ActionEvent e) {
-            sf.dispose();
-         }
+        	 CustomDAO rd = new CustomDAO();
+        	 String pw = String.valueOf(SPW2.getPassword());
+        	 String cofirmPw = String.valueOf(SPWch2.getPassword());
+        	 int addri = Sad2.getSelectedIndex();
+				if (!(SID2.getText().equals("") || Sname2.getText().equals("")
+						|| String.valueOf(SPW2.getPassword()).equals("") || addri == 0)) {
+					if (rd.checkId(SID2.getText())) {
+						if (!pw.equals(cofirmPw)) {
+							JOptionPane.showMessageDialog(null, "비밀번호를 확인 해주세요.");
+						}
+						else {
+							rd.registCustomer(Sname2.getText(), SID2.getText(), String.valueOf(SPW2.getPassword()), addri);
+							JOptionPane.showMessageDialog(null, "가입완료");
+							
+							sf.dispose();
+						}
+						
+					} 
+
+					else {
+						JOptionPane.showMessageDialog(null, "Id 중복 오류");
+					}
+				} else if (SID2.getText().equals("")) {
+
+					JOptionPane.showMessageDialog(null, "아이디를 입력해주세요.");
+				} else if (Sname2.getText().equals("")) {
+					JOptionPane.showMessageDialog(null, "이름을 입력해주세요.");
+
+				
+				} else if(pw.equals("")) {
+					JOptionPane.showMessageDialog(null, "비밀번호를 입력해주세요.");
+				} else {
+					JOptionPane.showMessageDialog(null, "주소를 선택해주세요.");
+				}
+			}
+         
       });
 
       JButton Cancle1 = new JButton("나가기");

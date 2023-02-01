@@ -2,6 +2,7 @@ package frame;
 
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,19 +18,29 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-import customDAO.*;
+import customDAO.CartDAO;
+import customDAO.CustomDAO;
+import customDAO.ItemDAO;
+import customDAO.MyInfo;
+import customDAO.SellDAO;
+import customDAO.UserInfo;
 
 public class Frame_Login extends JPanel {
 
-	public Frame_Login() {
-		
-		CustomDAO custom = new CustomDAO();
-		
-		// JPanel 구조
-		setLayout(null);
-		setBackground(Color.WHITE);
-		setSize(450, 600);
+	private JPasswordField passText;
+	private JTextField userText;
+	
+	UserInfo userInfo;
 
+	public Frame_Login() {
+
+		setLayout(null);
+		setSize(450, 600);
+		// setBackground(new Color(229,243,197));
+		setBackground(Color.WHITE);
+		CustomDAO custom = new CustomDAO();
+		ItemDAO item = new ItemDAO();
+		
 		// 로고
 		ImageIcon logophoto = new ImageIcon("img\\투개더로고2.png");
 		Image img = logophoto.getImage();
@@ -40,99 +51,20 @@ public class Frame_Login extends JPanel {
 		logo.setBounds(115, 200, 250, 80);
 		logo.setOpaque(true);
 		logo.setBackground(Color.GRAY);
-		add(logo);
-
-		// 라벨 ID
-		JLabel ID = new JLabel("ID : ");
-		ID.setSize(450, 100);
-		ID.setLocation(95, 250);
-
-		// ID 입력상자
-		JTextField txtId = new JTextField(20);
-		txtId.setText("아이디");
-		txtId.setForeground(Color.gray);
-		txtId.setSize(150, 30);
-		txtId.setLocation(150, 289);
-		
-		// 입력 후 삭제 및 처음으로 포커스 옮김 필요
-		txtId.addFocusListener(new FocusListener() {
-			
-			@Override
-			public void focusLost(FocusEvent e) {
-				String id = txtId.getText();
-				if (id.equals("아이디")) {
-					txtId.setForeground(Color.BLACK);
-					txtId.setText("");
-				}
-			}
-			
-			@Override
-			public void focusGained(FocusEvent e) {
-				String id = txtId.getText();
-				if(id.equals("")) {
-					txtId.setText("아이디");
-					txtId.setForeground(Color.gray);
-				}
-				
-			}
-		});
-		
-		add(ID);
-		add(txtId);
-
-		// 라벨 PW
-		JLabel PW = new JLabel("PW : ");
-		PW.setSize(450, 100);
-		PW.setLocation(86, 300);
-
-		// PW 입력상자
-		JPasswordField txtPw = new JPasswordField(20);
-		txtPw.setText("비밀번호");
-		txtPw.setForeground(Color.gray);
-		txtPw.setSize(150, 30);
-		txtPw.setLocation(150, 339);
-
-		add(PW);
-		add(txtPw);
-
-		// 입력 후 삭제 및 처음으로 포커스 옮김 필요
-		txtPw.addFocusListener(new FocusListener() {
-			
-			@Override
-			public void focusLost(FocusEvent e) {
-				String pw = String.valueOf(txtPw.getPassword());
-				if (pw.equals("비밀번호")) {
-					txtPw.setForeground(Color.BLACK);
-					txtPw.setText("");
-				}
-			}
-			
-			@Override
-			public void focusGained(FocusEvent e) {
-				String pw = String.valueOf(txtPw.getPassword());
-				if(pw.equals("")) {
-					txtPw.setText("비밀번호");
-					txtPw.setForeground(Color.gray);
-				}
-				
-			}
-		});
-		//
+		add(logo);		
 
 		JLabel btn = new JLabel("");
 		btn.setSize(450, 100);
 		btn.setLocation(0, 400);
 		btn.setLayout(new FlowLayout());
-
-		// 로그인, 회원가입, ID/PW 찾기
-		// 로그인버튼
+		
 		ImageIcon ImgLogin1 = new ImageIcon("img\\로그인1.png");
 		ImageIcon ImgLogin2 = new ImageIcon("img\\로그인2.png");
 		JButton btnLogin = new JButton(ImgLogin1);
 		btnLogin.setContentAreaFilled(false);
 		btnLogin.setBorderPainted(false); // 버튼의 외곽선 없에기
 		btnLogin.setRolloverIcon(ImgLogin2);
-
+		
 		// 회원가입버튼
 		ImageIcon ImgInit1 = new ImageIcon("img\\회원가입1.png");
 		ImageIcon ImgInit2 = new ImageIcon("img\\회원가입2.png");
@@ -167,79 +99,130 @@ public class Frame_Login extends JPanel {
 		btn.add(btnInit);
 		btn.add(btnIdFind);
 		btn.add(btnPwFind);
-
-		//버튼 기능 구현
 		
-		//로그인
-		btnLogin.addActionListener(new ActionListener() {
+		
+		Font font = new Font("맑은 고딕", Font.BOLD,12);
+		userText = new JTextField(20);
+		userText.setText("아이디");
+		userText.setFont(font);
+		userText.setForeground(Color.GRAY);
+		userText.setBounds(150,289,150,30);
+
+		userText.addFocusListener(new FocusListener() {
+
 			@Override
-			public void actionPerformed(ActionEvent e) {
-				Frame_Base.getInstance(new Frame_Home());
-				/*
-				if(!(custom.loginCheck(txtId.getText(), String.valueOf(txtPw.getPassword())).getId().equals(""))) {
-					
-					MyInfo m = custom.loginCheck(txtId.getText(), String.valueOf(txtPw.getPassword()));
-					
-					UserInfo userinfo = new UserInfo(m.getId(), m);
-					
-					Frame_Base.getInstance(new Frame_Home());
+			public void focusGained(FocusEvent e) {
+				String id = userText.getText();
+				if (id.equals("아이디")) {
+					userText.setForeground(Color.BLACK);
+					userText.setText("");
 				}
-			 */
-				
 			}
-			
-		}); 
-		
-		//회원가입
-		btnInit.addActionListener(new ActionListener() {
 
+			@Override
+			public void focusLost(FocusEvent e) {
+				String id = userText.getText();
+				if (id.equals("")) {
+					userText.setText("아이디");
+					userText.setForeground(Color.GRAY);
+				}
+			}
+		});
+
+		add(userText);
+
+		passText = new JPasswordField(20);
+		passText.setBounds(150, 319, 150, 30);
+		passText.setFont(font);
+		passText.setText("비밀번호");
+
+		passText.setForeground(Color.GRAY);
+
+		passText.addFocusListener(new FocusListener() {
+
+			@Override
+			public void focusGained(FocusEvent e) {
+				String pw = String.valueOf(passText.getPassword());
+
+				if (pw.equals("비밀번호")) {
+					passText.setForeground(Color.BLACK);
+					passText.setText("");
+				}
+			}
+
+			@Override
+			public void focusLost(FocusEvent e) {
+				String pw = String.valueOf(passText.getPassword());
+				if (pw.equals("")) {
+					passText.setText("비밀번호");
+					passText.setForeground(Color.GRAY);
+
+				}
+			}
+		});
+		add(passText);
+
+		btnInit.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				new Frame_Login_Register();
 			}
 		});
-		
-		//Id찾기
-		btnIdFind.addActionListener(new ActionListener() {
-			
+
+		btnLogin.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-				String name = JOptionPane.showInputDialog("이름 입력");
+				// 로그인 정보 가져가기위해서 객체넘김
+				if (!(custom.loginCheck(userText.getText(), String.valueOf(passText.getPassword())).getId()
+						.equals(""))) {
+					MyInfo m = custom.loginCheck(userText.getText(),
+							String.valueOf(String.valueOf(passText.getPassword())));
+					userInfo = new UserInfo(m.getId(), m);
+
+					CartDAO cart = new CartDAO(m.getId());
+					SellDAO history = new SellDAO(m.getId());
+
+					//Frame_Base.getInstance(new Kinds(UserInfo.UserInfoMap.get(m.getId()), cart, history));
+					Frame_Base.getInstance(new Frame_Home());
+
+				} else {
+					JOptionPane.showMessageDialog(null, "로그인 정보 오류");
+				}
+			}
+		});
+
+		btnIdFind.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				String name = JOptionPane.showInputDialog("이름을 입력하시오 ");
 				
 				if(custom.findId(name) == null) {
-					JOptionPane.showMessageDialog(null, "일치하는 회원 정보가 없습니다.");
-				} else if(!(custom.findId(name).equals(""))) {
-					
-					String id =custom.findId(name);
-					
-					JOptionPane.showMessageDialog(null, id);
-					
+					JOptionPane.showMessageDialog(null, "정보가 없습니다.");
 				}
 				
+				else if (!(custom.findId(name).equals(""))) {
+					String id = custom.findId(name);
+					JOptionPane.showMessageDialog(null, "아이디 : " + id);
+				} 
 			}
 		});
-		
-		//Pw찾기
+
 		btnPwFind.addActionListener(new ActionListener() {
-			
+
 			@Override
-			public void actionPerformed(ActionEvent e) {
-				String id = JOptionPane.showInputDialog("ID 입력");
-				
-				if(custom.findPw(id) == null) {
-					JOptionPane.showMessageDialog(null, "등록된 ID가 아닙니다.");
-				} else if(!(custom.findPw(id).equals(""))) {
-					
+			public void actionPerformed(ActionEvent arg0) {
+				String id = JOptionPane.showInputDialog("아이디를 입력하시오 ");
+
+				if (!(custom.findPw(id)==null)) {
 					String pw = custom.findPw(id);
-					
-					JOptionPane.showMessageDialog(null, pw);
-					
+					JOptionPane.showMessageDialog(null, "pw : " + pw);
+				} else {
+					JOptionPane.showMessageDialog(null, "정보가 없습니다.");
 				}
-				
 			}
-			
+
 		});
+
 	}
 
 }

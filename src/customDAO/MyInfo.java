@@ -1,20 +1,32 @@
 package customDAO;
 
 public class MyInfo {
-
+	
 	String name;
 	String id;
 	String pw;
-	String addr;
-	
-	MyInfo(){
+	int addr;
+
+	MyInfo() {
 		this.id = "";
 	}
 	
-	MyInfo(String name, String id, String pw, String addr){
+	MyInfo(String name, String id, String pw, int addr/*, boolean pet*/) {
 		this.name = name;
 		this.id = id;
 		this.pw = pw;
+		this.addr=addr;
+		//this.pet = pet;
+		
+		
+	}
+	
+
+	public int getAddr() {
+		return addr;
+	}
+
+	public void setAddr(int addr) {
 		this.addr = addr;
 	}
 
@@ -41,15 +53,5 @@ public class MyInfo {
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
-
-	public String getAddr() {
-		return addr;
-	}
-
-	public void setAddr(String addr) {
-		this.addr = addr;
-	}
-	
-	
 	
 }
