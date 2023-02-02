@@ -64,7 +64,7 @@ public class Frame_Shopping extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Frame_Base.getInstance(new Frame_Shopping_Snack());
+				Frame_Base.getInstance(new Frame_Shopping_Snack(m, cart, history));
 
 			}// snack으로 연결
 		});
@@ -92,7 +92,7 @@ public class Frame_Shopping extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Frame_Base.getInstance(new Frame_Shopping_Clean());
+				Frame_Base.getInstance(new Frame_Shopping_Clean(m, cart, history));
 
 			}// clean으로 연결
 		});
@@ -106,7 +106,7 @@ public class Frame_Shopping extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Frame_Base.getInstance(new Frame_Shopping_Walk());
+				Frame_Base.getInstance(new Frame_Shopping_Walk(m, cart, history));
 
 			}// walk로 연결
 		});

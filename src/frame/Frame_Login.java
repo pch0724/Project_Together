@@ -54,7 +54,7 @@ public class Frame_Login extends JPanel {
 		add(logo);		
 
 		JLabel btn = new JLabel("");
-		btn.setSize(450, 100);
+		btn.setSize(500, 100);
 		btn.setLocation(0, 400);
 		btn.setLayout(new FlowLayout());
 		
