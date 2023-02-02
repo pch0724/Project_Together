@@ -19,10 +19,10 @@ import customDAO.MyInfo;
 import customDAO.SellDAO;
 
 public class Frame_MyPage extends JPanel {
-	
+
 	public Frame_MyPage() {
 	}
-	
+
 	public Frame_MyPage(MyInfo m, CartDAO cart, SellDAO history) {
 
 		// 기본 패널 설정
@@ -61,7 +61,7 @@ public class Frame_MyPage extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new Frame_MyPage_RegisterDog();
+				new Frame_MyPage_RegisterDog(m, cart, history);
 
 			}
 		});
@@ -76,7 +76,7 @@ public class Frame_MyPage extends JPanel {
 		DmodifyBtn.setRolloverIcon(btndmo2);
 		DmodifyBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Frame_MyPage_UpdateDog();
+				new Frame_MyPage_UpdateDog(m, cart, history);
 			}
 		});
 		DmodifyBtn.setBounds(185, 230, 125, 40);
@@ -90,13 +90,12 @@ public class Frame_MyPage extends JPanel {
 		writediary.setBorderPainted(false); // 버튼의 외곽선 없에기
 		writediary.setRolloverIcon(btnwrite2);
 
-		/*
 		writediary.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new Frame_Diary(m, cart, history);
 			}
 		});
-		*/
+
 		writediary.setBounds(325, 230, 125, 40);
 		add(writediary);
 
@@ -125,9 +124,9 @@ public class Frame_MyPage extends JPanel {
 
 		PmodifyBtn.addActionListener(new ActionListener() { // 버튼 수행동작
 			public void actionPerformed(ActionEvent e) {
-				
+
 				new Frame_MyPage_UpdateP(m);
-				
+
 			}
 		});
 		PmodifyBtn.setBounds(40, 580, 125, 40);
@@ -214,6 +213,7 @@ public class Frame_MyPage extends JPanel {
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
+
 						Pwithdrawal.dispose();
 						Frame_Base.getInstance(new Frame_Login());
 						;

@@ -29,7 +29,7 @@ public class Frame_Login extends JPanel {
 
 	private JPasswordField passText;
 	private JTextField userText;
-	
+
 	UserInfo userInfo;
 
 	public Frame_Login() {
@@ -40,7 +40,7 @@ public class Frame_Login extends JPanel {
 		setBackground(Color.WHITE);
 		CustomDAO custom = new CustomDAO();
 		ItemDAO item = new ItemDAO();
-		
+
 		// 로고
 		ImageIcon logophoto = new ImageIcon("img\\투개더로고2.png");
 		Image img = logophoto.getImage();
@@ -51,20 +51,20 @@ public class Frame_Login extends JPanel {
 		logo.setBounds(115, 200, 250, 80);
 		logo.setOpaque(true);
 		logo.setBackground(Color.GRAY);
-		add(logo);		
+		add(logo);
 
 		JLabel btn = new JLabel("");
 		btn.setSize(500, 100);
 		btn.setLocation(0, 400);
 		btn.setLayout(new FlowLayout());
-		
+
 		ImageIcon ImgLogin1 = new ImageIcon("img\\로그인1.png");
 		ImageIcon ImgLogin2 = new ImageIcon("img\\로그인2.png");
 		JButton btnLogin = new JButton(ImgLogin1);
 		btnLogin.setContentAreaFilled(false);
 		btnLogin.setBorderPainted(false); // 버튼의 외곽선 없에기
 		btnLogin.setRolloverIcon(ImgLogin2);
-		
+
 		// 회원가입버튼
 		ImageIcon ImgInit1 = new ImageIcon("img\\회원가입1.png");
 		ImageIcon ImgInit2 = new ImageIcon("img\\회원가입2.png");
@@ -99,14 +99,13 @@ public class Frame_Login extends JPanel {
 		btn.add(btnInit);
 		btn.add(btnIdFind);
 		btn.add(btnPwFind);
-		
-		
-		Font font = new Font("맑은 고딕", Font.BOLD,12);
+
+		Font font = new Font("맑은 고딕", Font.BOLD, 12);
 		userText = new JTextField(20);
 		userText.setText("아이디");
 		userText.setFont(font);
 		userText.setForeground(Color.GRAY);
-		userText.setBounds(150,289,150,30);
+		userText.setBounds(150, 289, 150, 30);
 
 		userText.addFocusListener(new FocusListener() {
 
@@ -183,7 +182,7 @@ public class Frame_Login extends JPanel {
 					SellDAO history = new SellDAO(m.getId());
 
 					Frame_Base.getInstance(new Frame_Home(UserInfo.UserInfoMap.get(m.getId()), cart, history));
-					//Frame_Base.getInstance(new Frame_Home());
+					// Frame_Base.getInstance(new Frame_Home());
 
 				} else {
 					JOptionPane.showMessageDialog(null, "로그인 정보 오류");
@@ -195,15 +194,15 @@ public class Frame_Login extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				String name = JOptionPane.showInputDialog("이름을 입력하시오 ");
-				
-				if(custom.findId(name) == null) {
+
+				if (custom.findId(name) == null) {
 					JOptionPane.showMessageDialog(null, "정보가 없습니다.");
 				}
-				
+
 				else if (!(custom.findId(name).equals(""))) {
 					String id = custom.findId(name);
 					JOptionPane.showMessageDialog(null, "아이디 : " + id);
-				} 
+				}
 			}
 		});
 
@@ -213,7 +212,7 @@ public class Frame_Login extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				String id = JOptionPane.showInputDialog("아이디를 입력하시오 ");
 
-				if (!(custom.findPw(id)==null)) {
+				if (!(custom.findPw(id) == null)) {
 					String pw = custom.findPw(id);
 					JOptionPane.showMessageDialog(null, "pw : " + pw);
 				} else {

@@ -16,14 +16,12 @@ public class UserInfo {
 
 	public UserInfo(String userId, MyInfo m) {
 		if (UserInfoMap.get(userId) == null) {
-			init(userId,m);
+			init(userId, m);
 		}
 	}
 
 	private void init(String userId, MyInfo m) {
 		UserInfoMap.put(userId, m);
 	}
-	
-	
 
 }

@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Arrays;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -13,6 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import customDAO.CustomDAO;
@@ -70,7 +72,7 @@ public class Frame_Login_Register extends JFrame {
 
 		JTextField Sname2 = new JTextField(null, 26);
 		Sname2.setBounds(90, 360, 300, 30);
-		
+
 		// ============================================= 박스
 		JLabel Sad1 = new JLabel(" 거주하고 있는 인근지역");
 		Sad1.setOpaque(true);
@@ -88,6 +90,33 @@ public class Frame_Login_Register extends JFrame {
 		Sad2.setBounds(200, 430, 300, 20);
 		Sad.add(Sad2);
 
+		// ============================================= 박스
+		JLabel Spet1 = new JLabel("반려견 유무 여부");
+		Spet1.setOpaque(true);
+		Spet1.setBackground(Color.WHITE);
+		Spet1.setBounds(90, 470, 300, 20);
+
+		// ============================================= 보유 여부 콤보박스
+		JPanel Spet = new JPanel();
+		Spet.setBackground(Color.WHITE);
+		Spet.setBounds(90, 500, 300, 30);
+
+		String[] optionsToChoose2 = { "------------------------------선택------------------------------", "있음", "없음" };
+		JComboBox<String> Spet2 = new JComboBox<String>(optionsToChoose2);
+		Spet2.setBounds(200, 430, 300, 20);
+		Spet.add(Spet2);
+
+		/*
+		 * JRadioButton SpetY = new JRadioButton("있음                    ");
+		 * SpetY.setBackground(Color.WHITE); JRadioButton SpetN = new
+		 * JRadioButton("없음"); SpetN.setBackground(Color.WHITE); ButtonGroup SSSpet =
+		 * new ButtonGroup();
+		 * 
+		 * SSSpet.add(SpetY); SSSpet.add(SpetN);
+		 * 
+		 * Spet.add(SpetY); Spet.add(SpetN);
+		 */
+
 		// ============================================= 버튼
 		JButton Enroll1 = new JButton("가입하기");
 		Enroll1.setBounds(120, 570, 90, 40);
@@ -100,14 +129,16 @@ public class Frame_Login_Register extends JFrame {
 				String pw = String.valueOf(SPW2.getPassword());
 				String cofirmPw = String.valueOf(SPWch2.getPassword());
 				int addri = Sad2.getSelectedIndex();
+				int peti = Spet2.getSelectedIndex();
+
 				if (!(SID2.getText().equals("") || Sname2.getText().equals("")
-						|| String.valueOf(SPW2.getPassword()).equals("") || addri == 0)) {
+						|| String.valueOf(SPW2.getPassword()).equals("") || addri == 0 || peti == 0)) {
 					if (rd.checkId(SID2.getText())) {
 						if (!pw.equals(cofirmPw)) {
 							JOptionPane.showMessageDialog(null, "비밀번호를 확인 해주세요.");
 						} else {
 							rd.registCustomer(Sname2.getText(), SID2.getText(), String.valueOf(SPW2.getPassword()),
-									addri);
+									addri, peti);
 							JOptionPane.showMessageDialog(null, "가입완료");
 
 							sf.dispose();
@@ -126,8 +157,10 @@ public class Frame_Login_Register extends JFrame {
 
 				} else if (pw.equals("")) {
 					JOptionPane.showMessageDialog(null, "비밀번호를 입력해주세요.");
-				} else {
+				} else if (addri == 0) {
 					JOptionPane.showMessageDialog(null, "주소를 선택해주세요.");
+				} else {
+					JOptionPane.showMessageDialog(null, "반려견 보유 여부를 선택해주세요.");
 				}
 			}
 
@@ -154,8 +187,8 @@ public class Frame_Login_Register extends JFrame {
 		sf.add(SPWch2);// 비밀번호 확인 [텍스트]
 		sf.add(Sname1);// 이름[라벨]
 		sf.add(Sname2);// 이름 [텍스트]
-		// sf.add(Sbir1);// 생년월일[라벨]
-		// sf.add(Sbir);// 생년월일 [텍스트]
+		sf.add(Spet1);// 보유여부 [라벨]
+		sf.add(Spet);// 보유여부 [콤보박스]
 		sf.add(Sad1);// 주소[라밸]
 		sf.add(Sad);// 주소 [콤보박스]
 		sf.add(Enroll1);// 가입하기 [버튼]

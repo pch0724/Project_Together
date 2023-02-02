@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class Frame_Walk_Road extends JFrame{
+public class Frame_Walk_Road extends JFrame {
 
 	public Frame_Walk_Road() {
 
@@ -16,7 +16,7 @@ public class Frame_Walk_Road extends JFrame{
 		pf.setVisible(true);
 		pf.setSize(1000, 700);
 		pf.setLocationRelativeTo(null);
-		//pf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		// pf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		pf.getContentPane().setLayout(null);
 		// ======================================================
 

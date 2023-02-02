@@ -1,4 +1,4 @@
- package customDAO;
+package customDAO;
 
 import java.util.*;
 
@@ -9,7 +9,7 @@ public class CustomDAO {
 	private static ArrayList<CustomerInfo> customList;
 
 	public static ArrayList<CustomerInfo> getCustomList() {
-		return customList; 
+		return customList;
 	}
 
 	public static void setCustomList(ArrayList<CustomerInfo> customList) {
@@ -25,11 +25,13 @@ public class CustomDAO {
 	private void init() { // 초기 정보
 
 		customList = new ArrayList<>();
-		customList.add(new CustomerInfo("박창훈", "a", "a", 1));
-		/*customList.add(new CustomerInfo("1", "1", "1",0,"NORMAL"));
-		customList.add(new CustomerInfo("2", "2", "2",0, "NORMAL"));
-		customList.add(new CustomerInfo("3", "3", "3",0,"NORMAL"));
-		customList.add(new CustomerInfo("4", "4", "4",0,"NORMAL"));*/
+		customList.add(new CustomerInfo("박창훈", "a", "a", 1, 1));
+		/*
+		 * customList.add(new CustomerInfo("1", "1", "1",0,"NORMAL"));
+		 * customList.add(new CustomerInfo("2", "2", "2",0, "NORMAL"));
+		 * customList.add(new CustomerInfo("3", "3", "3",0,"NORMAL"));
+		 * customList.add(new CustomerInfo("4", "4", "4",0,"NORMAL"));
+		 */
 	}
 
 	// login 확인 -> id, pw 맞으면 true | 틀리면 false
@@ -39,14 +41,14 @@ public class CustomDAO {
 
 			if (customList.get(i).getId().equals(id) && customList.get(i).getPw().equals(pw)) {
 
-				return new MyInfo(customList.get(i).getName(), id, pw, customList.get(i).getAddr());
-				
+				return new MyInfo(customList.get(i).getName(), id, pw, customList.get(i).getAddr(),
+						customList.get(i).getPet());
+
 			}
-		
 
 		}
 		return new MyInfo();
-		
+
 	}
 
 	public boolean checkId(String id) {
@@ -62,9 +64,9 @@ public class CustomDAO {
 
 	}
 
-	public void registCustomer(String name, String id, String pw, int addr) {
+	public void registCustomer(String name, String id, String pw, int addr, int pet) {
 
-		customList.add(new CustomerInfo(name, id, pw, addr));
+		customList.add(new CustomerInfo(name, id, pw, addr, pet));
 
 	}
 
@@ -89,6 +91,5 @@ public class CustomDAO {
 		return null;
 
 	}
-	
-			
+
 }

@@ -86,7 +86,25 @@ public class Frame_MyPage_UpdateP {
 				"동대문구", "동작구", "마포구", "중구" };
 		JComboBox<String> Sad2 = new JComboBox<String>(optionsToChoose);
 		Sad2.setBounds(200, 430, 300, 20);
+		Sad2.setSelectedIndex(UserInfo.UserInfoMap.get(m.getId()).getAddr());
 		Sad.add(Sad2);
+		// ============================================== 박스2
+		JLabel Spet1 = new JLabel("반려견 유무 여부");
+		Spet1.setOpaque(true);
+		Spet1.setBackground(Color.WHITE);
+		Spet1.setBounds(90, 470, 300, 20);
+
+		// ============================================= 보유 여부 콤보박스
+		JPanel Spet = new JPanel();
+		Spet.setBackground(Color.WHITE);
+		Spet.setBounds(90, 500, 300, 30);
+
+		String[] optionsToChoose2 = { "------------------------------선택------------------------------", "있음", "없음" };
+		JComboBox<String> Spet2 = new JComboBox<String>(optionsToChoose2);
+		Spet2.setBounds(200, 430, 300, 20);
+		Spet2.setSelectedIndex(UserInfo.UserInfoMap.get(m.getId()).getPet());
+		Spet.add(Spet2);
+
 		// ============================================= 버튼
 		JButton Enroll1 = new JButton("저장하기");
 		Enroll1.setBounds(120, 570, 90, 40);
@@ -99,23 +117,28 @@ public class Frame_MyPage_UpdateP {
 				String pw = String.valueOf(SPW2.getPassword());
 				String conpw = String.valueOf(SPWch2.getPassword());
 				int addri = Sad2.getSelectedIndex();
+				int peti = Spet2.getSelectedIndex();
 
-				if (!(Sname2.getText().equals("") || String.valueOf(SPW2.getPassword()).equals("") || addri == 0)) {
+				if (!(Sname2.getText().equals("") || String.valueOf(SPW2.getPassword()).equals("") || addri == 0
+						|| peti == 0)) {
 					if (!pw.equals(conpw)) {
 						JOptionPane.showMessageDialog(null, "비밀번호를 확인 해주세요.");
 					} else {
 						UserInfo.UserInfoMap.get(m.getId()).setName(Sname2.getText());
-						UserInfo.UserInfoMap.get(m.getId()).setPw(String.valueOf(SPW2.getPassword()));
-						UserInfo.UserInfoMap.get(m.getId()).setAddr(Sad2.getSelectedIndex());
+						UserInfo.UserInfoMap.get(m.getId()).setPw(pw);
+						UserInfo.UserInfoMap.get(m.getId()).setAddr(addri);
+						UserInfo.UserInfoMap.get(m.getId()).setPet(addri);
 						sf.dispose();
 					}
 
-				}  else if (Sname2.getText().equals("")) {
+				} else if (Sname2.getText().equals("")) {
 					JOptionPane.showMessageDialog(null, "이름을 입력해주세요.");
 				} else if (pw.equals("")) {
 					JOptionPane.showMessageDialog(null, "비밀번호를 입력해주세요.");
-				} else {
+				} else if (addri == 0) {
 					JOptionPane.showMessageDialog(null, "주소를 선택해주세요.");
+				} else {
+					JOptionPane.showMessageDialog(null, "반려견 보유 여부를 선택해주세요.");
 				}
 
 			}
@@ -142,6 +165,8 @@ public class Frame_MyPage_UpdateP {
 		sf.add(SPWch2);// 비밀번호 확인 [텍스트]
 		sf.add(Sname1);// 이름[라벨]
 		sf.add(Sname2);// 이름 [텍스트]
+		sf.add(Spet1);// 보유여부 [라벨]
+		sf.add(Spet);// 보유여부 [콤보박스]
 		sf.add(Sad1);// 주소[라밸]
 		sf.add(Sad);// 주소 [콤보박스]
 		sf.add(Enroll1);// 가입하기 [버튼]

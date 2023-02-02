@@ -53,9 +53,17 @@ public class Frame_Walk_Road_Joong extends JFrame {
 		pf.add(Ppic);
 		// Ppic.setBounds(520, 320, 420, 250);
 
+		ImageIcon dog = new ImageIcon("img//구석강아지2.png");
+		Image dog1 = dog.getImage();
+		Image dog2 = dog1.getScaledInstance(230, 100, Image.SCALE_SMOOTH);
+		ImageIcon dog4 = new ImageIcon(dog2);
+		JLabel dog5 = new JLabel(dog4);
+		dog5.setBounds(20, 565, 250, 120);
+		pf.add(dog5);
+
 		// =======================================================
 
-		Font font = new Font(Font.SANS_SERIF, Font.BOLD, 16);
+		Font font = new Font("에스코어 드림 5 Medium", Font.PLAIN, 16);
 		JTextArea Pdes = new JTextArea(
 				"                          [ 남산 둘레길 ]\r\n" + "\r\n" + "산책코스 : 남산 야외 식물원\r\n"
 						+ "                 – 자연생태길 둘레길\r\n" + "                 – 벚꽃길\r\n"

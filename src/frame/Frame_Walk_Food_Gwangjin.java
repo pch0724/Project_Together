@@ -11,8 +11,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 
-
-
 public class Frame_Walk_Food_Gwangjin extends JFrame {
 
 	public Frame_Walk_Food_Gwangjin() {
@@ -25,7 +23,14 @@ public class Frame_Walk_Food_Gwangjin extends JFrame {
 		ff.getContentPane().setLayout(null);
 		ff.getContentPane().setLayout(null);
 		ff.getContentPane().setBackground(Color.WHITE);
-	
+		  //구석강아지들
+	    ImageIcon dog = new ImageIcon("img//구석강아지1.png");
+		Image dog1 = dog.getImage();
+		Image dog2 = dog1.getScaledInstance(250, 120, Image.SCALE_SMOOTH);
+		ImageIcon dog4 = new ImageIcon(dog2);
+		JLabel dog5 = new JLabel(dog4);
+		dog5.setBounds(20,565, 250, 120);
+		ff.add(dog5);
 		// ======================================================
 
 		ImageIcon Gwangjin1 = new ImageIcon("img//광진 카페 후문1.png");
@@ -56,7 +61,7 @@ public class Frame_Walk_Food_Gwangjin extends JFrame {
 
 
 		//=======================================================
-		Font font=new Font(Font.SANS_SERIF, Font.BOLD, 15);
+		Font font=new Font("에스코어 드림 5 Medium", Font.PLAIN, 15);
 		JTextArea Pdes1=new JTextArea("                                      [카페 Who...문]\r\n"
 				+ "\r\n"
 				+ "서울특별시 광진구 능동로36길 183 (어린이대공원 후문)\r\n"

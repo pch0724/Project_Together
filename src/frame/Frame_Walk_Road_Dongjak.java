@@ -53,9 +53,16 @@ public class Frame_Walk_Road_Dongjak extends JFrame {
 		pf.add(Ppic);
 		// Ppic.setBounds(520, 320, 420, 250);
 
+		ImageIcon dog = new ImageIcon("img//구석강아지2.png");
+		Image dog1 = dog.getImage();
+		Image dog2 = dog1.getScaledInstance(230, 100, Image.SCALE_SMOOTH);
+		ImageIcon dog4 = new ImageIcon(dog2);
+		JLabel dog5 = new JLabel(dog4);
+		dog5.setBounds(20, 565, 250, 120);
+		pf.add(dog5);
 		// =======================================================
 
-		Font font = new Font(Font.SANS_SERIF, Font.BOLD, 16);
+		Font font = new Font("에스코어 드림 5 Medium", Font.PLAIN, 16);
 		JTextArea Pdes = new JTextArea("                          [ 보라매 공원 반려견 놀이터 ]\r\n" + "\r\n"
 				+ "산책코스 : 보라매 공원 신대방동-정문\r\n" + "                 – 와우산 둘레길\r\n" + "                 – 한화불꽃정원\r\n"
 				+ "                 – 보라매공원 반려견 놀이터 \r\n" + "\r\n" + "주소 : 동작구 여의대방로20마길 11(보라매공원 향기원 옆)\r\n"
