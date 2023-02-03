@@ -1,9 +1,13 @@
 package frame;
 
-import java.awt.Button;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.charset.Charset;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -19,6 +23,8 @@ import customDAO.MyInfo;
 import customDAO.SellDAO;
 
 public class Frame_MyPage extends JPanel {
+
+	private String DIARY_FOLDER = "Diary";
 
 	public Frame_MyPage() {
 	}
@@ -90,25 +96,44 @@ public class Frame_MyPage extends JPanel {
 		writediary.setBorderPainted(false); // 버튼의 외곽선 없에기
 		writediary.setRolloverIcon(btnwrite2);
 
-		writediary.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				new Frame_Diary(m, cart, history);
-			}
-		});
-
+		/*
+		 * writediary.addActionListener(new ActionListener() { public void
+		 * actionPerformed(ActionEvent e) { new Frame_Diary(m, cart, history); } });
+		 */
 		writediary.setBounds(325, 230, 125, 40);
 		add(writediary);
 
 		// diarylist 라벨
 		// diarylist 라벨
 		String Heder[] = { "제목", "내용" };
-		Object[][] list = { { "짱귀여운강아지", "세상에 이렇게 귀여운 강아지가 있다. 솜이야!" },
-				{ "오늘도 너무나 귀여운 우리솜이", "세상에 벽을 뿌시고싶다 솜이야너무 귀여워!!!!!!!!!" }, { "어떻게해야 귀겨움을 멈출수 있죠?", "으아아아아아아아앙아ㅏ악" } };
 
+		// START
+		File file = new File(DIARY_FOLDER + "/" + m.getId());
+		File fileList[] = file.listFiles();
+		int fileLength = fileList.length;
+		String[][] list = new String[fileLength][2];
+
+		int i = 0;
+		for (File diary : fileList) {
+			try {
+				BufferedReader reader = new BufferedReader(new FileReader(diary, Charset.forName("UTF-8")));
+				String text = reader.readLine();
+				String[] textArr = text.split("###");
+				list[i][0] = textArr[0];
+				list[i][1] = textArr[1];
+				++i;
+				reader.close();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+		}
+
+		// 게시판
 		JTable table = new JTable(list, Heder);
 		JScrollPane s = new JScrollPane(table);
 		s.setBounds(70, 310, 350, 220);
 		add(s);
+
 		/*
 		 * JLabel diarylistL = new JLabel("diarylist");
 		 * diarylistL.setHorizontalAlignment(SwingConstants.CENTER); // 라벨 정렬 | 가운데
@@ -213,7 +238,6 @@ public class Frame_MyPage extends JPanel {
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-
 						Pwithdrawal.dispose();
 						Frame_Base.getInstance(new Frame_Login());
 						;

@@ -2,71 +2,78 @@ package customDAO;
 
 public class DogInfo {
 
-	String dName;
-	int dAge;
-	boolean dGender;
-	boolean dChip;
-	int dPhoto;
-	
-	
-	public DogInfo(String dName, int dAge, boolean dGender, boolean dChip, int dPhoto) {
-		this.dName = dName;
-		this.dAge = dAge;
-		this.dGender = dGender;
-		this.dChip = dChip;
-		this.dPhoto = dPhoto;
-	}
+   static String dName;
+   static String dAge;
+   static String dGender;
+   static String dChip;
+   //static int dPhoto;
+   
+   
+   public DogInfo(String dName, String dAge, String dGender, String dChip/*, int dPhoto*/) {
+      this.dName = dName;
+      this.dAge = dAge;
+      this.dGender = dGender;
+      this.dChip = dChip;
+      //this.dPhoto = dPhoto;
+   }
 
 
-	public String getdName() {
-		return dName;
-	}
+   public DogInfo() {
+      // TODO Auto-generated constructor stub
+   }
 
 
-	public void setdName(String dName) {
-		this.dName = dName;
-	}
+   public String getdName() {
+      return dName;
+   }
 
 
-	public int getdAge() {
-		return dAge;
-	}
+   public void setdName(String dName) {
+      this.dName = dName;
+   }
 
 
-	public void setdAge(int dAge) {
-		this.dAge = dAge;
-	}
+   public String getdAge() {
+      return dAge;
+   }
 
 
-	public boolean isdGender() {
-		return dGender;
-	}
+   public void setdAge(String dAge) {
+      this.dAge = dAge;
+   }
 
 
-	public void setdGender(boolean dGender) {
-		this.dGender = dGender;
-	}
+   public String getdGender() {
+      return dGender;
+   }
 
 
-	public boolean isdChip() {
-		return dChip;
-	}
+   public void setdGender(String dGender) {
+      this.dGender = dGender;
+   }
 
 
-	public void setdChip(boolean dChip) {
-		this.dChip = dChip;
-	}
+   public String getdChip() {
+      return dChip;
+   }
 
 
-	public int getdPhoto() {
-		return dPhoto;
-	}
+   public void setdChip(String dChip) {
+      this.dChip = dChip;
+   }
+
+/*
+ * 
+   public int getdPhoto() {
+      return dPhoto;
+   }
 
 
-	public void setdPhoto(int dPhoto) {
-		this.dPhoto = dPhoto;
-	}
-	
-	
-	
+   public void setdPhoto(int dPhoto) {
+      this.dPhoto = dPhoto;
+   }
+   
+ */
+   
+   
 }

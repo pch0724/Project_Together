@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.Arrays;
 
 import javax.swing.ButtonGroup;
@@ -22,6 +23,8 @@ import customDAO.MyInfo;
 
 public class Frame_Login_Register extends JFrame {
 
+	private String DIARY_FOLDER = "Diary";
+	
 	public Frame_Login_Register() {
 		// =============================================
 		JFrame sf = new JFrame("회원가입");
@@ -139,6 +142,8 @@ public class Frame_Login_Register extends JFrame {
 						} else {
 							rd.registCustomer(Sname2.getText(), SID2.getText(), String.valueOf(SPW2.getPassword()),
 									addri, peti);
+							File dir = new File(DIARY_FOLDER + "/" + SID2.getText());
+							dir.mkdir();
 							JOptionPane.showMessageDialog(null, "가입완료");
 
 							sf.dispose();

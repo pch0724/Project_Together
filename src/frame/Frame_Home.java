@@ -14,13 +14,19 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import customDAO.CartDAO;
+import customDAO.DogInfo;
 import customDAO.MyInfo;
 import customDAO.SellDAO;
 
 public class Frame_Home extends JPanel {
+
+	static boolean save = false;
+	DogInfo di = new DogInfo();
 
 	public Frame_Home() {
 	}
@@ -45,28 +51,48 @@ public class Frame_Home extends JPanel {
 		logo.setBackground(Color.GRAY);
 		add(logo);
 
-		// 산책일지 정보
-		JLabel a = new JLabel("산책정보: 오늘은 30km만큼 산책했어요");
-		a.setHorizontalAlignment(SwingConstants.CENTER);
-		a.setBounds(115, 105, 250, 30);
-		a.setOpaque(true);
-		a.setBackground(Color.WHITE);
-		add(a);
+		/*
+		 * // 산책일지 정보 JLabel a = new JLabel("산책정보: 오늘은 30km만큼 산책했어요");
+		 * a.setHorizontalAlignment(SwingConstants.CENTER); a.setBounds(115, 105, 250,
+		 * 30); a.setOpaque(true); a.setBackground(Color.WHITE); add(a);
+		 */
 
-		// 반려동물 사진
-		JLabel petphoto = new JLabel("반려동물사진");
-		petphoto.setBounds(55, 145, 130, 130);
-		petphoto.setOpaque(true);
-		petphoto.setBackground(Color.LIGHT_GRAY);
-		add(petphoto);
+		if (save == false) {
 
-		// 내용
-		JLabel n = new JLabel("이름: 개솜이" + "\n" + " 나이: 4살 " + "\n" + " 성별: 여");
-		n.setHorizontalAlignment(SwingConstants.CENTER);
-		n.setBounds(195, 145, 250, 130);
-		n.setOpaque(true);
-		n.setBackground(Color.LIGHT_GRAY);
-		add(n);
+			// 반려동물 사진
+
+			JLabel petphoto = new JLabel("반려동물사진");
+			petphoto.setBounds(55, 145, 130, 130);
+			petphoto.setOpaque(true);
+			petphoto.setBackground(Color.LIGHT_GRAY);
+			add(petphoto);
+
+			// 내용
+			JTextField n = new JTextField("등록해주세요");
+			n.setHorizontalAlignment(SwingConstants.CENTER);
+			n.setBounds(195, 145, 250, 130);
+			n.setOpaque(true);
+			n.setBackground(Color.LIGHT_GRAY);
+			add(n);
+		} else {
+			// 반려동물 사진
+
+			JLabel petphoto = new JLabel();
+			petphoto.setBounds(55, 145, 130, 130);
+			petphoto.setOpaque(true);
+			petphoto.setBackground(Color.LIGHT_GRAY);
+			add(petphoto);
+
+			// 내용
+			JTextArea n = new JTextArea(
+					"사랑스런 우리 " + di.getdName() + "\r\n" + di.getdAge() + "살이에요" + di.getdGender() + di.getdChip());
+
+			n.setBounds(195, 145, 250, 130);
+			n.setOpaque(true);
+			n.setBackground(Color.LIGHT_GRAY);
+			add(n);
+		}
+
 		// 산책일지
 		ImageIcon day = new ImageIcon("img\\산책일지.png");
 		ImageIcon day2 = new ImageIcon("img\\산책일지2.png");
