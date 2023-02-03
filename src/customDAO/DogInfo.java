@@ -2,78 +2,65 @@ package customDAO;
 
 public class DogInfo {
 
-   static String dName;
-   static String dAge;
-   static String dGender;
-   static String dChip;
-   //static int dPhoto;
-   
-   
-   public DogInfo(String dName, String dAge, String dGender, String dChip/*, int dPhoto*/) {
-      this.dName = dName;
-      this.dAge = dAge;
-      this.dGender = dGender;
-      this.dChip = dChip;
-      //this.dPhoto = dPhoto;
-   }
+	static String dName;
+	static String dAge;
+	static String dGender;
+	static String dChip;
+	static int dPhoto;
+
+	public DogInfo() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public DogInfo(String dName, String dAge, String dGender, String dChip, int dPhoto) {
+		this.dName = dName;
+		this.dAge = dAge;
+		this.dGender = dGender;
+		this.dChip = dChip;
+		this.dPhoto = dPhoto;
+	}
 
 
-   public DogInfo() {
-      // TODO Auto-generated constructor stub
-   }
+	public static String getdName() {
+		return dName;
+	}
 
+	public static void setdName(String dName) {
+		DogInfo.dName = dName;
+	}
 
-   public String getdName() {
-      return dName;
-   }
+	public static String getdAge() {
+		return dAge;
+	}
 
+	public static void setdAge(String dAge) {
+		DogInfo.dAge = dAge;
+	}
 
-   public void setdName(String dName) {
-      this.dName = dName;
-   }
+	public static String getdGender() {
+		return dGender;
+	}
 
+	public static void setdGender(String dGender) {
+		DogInfo.dGender = dGender;
+	}
 
-   public String getdAge() {
-      return dAge;
-   }
+	public static String getdChip() {
+		return dChip;
+	}
 
+	public static void setdChip(String dChip) {
+		DogInfo.dChip = dChip;
+	}
 
-   public void setdAge(String dAge) {
-      this.dAge = dAge;
-   }
+	public static int getdPhoto() {
+		return dPhoto;
+	}
 
+	public static void setdPhoto(int dPhoto) {
+		DogInfo.dPhoto = dPhoto;
+	}
 
-   public String getdGender() {
-      return dGender;
-   }
+	
 
-
-   public void setdGender(String dGender) {
-      this.dGender = dGender;
-   }
-
-
-   public String getdChip() {
-      return dChip;
-   }
-
-
-   public void setdChip(String dChip) {
-      this.dChip = dChip;
-   }
-
-/*
- * 
-   public int getdPhoto() {
-      return dPhoto;
-   }
-
-
-   public void setdPhoto(int dPhoto) {
-      this.dPhoto = dPhoto;
-   }
-   
- */
-   
-   
 }

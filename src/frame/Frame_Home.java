@@ -7,6 +7,7 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.awt.event.ActionEvent;
 
 import javax.swing.ImageIcon;
@@ -27,6 +28,7 @@ public class Frame_Home extends JPanel {
 
 	static boolean save = false;
 	DogInfo di = new DogInfo();
+	private String DIARY_FOLDER = "Diary";
 
 	public Frame_Home() {
 	}
@@ -51,11 +53,34 @@ public class Frame_Home extends JPanel {
 		logo.setBackground(Color.GRAY);
 		add(logo);
 
-		/*
-		 * // 산책일지 정보 JLabel a = new JLabel("산책정보: 오늘은 30km만큼 산책했어요");
-		 * a.setHorizontalAlignment(SwingConstants.CENTER); a.setBounds(115, 105, 250,
-		 * 30); a.setOpaque(true); a.setBackground(Color.WHITE); add(a);
-		 */
+		// 산책일지 정보
+		File file = new File(DIARY_FOLDER + "/" + m.getId());
+		File fileList[] = file.listFiles();
+		int fileLength = fileList.length;
+		JLabel a = new JLabel("산책정보: " + fileLength + "번 산책했어요!");
+		a.setHorizontalAlignment(SwingConstants.CENTER);
+		a.setBounds(115, 105, 250, 30);
+		a.setOpaque(true);
+		a.setBackground(Color.WHITE);
+		add(a);
+
+		// 프로필 사진
+		ImageIcon PIC1 = new ImageIcon("img\\강아지1.png");
+		JButton picin1 = new JButton(PIC1);
+		picin1.setBounds(42, 140, 90, 90);
+		picin1.setBorderPainted(false);
+		ImageIcon PIC2 = new ImageIcon("img\\강아지2.png");
+		JButton picin2 = new JButton(PIC2);
+		picin2.setBounds(134, 140, 90, 90);
+		picin2.setBorderPainted(false);
+		ImageIcon PIC3 = new ImageIcon("img\\강아지3.png");
+		JButton picin3 = new JButton(PIC3);
+		picin3.setBounds(226, 140, 90, 90);
+		picin3.setBorderPainted(false);
+		ImageIcon PIC4 = new ImageIcon("img\\강아지4.png");
+		JButton picin4 = new JButton(PIC4);
+		picin4.setBounds(317, 140, 90, 90);
+		picin4.setBorderPainted(false);
 
 		if (save == false) {
 
@@ -76,12 +101,48 @@ public class Frame_Home extends JPanel {
 			add(n);
 		} else {
 			// 반려동물 사진
+			// 사진 label
+			switch (DogInfo.getdPhoto()) {
+			case 1:
+				JLabel dogpic1 = new JLabel("");
+				dogpic1.setIcon(new ImageIcon("img//강아지1.png"));
+				dogpic1.setHorizontalAlignment(SwingConstants.CENTER); // 사진 정렬 - 가운데
+				dogpic1.setBounds(55, 145, 130, 130); // 사진 위치 조절 x,y,w,h
+				add(dogpic1);
+				break;
 
-			JLabel petphoto = new JLabel();
-			petphoto.setBounds(55, 145, 130, 130);
-			petphoto.setOpaque(true);
-			petphoto.setBackground(Color.LIGHT_GRAY);
-			add(petphoto);
+			case 2:
+				JLabel dogpic2 = new JLabel("");
+				dogpic2.setIcon(new ImageIcon("img//강아지2.png"));
+				dogpic2.setHorizontalAlignment(SwingConstants.CENTER); // 사진 정렬 - 가운데
+				dogpic2.setBounds(55, 145, 130, 130); // 사진 위치 조절 x,y,w,h
+				add(dogpic2);
+				break;
+
+			case 3:
+				JLabel dogpic3 = new JLabel("");
+				dogpic3.setIcon(new ImageIcon("img//강아지3.png"));
+				dogpic3.setHorizontalAlignment(SwingConstants.CENTER); // 사진 정렬 - 가운데
+				dogpic3.setBounds(55, 145, 130, 130); // 사진 위치 조절 x,y,w,h
+				add(dogpic3);
+				break;
+
+			case 4:
+				JLabel dogpic4 = new JLabel("");
+				dogpic4.setIcon(new ImageIcon("img//강아지4.png"));
+				dogpic4.setHorizontalAlignment(SwingConstants.CENTER); // 사진 정렬 - 가운데
+				dogpic4.setBounds(55, 145, 130, 130); // 사진 위치 조절 x,y,w,h
+				add(dogpic4);
+				break;
+
+			default:
+				JLabel dogpic = new JLabel("");
+				dogpic.setIcon(new ImageIcon("img//images.jpg"));
+				dogpic.setHorizontalAlignment(SwingConstants.CENTER); // 사진 정렬 - 가운데
+				dogpic.setBounds(55, 145, 130, 130); // 사진 위치 조절 x,y,w,h
+				add(dogpic);
+				break;
+			}
 
 			// 내용
 			JTextArea n = new JTextArea(

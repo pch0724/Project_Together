@@ -19,6 +19,7 @@ import javax.swing.JTable;
 import javax.swing.SwingConstants;
 
 import customDAO.CartDAO;
+import customDAO.DogInfo;
 import customDAO.MyInfo;
 import customDAO.SellDAO;
 
@@ -49,12 +50,66 @@ public class Frame_MyPage extends JPanel {
 		Dinfo.setOpaque(true);
 		Dinfo.setBackground(Color.black);
 
+		// 프로필 사진
+		ImageIcon PIC1 = new ImageIcon("img\\강아지1.png");
+		JButton picin1 = new JButton(PIC1);
+		picin1.setBounds(42, 140, 90, 90);
+		picin1.setBorderPainted(false);
+		ImageIcon PIC2 = new ImageIcon("img\\강아지2.png");
+		JButton picin2 = new JButton(PIC2);
+		picin2.setBounds(134, 140, 90, 90);
+		picin2.setBorderPainted(false);
+		ImageIcon PIC3 = new ImageIcon("img\\강아지3.png");
+		JButton picin3 = new JButton(PIC3);
+		picin3.setBounds(226, 140, 90, 90);
+		picin3.setBorderPainted(false);
+		ImageIcon PIC4 = new ImageIcon("img\\강아지4.png");
+		JButton picin4 = new JButton(PIC4);
+		picin4.setBounds(317, 140, 90, 90);
+		picin4.setBorderPainted(false);
+
 		// 사진 label
-		JLabel dogpic = new JLabel("");
-		dogpic.setIcon(new ImageIcon("img//images.jpg"));
-		dogpic.setHorizontalAlignment(SwingConstants.CENTER); // 사진 정렬 - 가운데
-		dogpic.setBounds(40, 40, 180, 160); // 사진 위치 조절 x,y,w,h
-		add(dogpic);
+		switch (DogInfo.getdPhoto()) {
+		case 1:
+			JLabel dogpic1 = new JLabel("");
+			dogpic1.setIcon(new ImageIcon("img//강아지1.png"));
+			dogpic1.setHorizontalAlignment(SwingConstants.CENTER); // 사진 정렬 - 가운데
+			dogpic1.setBounds(40, 40, 180, 160); // 사진 위치 조절 x,y,w,h
+			add(dogpic1);
+			break;
+
+		case 2:
+			JLabel dogpic2 = new JLabel("");
+			dogpic2.setIcon(new ImageIcon("img//강아지2.png"));
+			dogpic2.setHorizontalAlignment(SwingConstants.CENTER); // 사진 정렬 - 가운데
+			dogpic2.setBounds(40, 40, 180, 160); // 사진 위치 조절 x,y,w,h
+			add(dogpic2);
+			break;
+
+		case 3:
+			JLabel dogpic3 = new JLabel("");
+			dogpic3.setIcon(new ImageIcon("img//강아지3.png"));
+			dogpic3.setHorizontalAlignment(SwingConstants.CENTER); // 사진 정렬 - 가운데
+			dogpic3.setBounds(40, 40, 180, 160); // 사진 위치 조절 x,y,w,h
+			add(dogpic3);
+			break;
+
+		case 4:
+			JLabel dogpic4 = new JLabel("");
+			dogpic4.setIcon(new ImageIcon("img//강아지4.png"));
+			dogpic4.setHorizontalAlignment(SwingConstants.CENTER); // 사진 정렬 - 가운데
+			dogpic4.setBounds(40, 40, 180, 160); // 사진 위치 조절 x,y,w,h
+			add(dogpic4);
+			break;
+
+		default:
+			JLabel dogpic = new JLabel("");
+			dogpic.setIcon(new ImageIcon("img//images.jpg"));
+			dogpic.setHorizontalAlignment(SwingConstants.CENTER); // 사진 정렬 - 가운데
+			dogpic.setBounds(40, 40, 180, 160); // 사진 위치 조절 x,y,w,h
+			add(dogpic);
+			break;
+		}
 
 		// 수정버튼
 		ImageIcon btndreg1 = new ImageIcon("img//마이페이지등록버튼1.png");
@@ -95,22 +150,25 @@ public class Frame_MyPage extends JPanel {
 		writediary.setContentAreaFilled(false);
 		writediary.setBorderPainted(false); // 버튼의 외곽선 없에기
 		writediary.setRolloverIcon(btnwrite2);
+		writediary.addActionListener(new ActionListener() {
 
-		/*
-		 * writediary.addActionListener(new ActionListener() { public void
-		 * actionPerformed(ActionEvent e) { new Frame_Diary(m, cart, history); } });
-		 */
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new Frame_Diary(m, cart, history);
+			}
+		});
+
 		writediary.setBounds(325, 230, 125, 40);
 		add(writediary);
 
-		// diarylist 라벨
-		// diarylist 라벨
+		// Jtable
 		String Heder[] = { "제목", "내용" };
 
 		// START
 		File file = new File(DIARY_FOLDER + "/" + m.getId());
 		File fileList[] = file.listFiles();
 		int fileLength = fileList.length;
+		int count = fileLength;
 		String[][] list = new String[fileLength][2];
 
 		int i = 0;
@@ -133,12 +191,6 @@ public class Frame_MyPage extends JPanel {
 		JScrollPane s = new JScrollPane(table);
 		s.setBounds(70, 310, 350, 220);
 		add(s);
-
-		/*
-		 * JLabel diarylistL = new JLabel("diarylist");
-		 * diarylistL.setHorizontalAlignment(SwingConstants.CENTER); // 라벨 정렬 | 가운데
-		 * diarylistL.setBounds(70, 310, 350, 220); add(diarylistL); // 패널에 라벨 추가
-		 */
 
 		ImageIcon btnwpmod1 = new ImageIcon("img//정보수정버튼1.png");
 		ImageIcon btnwpmod2 = new ImageIcon("img//정보수정버튼2.png");

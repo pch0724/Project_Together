@@ -22,165 +22,164 @@ import customDAO.UserInfo;
 
 public class Frame_MyPage_UpdateDog extends JFrame {
 
-	
 	public Frame_MyPage_UpdateDog() {
 	}
-	
-   public Frame_MyPage_UpdateDog(MyInfo m, CartDAO cart, SellDAO history) {
 
-	      // 프레임=======================
-	      JFrame jjf = new JFrame("반려견 수정");
-	      jjf.setVisible(true);
+	public Frame_MyPage_UpdateDog(MyInfo m, CartDAO cart, SellDAO history) {
 
-	      jjf.setSize(400, 550);
-	      jjf.setLocationRelativeTo(null);
-	      // jjf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	      jjf.getContentPane().setLayout(null);
-	      jjf.getContentPane().setBackground(Color.WHITE);
-	      setLayout(null);
-	      // ==============================================
+		// 프레임=======================
+		JFrame jjf = new JFrame("반려견 수정");
+		jjf.setVisible(true);
 
-	      JLabel JJpic1 = new JLabel(" 사진");
-	      JJpic1.setBounds(90, 90, 40, 30);
-	      JJpic1.setOpaque(true);
-	      JJpic1.setBackground(Color.WHITE);
+		jjf.setSize(400, 550);
+		jjf.setLocationRelativeTo(null);
+		// jjf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		jjf.getContentPane().setLayout(null);
+		jjf.getContentPane().setBackground(Color.WHITE);
+		setLayout(null);
+		// ==============================================
 
-	      JButton Jpicin = new JButton("변경하기");
-	      Jpicin.setBounds(90, 120, 220, 30);
-	      Jpicin.addActionListener(new ActionListener() {
+		JLabel JJpic1 = new JLabel(" 사진");
+		JJpic1.setBounds(90, 90, 40, 30);
+		JJpic1.setOpaque(true);
+		JJpic1.setBackground(Color.WHITE);
 
-	         @Override
-	         public void actionPerformed(ActionEvent e) {
-	            // TODO Auto-generated method stub
-	            jjf.dispose();
-	         }
-	      });
-	      // ==============================================
-	      // 라벨[이름]
-	      JLabel JJname1 = new JLabel("이름 : ");
-	      JJname1.setBounds(90, 150, 40, 30);
-	      JJname1.setOpaque(true);
-	      JJname1.setBackground(Color.WHITE);
-	      
-	      // 텍스트 필드
-	      JPanel JJname = new JPanel();
-	      JJname.setBounds(80, 180, 240, 30);
-	      JJname.setBackground(Color.WHITE);
+		JButton Jpicin = new JButton("변경하기");
+		Jpicin.setBounds(90, 120, 220, 30);
+		Jpicin.addActionListener(new ActionListener() {
 
-	      JTextField JJname2 = new JTextField(null, 18);
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				jjf.dispose();
+			}
+		});
+		// ==============================================
+		// 라벨[이름]
+		JLabel JJname1 = new JLabel("이름 : ");
+		JJname1.setBounds(90, 150, 40, 30);
+		JJname1.setOpaque(true);
+		JJname1.setBackground(Color.WHITE);
 
-	      JJname.add(JJname2);
-	      // ===================================================
-	      // 라벨[나이]
-	      JLabel JJage1 = new JLabel("나이 : ");
-	      JJage1.setBounds(90, 210, 40, 30);
-	      JJage1.setOpaque(true);
-	      JJage1.setBackground(Color.WHITE);
-	      // 텍스트 필드
-	      JPanel JJage = new JPanel();
-	      JJage.setBounds(80, 240, 240, 30);
-	      JJage.setBackground(Color.WHITE);
+		// 텍스트 필드
+		JPanel JJname = new JPanel();
+		JJname.setBounds(80, 180, 240, 30);
+		JJname.setBackground(Color.WHITE);
 
-	      JTextField JJage2 = new JTextField(null, 18);
+		JTextField JJname2 = new JTextField(null, 18);
 
-	      JJage.add(JJage2);
-	      // ===================================================
+		JJname.add(JJname2);
+		// ===================================================
+		// 라벨[나이]
+		JLabel JJage1 = new JLabel("나이 : ");
+		JJage1.setBounds(90, 210, 40, 30);
+		JJage1.setOpaque(true);
+		JJage1.setBackground(Color.WHITE);
+		// 텍스트 필드
+		JPanel JJage = new JPanel();
+		JJage.setBounds(80, 240, 240, 30);
+		JJage.setBackground(Color.WHITE);
 
-	      // 라벨 성별
-	      JLabel JJgender1 = new JLabel("성별");
-	      JJgender1.setOpaque(true);
-	      JJgender1.setBackground(Color.WHITE);
-	      JJgender1.setBounds(90, 270, 40, 30);
-	      
-	      // 성별 라디오 버튼
-	      JPanel JJgender = new JPanel();
-	      JJgender.setBackground(Color.WHITE);
-	      JJgender.setBounds(80, 300, 240, 40);
+		JTextField JJage2 = new JTextField(null, 18);
 
-	      JRadioButton JJgenderFemale = new JRadioButton("암컷");
-	      JJgenderFemale.setBackground(Color.WHITE);
-	      JRadioButton JJgenderMale = new JRadioButton("수컷");
-	      JJgenderMale.setBackground(Color.WHITE);
-	      ButtonGroup JJJgen = new ButtonGroup();
+		JJage.add(JJage2);
+		// ===================================================
 
-	      JJJgen.add(JJgenderFemale);
-	      JJJgen.add(JJgenderMale);
+		// 라벨 성별
+		JLabel JJgender1 = new JLabel("성별");
+		JJgender1.setOpaque(true);
+		JJgender1.setBackground(Color.WHITE);
+		JJgender1.setBounds(90, 270, 40, 30);
 
-	      JJgender.add(JJgenderFemale);
-	      JJgender.add(JJgenderMale);
-	      // ===================================================
-	      
-	      JLabel JJchip1 = new JLabel(" 칩 등록 여부");
-	      JJchip1.setOpaque(true);
-	      JJchip1.setBackground(Color.WHITE);
-	      JJchip1.setBounds(90, 340, 90, 30);
+		// 성별 라디오 버튼
+		JPanel JJgender = new JPanel();
+		JJgender.setBackground(Color.WHITE);
+		JJgender.setBounds(80, 300, 240, 40);
 
-	      // 성별 라디오 버튼
-	      JPanel JJchip = new JPanel();
-	      JJchip.setBackground(Color.WHITE);
-	      JJchip.setBounds(80, 370, 240, 40);
+		JRadioButton JJgenderFemale = new JRadioButton("암컷");
+		JJgenderFemale.setBackground(Color.WHITE);
+		JRadioButton JJgenderMale = new JRadioButton("수컷");
+		JJgenderMale.setBackground(Color.WHITE);
+		ButtonGroup JJJgen = new ButtonGroup();
 
-	      JRadioButton JJchipO = new JRadioButton("등록   ");
-	      JJchipO.setBackground(Color.WHITE);
-	      JRadioButton JJchipX = new JRadioButton("미등록");
-	      JJchipX.setBackground(Color.WHITE);
-	      ButtonGroup JJJchip = new ButtonGroup();
+		JJJgen.add(JJgenderFemale);
+		JJJgen.add(JJgenderMale);
 
-	      JJchip.add(JJchipO);
-	      JJchip.add(JJchipX);
+		JJgender.add(JJgenderFemale);
+		JJgender.add(JJgenderMale);
+		// ===================================================
 
-	      JJchip.add(JJchipO);
-	      JJchip.add(JJchipX);
-	      
-	      // ===================================================
-	      // 등록 닫기 버튼
+		JLabel JJchip1 = new JLabel(" 칩 등록 여부");
+		JJchip1.setOpaque(true);
+		JJchip1.setBackground(Color.WHITE);
+		JJchip1.setBounds(90, 340, 90, 30);
 
-	      JButton JEnroll = new JButton("수정");
-	      JEnroll.setBounds(90, 430, 80, 40);
-	      JEnroll.addActionListener(new ActionListener() {
+		// 성별 라디오 버튼
+		JPanel JJchip = new JPanel();
+		JJchip.setBackground(Color.WHITE);
+		JJchip.setBounds(80, 370, 240, 40);
 
-	         @Override
-	         public void actionPerformed(ActionEvent e) {
-	            Frame_Base.getInstance(new Frame_MyPage());
-	            jjf.dispose();
-	         }
-	      });
+		JRadioButton JJchipO = new JRadioButton("등록   ");
+		JJchipO.setBackground(Color.WHITE);
+		JRadioButton JJchipX = new JRadioButton("미등록");
+		JJchipX.setBackground(Color.WHITE);
+		ButtonGroup JJJchip = new ButtonGroup();
 
-	      JButton JCancle = new JButton("취소");
-	      JCancle.setBounds(230, 430, 80, 40);
-	      JCancle.addActionListener(new ActionListener() {
+		JJchip.add(JJchipO);
+		JJchip.add(JJchipX);
 
-	         @Override
-	         public void actionPerformed(ActionEvent e) {
-	            jjf.dispose();
+		JJchip.add(JJchipO);
+		JJchip.add(JJchipX);
 
-	         }
-	      });
+		// ===================================================
+		// 등록 닫기 버튼
 
-	      ImageIcon logophoto = new ImageIcon("img\\투개더로고2.png");
-	      Image img = logophoto.getImage();
-	      Image changelogophoto = img.getScaledInstance(250, 80, Image.SCALE_SMOOTH);
-	      ImageIcon logophoto2 = new ImageIcon(changelogophoto);
-	      JLabel JJpro = new JLabel(logophoto2);
-	      JJpro.setHorizontalAlignment(SwingConstants.CENTER);// 사진정렬-가운데
-	      JJpro.setBounds(80, 15, 250, 80);
-	      JJpro.setOpaque(true);
-	      JJpro.setBackground(Color.GRAY);
+		JButton JEnroll = new JButton("수정");
+		JEnroll.setBounds(90, 430, 80, 40);
+		JEnroll.addActionListener(new ActionListener() {
 
-	      jjf.add(JJpro);// 프로젝트[라벨]
-	      jjf.add(JJpic1);
-	      jjf.add(JJname1);// 반려견 이름[라벨]
-	      jjf.add(JJage1);// 반려견 나이[라벨]
-	      jjf.add(JJgender1);// 반려견 성별[라벨]
-	      jjf.add(JJname);// 이름 텍스트 필드
-	      jjf.add(JJage);// 나이 텍스트 필드
-	      jjf.add(JJgender);// 성별 텍스트 버튼
-	      jjf.add(JEnroll);
-	      jjf.add(JCancle);
-	      jjf.add(Jpicin);
-	      jjf.add(JJchip1);
-	     jjf.add(JJchip);
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Frame_Base.getInstance(new Frame_MyPage());
+				jjf.dispose();
+			}
+		});
 
-	   }
+		JButton JCancle = new JButton("취소");
+		JCancle.setBounds(230, 430, 80, 40);
+		JCancle.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				jjf.dispose();
+
+			}
+		});
+
+		ImageIcon logophoto = new ImageIcon("img\\투개더로고2.png");
+		Image img = logophoto.getImage();
+		Image changelogophoto = img.getScaledInstance(250, 80, Image.SCALE_SMOOTH);
+		ImageIcon logophoto2 = new ImageIcon(changelogophoto);
+		JLabel JJpro = new JLabel(logophoto2);
+		JJpro.setHorizontalAlignment(SwingConstants.CENTER);// 사진정렬-가운데
+		JJpro.setBounds(80, 15, 250, 80);
+		JJpro.setOpaque(true);
+		JJpro.setBackground(Color.GRAY);
+
+		jjf.add(JJpro);// 프로젝트[라벨]
+		jjf.add(JJpic1);
+		jjf.add(JJname1);// 반려견 이름[라벨]
+		jjf.add(JJage1);// 반려견 나이[라벨]
+		jjf.add(JJgender1);// 반려견 성별[라벨]
+		jjf.add(JJname);// 이름 텍스트 필드
+		jjf.add(JJage);// 나이 텍스트 필드
+		jjf.add(JJgender);// 성별 텍스트 버튼
+		jjf.add(JEnroll);
+		jjf.add(JCancle);
+		jjf.add(Jpicin);
+		jjf.add(JJchip1);
+		jjf.add(JJchip);
 
 	}
+
+}

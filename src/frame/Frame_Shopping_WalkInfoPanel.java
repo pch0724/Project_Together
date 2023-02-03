@@ -18,6 +18,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import Button.RoundedButton;
 import customDAO.CartDAO;
 import customDAO.ItemDAO;
 import customDAO.Items;
@@ -34,7 +35,7 @@ public class Frame_Shopping_WalkInfoPanel extends JPanel {
 	JTextField countField;
 	List<ImageIcon> itemImg;
 	
-	Font font = new Font("맑은 고딕",Font.BOLD,18);
+	Font font = new Font("에스코어 드림 5 Medium", Font.PLAIN, 15);
 	String str;
 	
 	public Frame_Shopping_WalkInfoPanel(Items item, MyInfo m, CartDAO c, SellDAO history) {
@@ -141,12 +142,12 @@ public class Frame_Shopping_WalkInfoPanel extends JPanel {
 		info.setLocation(0, 455);
 		info.setBackground(new Color(255, 255, 255));
 		info.setEditable(false);
-		info.setFont(new Font("맑은 고딕", Font.BOLD, 13));
+		info.setFont(font);
 		add(info);
 		
-		JButton sellBtn = new JButton("바로 구매");
-		
-		sellBtn.setBackground(Color.WHITE);
+		RoundedButton sellBtn = new RoundedButton("바로 구매");
+		Color c1 = new Color(255,108,0);
+		sellBtn.setBackground(c1);
 		sellBtn.setFont(font);
 		
 		sellBtn.addActionListener(new ActionListener() {
@@ -184,9 +185,9 @@ public class Frame_Shopping_WalkInfoPanel extends JPanel {
 		});
 		bottomSet.add(sellBtn);
 		
-		JButton cartBnt = new JButton("장바구니 담기");
+		RoundedButton cartBnt = new RoundedButton("장바구니 담기");
 		
-		cartBnt.setBackground(Color.WHITE);
+		cartBnt.setBackground(c1);
 		cartBnt.setFont(font);
 		bottomSet.add(cartBnt);
 		

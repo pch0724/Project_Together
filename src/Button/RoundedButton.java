@@ -32,8 +32,6 @@ public class RoundedButton extends JButton {
 		super(icon);
 		decorate();
 	}
-	
-	
 
 	public RoundedButton(String text, Icon icon) {
 		super(text, icon);
@@ -52,15 +50,13 @@ public class RoundedButton extends JButton {
 		Graphics2D graphics = (Graphics2D) g;
 		graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		if (getModel().isArmed()) {
-			graphics.setColor(new Color(255,192,0));
+			graphics.setColor(new Color(255, 192, 0));
 		} else if (getModel().isRollover()) {
-			graphics.setColor((new Color(255,192,0)));
+			graphics.setColor((new Color(255, 192, 0)));
 		} else {
 			graphics.setColor(getBackground());
 		}
-		
-		
-		
+
 		graphics.fillRoundRect(0, 0, width, height, 20, 20);
 		FontMetrics fontMetrics = graphics.getFontMetrics();
 		Rectangle stringBounds = fontMetrics.getStringBounds(this.getText(), graphics).getBounds();

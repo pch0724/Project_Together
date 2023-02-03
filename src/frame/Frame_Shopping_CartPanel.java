@@ -20,8 +20,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import Button.RoundedButton;
 import customDAO.CartDAO;
-import customDAO.ItemDAO;
 import customDAO.MyInfo;
 import customDAO.SellDAO;
 
@@ -31,7 +31,7 @@ public class Frame_Shopping_CartPanel extends JPanel {
 	JPanel cartViewPanel;
 	ArrayList<JPanel> pgNum = new ArrayList<>();
 	JPanel pa;
-
+	Font font=new Font("에스코어 드림 5 Medium", Font.PLAIN, 15);
 	int partMoney = 0;
 	int payMoney = 0;
 	// int pageBtn = 0;
@@ -130,7 +130,7 @@ public class Frame_Shopping_CartPanel extends JPanel {
 
 			for (int j = 0; j < panelCount; j++) {
 				JButton pageBtn = new JButton(String.valueOf(j + 1));
-				pageBtn.setFont(new Font("맑은 고딕", Font.BOLD, 15));
+				pageBtn.setFont(font);
 
 				if (Integer.parseInt(pageBtn.getText()) == panelCount) {
 
@@ -396,10 +396,11 @@ public class Frame_Shopping_CartPanel extends JPanel {
 		bottomSet.setBackground(Color.WHITE);
 
 
-		JButton payBtn = new JButton("결제");
-		payBtn.setFont(new Font("맑은 고딕", Font.BOLD, 15));
-		payBtn.setBackground(Color.WHITE);
-		payBtn.setFont(new Font("맑은 고딕", Font.BOLD, 15));
+		RoundedButton payBtn = new RoundedButton("결제");
+		Color c1 = new Color(255,108,0);
+		payBtn.setFont(font);
+		payBtn.setBackground(c1);
+		payBtn.setFont(font);
 		//payBtn.setForeground(new Color(255, 255, 255));
 
 		payBtn.addActionListener(new ActionListener() {
@@ -441,10 +442,10 @@ public class Frame_Shopping_CartPanel extends JPanel {
 			}
 		});
 
-		JButton partPayBtn = new JButton("선택상품 결제");
-		partPayBtn.setFont(new Font("맑은고딕", Font.BOLD, 15));
-		partPayBtn.setBackground(Color.WHITE);
-		partPayBtn.setFont(new Font("맑은고딕", Font.BOLD, 15));
+		RoundedButton partPayBtn = new RoundedButton("선택상품 결제");
+		partPayBtn.setFont(font);
+		partPayBtn.setBackground(c1);
+		partPayBtn.setFont(font);
 		//partPayBtn.setForeground(new Color(255, 255, 255));
 		bottomSet.add(partPayBtn);
 		bottomSet.add(payBtn);

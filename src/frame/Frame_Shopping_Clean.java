@@ -24,7 +24,7 @@ public class Frame_Shopping_Clean extends JPanel{
 		setLayout(null);
 		setSize(500, 730);
 		setBackground(Color.WHITE);	
-		Font font = new Font("맑은고딕", Font.BOLD, 15);
+		Font font=new Font("에스코어 드림 5 Medium", Font.PLAIN, 15);
 		
 		
 		// 로고 라벨
@@ -173,7 +173,7 @@ public class Frame_Shopping_Clean extends JPanel{
 		
 		JLabel dLabel2 = new JLabel("46,200");
 		dLabel2.setBounds(115+218, 325+258, 185, 20);
-		//dLabel2.setFont(font2);
+		dLabel2.setFont(font);
 		add(dLabel2);
 		
 		btnClean4.setSize(200, 200);

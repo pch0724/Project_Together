@@ -34,8 +34,7 @@ public class Frame_Shopping_CleanInfoPanel extends JPanel {
 	int itemId;
 	JTextField countField;
 	List<ImageIcon> itemImg;
-	
-	Font font = new Font("맑은 고딕",Font.BOLD,18);
+	Font font=new Font("에스코어 드림 5 Medium", Font.PLAIN, 15);
 	String str;
 	
 	public Frame_Shopping_CleanInfoPanel(Items item, MyInfo m, CartDAO c, SellDAO history) {
@@ -57,8 +56,6 @@ public class Frame_Shopping_CleanInfoPanel extends JPanel {
 
 			}
 		}
-		
-		Font font=new Font("에스코어 드림 5 Medium", Font.PLAIN, 15);
 		
 		// 로고 라벨
 		ImageIcon logophoto = new ImageIcon("img\\투개더로고2.png");
@@ -153,6 +150,7 @@ public class Frame_Shopping_CleanInfoPanel extends JPanel {
 		sellBtn.setBackground(c1);
 		sellBtn.setFont(font);
 		
+		
 		sellBtn.addActionListener(new ActionListener() {
 			
 			@Override
@@ -188,9 +186,9 @@ public class Frame_Shopping_CleanInfoPanel extends JPanel {
 		});
 		bottomSet.add(sellBtn);
 		
-		JButton cartBnt = new JButton("장바구니 담기");
+		RoundedButton cartBnt = new RoundedButton("장바구니 담기");
 		
-		cartBnt.setBackground(Color.WHITE);
+		cartBnt.setBackground(c1);
 		cartBnt.setFont(font);
 		bottomSet.add(cartBnt);
 		

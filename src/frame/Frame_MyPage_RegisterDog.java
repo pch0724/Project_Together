@@ -1,6 +1,7 @@
 package frame;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,6 +18,8 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+
+import Button.RoundedButton;
 import customDAO.CartDAO;
 import customDAO.CustomDAO;
 import customDAO.DogInfo;
@@ -27,7 +30,8 @@ import customDAO.UserInfo;
 public class Frame_MyPage_RegisterDog extends JFrame {
 
    DogInfo di = new DogInfo();
-   Frame_Home h=new Frame_Home();
+   Frame_Home h = new Frame_Home();
+
    public Frame_MyPage_RegisterDog() {
    }
 
@@ -49,11 +53,11 @@ public class Frame_MyPage_RegisterDog extends JFrame {
       Jpic1.setBounds(115, 100, 90, 30);
       Jpic1.setOpaque(true);
       Jpic1.setBackground(Color.WHITE);
-        
+
       ImageIcon PIC1 = new ImageIcon("img\\강아지1.png");
       JButton picin1 = new JButton(PIC1);
       picin1.setBounds(42, 140, 90, 90);
-     
+
       picin1.setBorderPainted(false);
       ImageIcon PIC2 = new ImageIcon("img\\강아지2.png");
       JButton picin2 = new JButton(PIC2);
@@ -67,7 +71,7 @@ public class Frame_MyPage_RegisterDog extends JFrame {
       JButton picin4 = new JButton(PIC4);
       picin4.setBounds(317, 140, 90, 90);
       picin4.setBorderPainted(false);
-      
+
       JRadioButton picinC1 = new JRadioButton("");
       picinC1.setBackground(Color.WHITE);
       picinC1.setBounds(80, 240, 20, 20);
@@ -86,8 +90,6 @@ public class Frame_MyPage_RegisterDog extends JFrame {
       picinC.add(picinC2);
       picinC.add(picinC3);
       picinC.add(picinC4);
-
-      
 
       // ==============================================
       // 라벨[이름]
@@ -168,88 +170,96 @@ public class Frame_MyPage_RegisterDog extends JFrame {
       Jchip.add(JchipO);
       Jchip.add(JchipX);
 
-         
-         // ===================================================
-         
-         
-         
-         // 등록 닫기 버튼
-         
-         JButton Enroll = new JButton("등록");
-         Enroll.setBounds(100, 565, 80, 40);
-         Enroll.addActionListener(new ActionListener() {
-            
-            @Override
-            public void actionPerformed(ActionEvent e) {
-               
-               //int dAge = Integer.parseInt(Jage2.getText());
-               JgenderMale.addItemListener(new ItemListener() {
-                  
-                  @Override
-                  public void itemStateChanged(ItemEvent e) {
-                     String dGender = e.getStateChange() == 1? "남아" :"여아";
-                     di.setdGender(dGender);
-                     JchipO.addItemListener(new ItemListener() {
-                  
-                  @Override
-                  public void itemStateChanged(ItemEvent e) {
-                     
-                  }
-               });
-                     //dd.registDog(dName, dAge, dGender);   
-                     
-                  }
-               });
-               di.setdName(Jname2.getText());
-               di.setdAge(Jage2.getText());
-               h.save = true;
-               jf.dispose();
-            
-            }
-         });
+      // ===================================================
 
-         JButton Cancle = new JButton("취소");
-         Cancle.setBounds(270, 565, 80, 40);
-         Cancle.addActionListener(new ActionListener() {
+      // 등록 닫기 버튼
 
-            @Override
-            public void actionPerformed(ActionEvent e) {
-               jf.dispose();
-            }
-         });
+      RoundedButton Enroll = new RoundedButton("등록");
+      Color c1 = new Color(255, 108, 0);
+      Font font = new Font("에스코어 드림 5 Medium", Font.PLAIN, 15);
+      Enroll.setBackground(c1);
+      Enroll.setFont(font);
+      Enroll.setBounds(100, 565, 80, 40);
+      Enroll.addActionListener(new ActionListener() {
 
-         // 로고
-         ImageIcon logophoto = new ImageIcon("img\\투개더로고2.png");
-         Image img = logophoto.getImage();
-         Image changelogophoto = img.getScaledInstance(250, 80, Image.SCALE_SMOOTH);
-         ImageIcon logophoto2 = new ImageIcon(changelogophoto);
-         JLabel Jpro = new JLabel(logophoto2);
-         Jpro.setHorizontalAlignment(SwingConstants.CENTER);// 사진정렬-가운데
-         Jpro.setBounds(80, 15, 250, 80);
-         Jpro.setOpaque(true);
-         Jpro.setBackground(Color.GRAY);
+         @Override
+         public void actionPerformed(ActionEvent e) {
 
-         jf.add(Jpro);// 프로젝트[라벨]
-         jf.add(Jpic1);
-         jf.add(Jname1);// 반려견 이름[라벨]
-         jf.add(Jage1);// 반려견 나이[라벨]
-         jf.add(Jgender1);// 반려견 성별[라벨]
-         jf.add(Jname);// 이름 텍스트 필드
-         jf.add(Jage);// 나이 텍스트 필드
-         jf.add(Jgender);// 성별 텍스트 버튼
-         jf.add(Enroll);
-         jf.add(Cancle);
-         jf.add(picinC1);//사진 라디오
-         jf.add(picinC2);//사진 라디오
-         jf.add(picinC3);//사진 라디오
-         jf.add(picinC4);//사진 라디오
-         jf.add(picin1);//사진 버튼이미지
-         jf.add(picin2);//사진 버튼이미지
-         jf.add(picin3);//사진 버튼이미지
-         jf.add(picin4);//사진 버튼이미지
-         jf.add(Jchip1);
-         jf.add(Jchip);
+				di.setdName(Jname2.getText());//이름
+				di.setdAge(Jage2.getText());//나이
+			
+				if(JgenderFemale.isSelected()) {
+					di.setdGender("여아");
+				}else {
+					di.setdGender("남아");
+				}//성별
+				
+				if(JchipO.isSelected()) {
+					di.setdChip("등록");
+				}else {
+					di.setdChip("미등록");
+				}//칩
+				
+				if(picinC1.isSelected()) {
+					di.setdPhoto(1);
+				}else if(picinC2.isSelected()) {
+					di.setdPhoto(2);
+				}else if(picinC3.isSelected()) {
+					di.setdPhoto(3);
+				}else {
+					di.setdPhoto(4);
+				}//사진
+					
+				
+				h.save = true;
+				jf.dispose();            
+         }
+        });
 
-      }
+      RoundedButton Cancle = new RoundedButton("취소");
+      Cancle.setBackground(c1);
+      Cancle.setFont(font);
+      Cancle.setBounds(270, 565, 80, 40);
+      Cancle.addActionListener(new ActionListener() {
+
+         @Override
+         public void actionPerformed(ActionEvent e) {
+            jf.dispose();
+         }
+      });
+
+      // 로고
+      ImageIcon logophoto = new ImageIcon("img\\투개더로고2.png");
+      Image img = logophoto.getImage();
+      Image changelogophoto = img.getScaledInstance(250, 80, Image.SCALE_SMOOTH);
+      ImageIcon logophoto2 = new ImageIcon(changelogophoto);
+      JLabel Jpro = new JLabel(logophoto2);
+      Jpro.setHorizontalAlignment(SwingConstants.CENTER);// 사진정렬-가운데
+      Jpro.setBounds(105, 15, 250, 80);
+      Jpro.setOpaque(true);
+      Jpro.setBackground(Color.GRAY);
+
+      jf.add(Jpro);// 프로젝트[라벨]
+      jf.add(Jpic1);
+      jf.add(Jname1);// 반려견 이름[라벨]
+      jf.add(Jage1);// 반려견 나이[라벨]
+      jf.add(Jgender1);// 반려견 성별[라벨]
+      jf.add(Jname);// 이름 텍스트 필드
+      jf.add(Jage);// 나이 텍스트 필드
+      jf.add(Jgender);// 성별 텍스트 버튼
+      jf.add(Enroll);
+      jf.add(Cancle);
+      jf.add(picinC1);// 사진 라디오
+      jf.add(picinC2);// 사진 라디오
+      jf.add(picinC3);// 사진 라디오
+      jf.add(picinC4);// 사진 라디오
+      jf.add(picin1);// 사진 버튼이미지
+      jf.add(picin2);// 사진 버튼이미지
+      jf.add(picin3);// 사진 버튼이미지
+      jf.add(picin4);// 사진 버튼이미지
+      jf.add(Jchip1);
+      jf.add(Jchip);
 
    }
+
+}

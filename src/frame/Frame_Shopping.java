@@ -58,7 +58,14 @@ public class Frame_Shopping extends JPanel {
 		cartBtn.setSize(80, 80);
 		cartBtn.setLocation(410, 0);
 		add(cartBtn);
-
+		cartBtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Frame_Base.getInstance(new Frame_Shopping_CartPanel(m,cart,history));
+				
+			}
+		});
 		
 
 		ImageIcon snack = new ImageIcon("img\\간식1.png");
