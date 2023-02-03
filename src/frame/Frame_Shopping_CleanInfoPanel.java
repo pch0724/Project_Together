@@ -18,6 +18,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import Button.RoundedButton;
 import customDAO.CartDAO;
 import customDAO.ItemDAO;
 import customDAO.Items;
@@ -57,6 +58,8 @@ public class Frame_Shopping_CleanInfoPanel extends JPanel {
 			}
 		}
 		
+		Font font=new Font("에스코어 드림 5 Medium", Font.PLAIN, 15);
+		
 		// 로고 라벨
 		ImageIcon logophoto = new ImageIcon("img\\투개더로고2.png");
 		Image img5 = logophoto.getImage();
@@ -70,10 +73,15 @@ public class Frame_Shopping_CleanInfoPanel extends JPanel {
 		logo.setBackground(Color.GRAY);
 		add(logo);
 		
-		JButton cartBtn = new JButton("장바구니");
-		cartBtn.setBackground(Color.WHITE);
-		cartBtn.setSize(60, 60);
-		cartBtn.setLocation(420, 0);
+		// 장바구니
+		ImageIcon cart1 = new ImageIcon("img\\장바구니1.png");
+		ImageIcon cart2 = new ImageIcon("img\\장바구니2.png");
+		JButton cartBtn = new JButton(cart1);
+		cartBtn.setContentAreaFilled(false);
+		cartBtn.setBorderPainted(false);
+		cartBtn.setRolloverIcon(cart2);// 버튼의 외곽선 없에
+		cartBtn.setSize(80, 80);
+		cartBtn.setLocation(410, 0);
 		add(cartBtn);
 		cartBtn.addActionListener(new ActionListener() {
 			
@@ -94,8 +102,12 @@ public class Frame_Shopping_CleanInfoPanel extends JPanel {
 		img.setBounds(50, 83, 285, 350);
 		add(img);
 		
-		JButton backBtn = new JButton("뒤로가기");
-		backBtn.setBackground(Color.WHITE);
+		ImageIcon back = new ImageIcon("img\\뒤1.png");
+		ImageIcon back2 = new ImageIcon("img\\뒤2.png");
+		JButton backBtn = new JButton(back);
+		backBtn.setContentAreaFilled(false);
+		backBtn.setBorderPainted(false);
+		backBtn.setRolloverIcon(back2);// 버튼의 외곽선 없에
 		backBtn.setSize(60, 60);
 		backBtn.setLocation(5, 0);
 		add(backBtn);
@@ -133,12 +145,12 @@ public class Frame_Shopping_CleanInfoPanel extends JPanel {
 		info.setLocation(0, 455);
 		info.setBackground(Color.WHITE);
 		info.setEditable(false);
-		info.setFont(new Font("맑은 고딕", Font.BOLD, 13));
+		info.setFont(font);
 		add(info);
 		
-		JButton sellBtn = new JButton("바로 구매");
-		
-		sellBtn.setBackground(Color.WHITE);
+		RoundedButton sellBtn = new RoundedButton("바로 구매");
+		Color c1 = new Color(255,108,0);
+		sellBtn.setBackground(c1);
 		sellBtn.setFont(font);
 		
 		sellBtn.addActionListener(new ActionListener() {

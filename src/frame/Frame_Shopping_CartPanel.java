@@ -67,8 +67,12 @@ public class Frame_Shopping_CartPanel extends JPanel {
 			itemImg.add(new ImageIcon(CartDAO.cartMap.get(m.getId()).get(i).getItemUrl()));
 
 		}
-		JButton backBtn = new JButton("뒤로가기");
-		backBtn.setBackground(Color.WHITE);
+		ImageIcon back = new ImageIcon("img\\뒤1.png");
+		ImageIcon back2 = new ImageIcon("img\\뒤2.png");
+		JButton backBtn = new JButton(back);
+		backBtn.setContentAreaFilled(false);
+		backBtn.setBorderPainted(false);
+		backBtn.setRolloverIcon(back2);// 버튼의 외곽선 없에
 		backBtn.setSize(60, 60);
 		backBtn.setLocation(5, 0);
 		add(backBtn);
@@ -509,10 +513,14 @@ public class Frame_Shopping_CartPanel extends JPanel {
 		
 
 
-		JButton cartBtn = new JButton("장바구니");
-		cartBtn.setBackground(Color.WHITE);
-		cartBtn.setSize(60, 60);
-		cartBtn.setLocation(420, 0);
+		ImageIcon cart1 = new ImageIcon("img\\장바구니1.png");
+		ImageIcon cart2 = new ImageIcon("img\\장바구니2.png");
+		JButton cartBtn = new JButton(cart1);
+		cartBtn.setContentAreaFilled(false);
+		cartBtn.setBorderPainted(false);
+		cartBtn.setRolloverIcon(cart2);// 버튼의 외곽선 없에
+		cartBtn.setSize(80, 80);
+		cartBtn.setLocation(410, 0);
 		add(cartBtn);
 		cartBtn.addActionListener(new ActionListener() {
 			

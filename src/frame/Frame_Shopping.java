@@ -1,5 +1,6 @@
 package frame;
 
+import java.awt.Button;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
@@ -16,16 +17,17 @@ import customDAO.CartDAO;
 import customDAO.MyInfo;
 import customDAO.SellDAO;
 import frame.Frame_Base;
-import frame.Frame_Login;
 
-public class Frame_Shopping extends JPanel{
-	public Frame_Shopping() {}
+public class Frame_Shopping extends JPanel {
+
+	public Frame_Shopping() {
+	}
 	
 	public Frame_Shopping(MyInfo m, CartDAO cart, SellDAO history) {
 		setLayout(null);
 		setSize(500, 730);
 		setBackground(Color.WHITE);
-		
+
 		// 로고 라벨
 		ImageIcon logophoto = new ImageIcon("img\\투개더로고2.png");
 		Image img = logophoto.getImage();
@@ -38,91 +40,103 @@ public class Frame_Shopping extends JPanel{
 		logo.setOpaque(true);
 		logo.setBackground(Color.GRAY);
 		add(logo);
-		
-		Font font = new Font("맑은고딕", Font.BOLD, 40);
-		JLabel cateBtn = new JLabel("상품 구매");
+
+		ImageIcon ms= new ImageIcon("img\\메인.gif");
+		JLabel cateBtn = new JLabel(ms);
 		cateBtn.setBackground(Color.WHITE);
-		cateBtn.setSize(200, 70);
-		cateBtn.setLocation(150, 80);
-		cateBtn.setFont(font);
+		cateBtn.setSize(500, 480);
+		cateBtn.setLocation(0, 80);
 		add(cateBtn);
+
 		
-		JButton cartBtn = new JButton("장바구니");
-		cartBtn.setBackground(Color.WHITE);
-		cartBtn.setSize(60, 60);
-		cartBtn.setLocation(420, 0);
+		ImageIcon cart1 = new ImageIcon("img\\장바구니1.png");
+		ImageIcon cart2 = new ImageIcon("img\\장바구니2.png");
+		JButton cartBtn = new JButton(cart1);
+		cartBtn.setContentAreaFilled(false);
+		cartBtn.setBorderPainted(false);
+		cartBtn.setRolloverIcon(cart2);// 버튼의 외곽선 없에
+		cartBtn.setSize(80, 80);
+		cartBtn.setLocation(410, 0);
 		add(cartBtn);
-		cartBtn.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				Frame_Base.getInstance(new Frame_Shopping_CartPanel(m,cart,history));
-				
-			}
-		});
+
 		
-		JButton product1Btn = new JButton("간식");
-		product1Btn.setBackground(Color.WHITE);
-		product1Btn.setSize(245, 200);
-		product1Btn.setLocation(0, 180);
+
+		ImageIcon snack = new ImageIcon("img\\간식1.png");
+		ImageIcon scnak2 = new ImageIcon("img\\간식2.png");
+		JButton product1Btn = new JButton(snack);
+		product1Btn.setContentAreaFilled(false);
+		product1Btn.setBorderPainted(false); // 버튼의 외곽선 없에
+		product1Btn.setRolloverIcon(scnak2);
+		product1Btn.setSize(100, 100);
+		product1Btn.setLocation(50, 550);
 		add(product1Btn);
 		product1Btn.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				Frame_Base.getInstance(new Frame_Shopping_Snack(m, cart, history));
-				
-			}//snack으로 연결
+
+			}// snack으로 연결
 		});
 		
 		
-		JButton product2Btn = new JButton("장난감");
-		product2Btn.setBackground(Color.WHITE);
-		product2Btn.setSize(245, 200);
-		product2Btn.setLocation(product1Btn.getX()+245,product1Btn.getY());
+		ImageIcon toy = new ImageIcon("img\\놀이1.png");
+		ImageIcon toy2 = new ImageIcon("img\\놀이2.png");
+		JButton product2Btn = new JButton(toy);
+		product2Btn.setContentAreaFilled(false);
+		product2Btn.setBorderPainted(false); // 버튼의 외곽선 없에기
+		product2Btn.setRolloverIcon(toy2);
+		product2Btn.setSize(100, 100);
+		product2Btn.setLocation(product1Btn.getX() + 100, product1Btn.getY());
 		add(product2Btn);
 		product2Btn.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Frame_Base.getInstance(new Frame_Shopping_Toy(m, cart, history));
-				
-			}//toy로 연결
+				Frame_Base.getInstance(new  Frame_Shopping_Toy(m, cart, history));
+
+			}// toy로 연결
 		});
-		
-		JButton product3Btn = new JButton("배변/위생");
-		product3Btn.setBackground(Color.WHITE);
-		product3Btn.setSize(245, 200);
-		product3Btn.setLocation(product1Btn.getX(),product1Btn.getY()+200);
+
+		ImageIcon poo = new ImageIcon("img\\배변1.png");
+		ImageIcon poo2 = new ImageIcon("img\\배변2.png");
+		JButton product3Btn = new JButton(poo);
+		product3Btn.setContentAreaFilled(false);
+		product3Btn.setBorderPainted(false); // 버튼의 외곽선 없에기
+		product3Btn.setRolloverIcon(poo2);
+		product3Btn.setSize(100, 100);
+		product3Btn.setLocation(product1Btn.getX()+200, product1Btn.getY());
 		add(product3Btn);
 		product3Btn.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				Frame_Base.getInstance(new Frame_Shopping_Clean(m, cart, history));
-				
-			}//clean으로 연결
+
+			}// clean으로 연결
 		});
 		
 		
-		JButton product4Btn = new JButton("산책용품");
-		product4Btn.setBackground(Color.WHITE);
-		product4Btn.setSize(245, 200);
-		product4Btn.setLocation(product1Btn.getX()+245,product1Btn.getY()+200);
+		ImageIcon walk = new ImageIcon("img\\산책1.png");
+		ImageIcon walk2 = new ImageIcon("img\\산책2.png");
+		JButton product4Btn = new JButton(walk);
+		product4Btn.setContentAreaFilled(false);
+		product4Btn.setBorderPainted(false); // 버튼의 외곽선 없에기
+		product4Btn.setRolloverIcon(walk2);
+		product4Btn.setSize(100, 100);
+		product4Btn.setLocation(product1Btn.getX() + 300, product1Btn.getY());
 		add(product4Btn);
 		product4Btn.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				Frame_Base.getInstance(new Frame_Shopping_Walk(m, cart, history));
-				
-			}//walk로 연결
+
+			}// walk로 연결
 		});
-		
+
 		Bottom_Button bb = new Bottom_Button(m, cart, history);
 		add(bb);
-		
 	}
-	
-	
+
 }
