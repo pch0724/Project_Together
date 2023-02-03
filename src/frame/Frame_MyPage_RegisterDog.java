@@ -174,48 +174,121 @@ public class Frame_MyPage_RegisterDog extends JFrame {
 
       // 등록 닫기 버튼
 
+      // 등록 닫기 버튼
+
       RoundedButton Enroll = new RoundedButton("등록");
       Color c1 = new Color(255, 108, 0);
-      Font font = new Font("에스코어 드림 5 Medium", Font.PLAIN, 15);
+      Font font = new Font("에스코어 드림 5 Medium", Font.BOLD, 15);
       Enroll.setBackground(c1);
       Enroll.setFont(font);
       Enroll.setBounds(100, 565, 80, 40);
       Enroll.addActionListener(new ActionListener() {
+         /*
+         @Override
+          public void actionPerformed(ActionEvent e) {
+             CustomDAO rd = new CustomDAO();
+             String pw = String.valueOf(SPW2.getPassword());
+             String cofirmPw = String.valueOf(SPWch2.getPassword());
+             int addri = Sad2.getSelectedIndex();
+             int peti = Spet2.getSelectedIndex();
 
+             if (!(SID2.getText().equals("") || Sname2.getText().equals("")
+                   || String.valueOf(SPW2.getPassword()).equals("") || addri == 0 || peti == 0)) {
+                if (rd.checkId(SID2.getText())) {
+                   if (!pw.equals(cofirmPw)) {
+                      JOptionPane.showMessageDialog(null, "비밀번호를 확인 해주세요.");
+                   } else {
+                      rd.registCustomer(Sname2.getText(), SID2.getText(), String.valueOf(SPW2.getPassword()),
+                            addri, peti);
+                      File dir = new File(DIARY_FOLDER + "/" + SID2.getText());
+                      dir.mkdir();
+                      JOptionPane.showMessageDialog(null, "가입완료");
+
+                      sf.dispose();
+                   }
+
+                }
+
+                else {
+                   JOptionPane.showMessageDialog(null, "Id 중복 오류");
+                }
+             } else if (SID2.getText().equals("")) {
+
+                JOptionPane.showMessageDialog(null, "아이디를 입력해주세요.");
+             } else if (Sname2.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "이름을 입력해주세요.");
+
+             } else if (pw.equals("")) {
+                JOptionPane.showMessageDialog(null, "비밀번호를 입력해주세요.");
+             } else if (addri == 0) {
+                JOptionPane.showMessageDialog(null, "주소를 선택해주세요.");
+             } else {
+                JOptionPane.showMessageDialog(null, "반려견 보유 여부를 선택해주세요.");
+             }
+          }*/
          @Override
          public void actionPerformed(ActionEvent e) {
+            
+            if((picinC1.isSelected())||(picinC2.isSelected())||(picinC3.isSelected())||(picinC4.isSelected())) {
+            
+            if(!(Jname2.getText().equals("")||Jage2.getText().equals("")|| !(JgenderFemale.isSelected())&&!(JgenderMale.isSelected())||!(JchipO.isSelected())&&!(JchipX.isSelected()))) {
+               di.setdName(Jname2.getText());//이름
+             di.setdAge(Jage2.getText());//나이
+          
+             if(JgenderFemale.isSelected()) {
+                di.setdGender("여아");
+             }else {
+                di.setdGender("남아");
+             }//성별
+             
+             if(JchipO.isSelected()) {
+                di.setdChip("등록");
+             }else {
+                di.setdChip("미등록");
+             }//칩
+             if(picinC1.isSelected()) {
+               di.setdPhoto(1);
+            }else if(picinC2.isSelected()) {
+               di.setdPhoto(2);
+            }else if(picinC3.isSelected()) {
+               di.setdPhoto(3);
+            }else if(picinC4.isSelected()){
+               di.setdPhoto(4);
+            }
+             h.save = true;
+             jf.dispose();   
+             
+            }else if(Jname2.getText().equals("")) {
+               JOptionPane.showMessageDialog(null, "이름을 입력하세요.");
+            }else if(Jage2.getText().equals("")) {
+               JOptionPane.showMessageDialog(null, "나이를 입력하세요.");
+            }else if(!(JgenderFemale.isSelected())&&!(JgenderMale.isSelected())) {
+               JOptionPane.showMessageDialog(null, "성별을 선택하세요.");
+            }else if(!(JchipO.isSelected())&&!(JchipX.isSelected())) {
+               JOptionPane.showMessageDialog(null, "칩 유무를 선택하세요.");
+            }
+            }else
+               JOptionPane.showMessageDialog(null, "사진을 선택하세요."); 
+            
+            /*
+            if(picinC1.isSelected()) {
+               di.setdPhoto(1);
+            }else if(picinC2.isSelected()) {
+               di.setdPhoto(2);
+            }else if(picinC3.isSelected()) {
+               di.setdPhoto(3);
+            }else if(picinC4.isSelected()){
+               di.setdPhoto(4);
+            }
+            */
 
-				di.setdName(Jname2.getText());//이름
-				di.setdAge(Jage2.getText());//나이
-			
-				if(JgenderFemale.isSelected()) {
-					di.setdGender("여아");
-				}else {
-					di.setdGender("남아");
-				}//성별
-				
-				if(JchipO.isSelected()) {
-					di.setdChip("등록");
-				}else {
-					di.setdChip("미등록");
-				}//칩
-				
-				if(picinC1.isSelected()) {
-					di.setdPhoto(1);
-				}else if(picinC2.isSelected()) {
-					di.setdPhoto(2);
-				}else if(picinC3.isSelected()) {
-					di.setdPhoto(3);
-				}else {
-					di.setdPhoto(4);
-				}//사진
-					
-				
-				h.save = true;
-				jf.dispose();            
+            //사진
+               
+            
+            
+                     
          }
         });
-
       RoundedButton Cancle = new RoundedButton("취소");
       Cancle.setBackground(c1);
       Cancle.setFont(font);

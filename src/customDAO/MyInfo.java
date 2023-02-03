@@ -60,4 +60,11 @@ public class MyInfo {
 		this.pet = pet;
 	}
 
+	@Override
+	public String toString() {
+		return id;
+	}
+
+	
+	
 }

@@ -117,17 +117,6 @@ public class Frame_Login_Register extends JFrame {
       Spet2.setBounds(200, 430, 300, 20);
       Spet.add(Spet2);
 
-      /*
-       * JRadioButton SpetY = new JRadioButton("있음                    ");
-       * SpetY.setBackground(Color.WHITE); JRadioButton SpetN = new
-       * JRadioButton("없음"); SpetN.setBackground(Color.WHITE); ButtonGroup SSSpet =
-       * new ButtonGroup();
-       * 
-       * SSSpet.add(SpetY); SSSpet.add(SpetN);
-       * 
-       * Spet.add(SpetY); Spet.add(SpetN);
-       */
-
       // ============================================= 버튼
       RoundedButton Enroll1 = new RoundedButton("가입하기");
       Font font=new Font("에스코어 드림 5 Medium", Font.PLAIN, 15);

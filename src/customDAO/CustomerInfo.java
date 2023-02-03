@@ -56,4 +56,10 @@ public class CustomerInfo {
 		this.pet = pet;
 	}
 
+	@Override
+	public String toString() {
+		return id;
+	}
+	
+	
 }

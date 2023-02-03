@@ -67,7 +67,7 @@ public class Frame_Walk_Food_Gwangjin extends JFrame {
 				+ "자차로 오실 경우 매장에 주차 공간이 있습니다. \r\n" + "만차일 경우 가게 앞에 위치한 어린이대공원 후문 주차장을 \r\n" + "이용하시면 됩니다.");
 		Pdes1.setOpaque(true);
 		Pdes1.setBounds(520, 320, 420, 250);
-
+		Pdes1.setEditable(false);
 		Pdes1.setFont(font);
 		ff.add(Pdes1);
 

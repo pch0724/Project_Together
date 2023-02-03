@@ -73,7 +73,7 @@ public class Frame_Walk_Road_Mapo extends JFrame {
 				18, 42);
 		Pdes.setOpaque(true);
 		Pdes.setBounds(490, 320, 450, 250);
-
+		Pdes.setEditable(false);
 		Pdes.setFont(font);
 		pf.add(Pdes);
 

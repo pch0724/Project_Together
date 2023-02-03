@@ -70,6 +70,15 @@ public class CustomDAO {
 
 	}
 
+	public boolean removeCustomer(MyInfo myInfo) {
+
+		while (UserInfo.UserInfoMap.containsKey(myInfo)) {
+			UserInfo.UserInfoMap.remove(myInfo);
+			return true;
+		}
+		return false;
+	}
+
 	public String findId(String name) {
 
 		for (int i = 0; i < customList.size(); i++) {

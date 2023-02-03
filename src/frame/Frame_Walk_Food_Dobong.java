@@ -61,6 +61,7 @@ public class Frame_Walk_Food_Dobong extends JFrame {
 		Pdes1.setOpaque(true);
 		Pdes1.setBounds(520, 320, 420, 250);
 		Pdes1.setFont(font);
+		Pdes1.setEditable(false);
 		ff.add(Pdes1);
 
 		// 구석강아지들

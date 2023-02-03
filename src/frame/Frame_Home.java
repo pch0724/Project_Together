@@ -23,6 +23,7 @@ import customDAO.CartDAO;
 import customDAO.DogInfo;
 import customDAO.MyInfo;
 import customDAO.SellDAO;
+import customDAO.UserInfo;
 
 public class Frame_Home extends JPanel {
 
@@ -83,21 +84,23 @@ public class Frame_Home extends JPanel {
 		picin4.setBorderPainted(false);
 
 		if (save == false) {
-
+			
 			// 반려동물 사진
-
-			JLabel petphoto = new JLabel("반려동물사진");
+			ImageIcon PICD = new ImageIcon("img\\images.png");
+			
+			
+			JLabel petphoto = new JLabel(PICD);
 			petphoto.setBounds(55, 145, 130, 130);
 			petphoto.setOpaque(true);
-			petphoto.setBackground(Color.LIGHT_GRAY);
+			petphoto.setBackground(Color.white);
 			add(petphoto);
 
 			// 내용
-			JTextField n = new JTextField("등록해주세요");
-			n.setHorizontalAlignment(SwingConstants.CENTER);
-			n.setBounds(195, 145, 250, 130);
+			JTextArea n = new JTextArea("a");
+			n.setBounds(275, 145, 130, 130);
 			n.setOpaque(true);
-			n.setBackground(Color.LIGHT_GRAY);
+			n.setBackground(Color.white);
+			n.setEditable(false);
 			add(n);
 		} else {
 			// 반려동물 사진
@@ -137,20 +140,41 @@ public class Frame_Home extends JPanel {
 
 			default:
 				JLabel dogpic = new JLabel("");
-				dogpic.setIcon(new ImageIcon("img//images.jpg"));
+				dogpic.setIcon(new ImageIcon("img//images.png"));
 				dogpic.setHorizontalAlignment(SwingConstants.CENTER); // 사진 정렬 - 가운데
 				dogpic.setBounds(55, 145, 130, 130); // 사진 위치 조절 x,y,w,h
 				add(dogpic);
 				break;
 			}
 
-			// 내용
+			// TextArea 부가 도구
+			ImageIcon nTag = new ImageIcon("img\\nametag.png");
+			Image img1 = nTag.getImage();
+			img1.getScaledInstance(fileLength, fileLength, fileLength);
+			
+			ImageIcon aTag = new ImageIcon("img\\agetag.png");
+			Image img2 = nTag.getImage();
+			img2.getScaledInstance(fileLength, fileLength, fileLength);
+			
+			ImageIcon gTag = new ImageIcon("img\\gendertag.png");
+			Image img3 = nTag.getImage();
+			img3.getScaledInstance(fileLength, fileLength, fileLength);
+			
+			ImageIcon cTag = new ImageIcon("img\\chiptag.png");			
+			Image img4 = nTag.getImage();
+			img4.getScaledInstance(fileLength, fileLength, fileLength);
+			
+			
+			
+			
+			// TextArea
 			JTextArea n = new JTextArea(
-					"사랑스런 우리 " + di.getdName() + "\r\n" + di.getdAge() + "살이에요" + di.getdGender() + di.getdChip());
+					"사랑스런 우리 " + di.getdName() + "\r\n" + "\r\n" + di.getdAge() + "살이에요" + "\r\n" + "\r\n" + "성별 : " + di.getdGender() + "\r\n" +  "\r\n" + "등록여부 : " + di.getdChip());
 
-			n.setBounds(195, 145, 250, 130);
+			n.setBounds(275, 145, 130, 130);
 			n.setOpaque(true);
-			n.setBackground(Color.LIGHT_GRAY);
+			n.setBackground(Color.white);
+			n.setEditable(false);
 			add(n);
 		}
 
@@ -170,13 +194,79 @@ public class Frame_Home extends JPanel {
 				new Frame_Diary(m, cart, history);
 			}
 		});
-
+		
 		// 추천산책로사진
-		JLabel workphoto = new JLabel("추천산책로");
-		workphoto.setBounds(20, 365, 450, 300);
-		workphoto.setOpaque(true);
-		workphoto.setBackground(Color.LIGHT_GRAY);
-		add(workphoto);
+		ImageIcon walk1 = new ImageIcon("img\\광진1.png");
+		ImageIcon walk2 = new ImageIcon("img\\도봉1.png");
+		ImageIcon walk3 = new ImageIcon("img\\동대문1.png");
+		ImageIcon walk4 = new ImageIcon("img\\동작1.png");
+		ImageIcon walk5 = new ImageIcon("img\\마포1.png");
+		ImageIcon walk6 = new ImageIcon("img\\중구1.png");
+		
+		
+		// 추천산책로
+		switch (UserInfo.UserInfoMap.get(m.getId()).getAddr()) {
+		case 1:
+			JLabel workphoto1 = new JLabel("추천산책로");
+			workphoto1.setIcon(walk1);
+			workphoto1.setBounds(20, 365, 450, 300);
+			workphoto1.setOpaque(true);
+			workphoto1.setBackground(Color.LIGHT_GRAY);
+			add(workphoto1);
+			
+			break;
+
+		case 2:
+			JLabel workphoto2 = new JLabel("추천산책로");
+			workphoto2.setIcon(walk2);
+			workphoto2.setBounds(20, 365, 450, 300);
+			workphoto2.setOpaque(true);
+			workphoto2.setBackground(Color.LIGHT_GRAY);
+			add(workphoto2);
+			
+			break;
+			
+		case 3:
+			JLabel workphoto3 = new JLabel("추천산책로");
+			workphoto3.setIcon(walk3);
+			workphoto3.setBounds(20, 365, 450, 300);
+			workphoto3.setOpaque(true);
+			workphoto3.setBackground(Color.LIGHT_GRAY);
+			add(workphoto3);
+			
+			break;
+			
+		case 4:
+			JLabel workphoto4 = new JLabel("추천산책로");
+			workphoto4.setIcon(walk4);
+			workphoto4.setBounds(20, 365, 450, 300);
+			workphoto4.setOpaque(true);
+			workphoto4.setBackground(Color.LIGHT_GRAY);
+			add(workphoto4);
+			
+			break;
+			
+		case 5:
+			JLabel workphoto5 = new JLabel("추천산책로");
+			workphoto5.setIcon(walk5);
+			workphoto5.setBounds(20, 365, 450, 300);
+			workphoto5.setOpaque(true);
+			workphoto5.setBackground(Color.LIGHT_GRAY);
+			add(workphoto5);
+			
+			break;
+				
+		case 6:
+			JLabel workphoto6 = new JLabel("추천산책로");
+			workphoto6.setIcon(walk6);
+			workphoto6.setBounds(20, 365, 450, 300);
+			workphoto6.setOpaque(true);
+			workphoto6.setBackground(Color.LIGHT_GRAY);
+			add(workphoto6);
+			
+			break;
+		}
+		
 
 		Bottom_Button bb = new Bottom_Button(m, cart, history);
 		add(bb);

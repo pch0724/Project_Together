@@ -157,6 +157,8 @@ public class Frame_Diary extends JFrame {
 		});
 		ff.add(btn2);
 
+		ff.setResizable(false);
+
 	}
 
 	private Border BorderFactory(Border lineBorder) {

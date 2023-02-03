@@ -70,7 +70,7 @@ public class Frame_Walk_Road_Dongjak extends JFrame {
 				+ "24시간 운영 | 월요일 휴무 | 소형견, 대형견 분리 | 주차 가능\r\n" + "\r\n" + "", 18, 42);
 		Pdes.setOpaque(true);
 		Pdes.setBounds(490, 320, 450, 250);
-
+		Pdes.setEditable(false);
 		Pdes.setFont(font);
 		pf.add(Pdes);
 

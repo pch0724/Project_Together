@@ -1,6 +1,7 @@
 package frame;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -13,19 +14,26 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.table.JTableHeader;
 
 import customDAO.CartDAO;
+import customDAO.CustomDAO;
 import customDAO.DogInfo;
 import customDAO.MyInfo;
 import customDAO.SellDAO;
+import customDAO.UserInfo;
 
 public class Frame_MyPage extends JPanel {
 
 	private String DIARY_FOLDER = "Diary";
+	DogInfo di = new DogInfo();
 
 	public Frame_MyPage() {
 	}
@@ -39,16 +47,54 @@ public class Frame_MyPage extends JPanel {
 		setSize(450, 480);
 		// nav.setBackground(Color.GREEN);
 		setBackground(Color.white);
+		
+		ImageIcon nTag = new ImageIcon("img\\nametag.png");
+		ImageIcon aTag = new ImageIcon("img\\agetag.png");
+		ImageIcon gTag = new ImageIcon("img\\gendertag.png");
+		ImageIcon cTag = new ImageIcon("img\\chiptag.png");
+		
 		// 반려견 정보 라벨
+		JLabel name = new JLabel(nTag);
+		JLabel age = new JLabel(aTag);
+		JLabel gender = new JLabel(gTag);
+		JLabel chip = new JLabel(cTag);
 
-		JLabel Dinfo = new JLabel("반려견 정보");
-		Dinfo.setVerticalAlignment(SwingConstants.TOP);
-		Dinfo.setHorizontalAlignment(SwingConstants.CENTER);
-		Dinfo.setBounds(250, 50, 190, 130);
-		add(Dinfo);
+		name.setBounds(230, 72, 80, 32);
+		age.setBounds(230, 104, 80, 32);
+		gender.setBounds(230, 136, 80, 32);
+		chip.setBounds(230, 168, 80, 32);
+		
+		name.setOpaque(true);
+		name.setBackground(Color.black);
+		age.setOpaque(true);
+		age.setBackground(Color.red);
+		gender.setOpaque(true);
+		gender.setBackground(Color.black);
+		chip.setOpaque(true);
+		chip.setBackground(Color.red);
+		
+		add(name);
+		add(age);
+		add(gender);
+		add(chip);
 
-		Dinfo.setOpaque(true);
-		Dinfo.setBackground(Color.black);
+		if (di.getdName() == null) {
+			JTextArea Dinfo = new JTextArea("" + "\r\n" + "\r\n" + "" + "\r\n" + "\r\n" + "" + "\r\n" + "\r\n" + "");
+			Dinfo.setBounds(330, 80, 190, 130);
+			Dinfo.setOpaque(true);
+			Dinfo.setBackground(Color.white);
+			Dinfo.setEditable(false);
+			add(Dinfo);
+		} else {
+			JTextArea Dinfo = new JTextArea("이름 :" + di.getdName() + "\r\n" + "\r\n" + "나이 : " + di.getdAge() + "\r\n"
+					+ "\r\n" + "성별 : " + di.getdGender() + "\r\n" + "\r\n" + "등록여부 : " + di.getdChip());
+			Dinfo.setBounds(330, 80, 190, 130);
+			Dinfo.setOpaque(true);
+			Dinfo.setBackground(Color.white);
+			Dinfo.setEditable(false);
+			add(Dinfo);
+
+		}
 
 		// 프로필 사진
 		ImageIcon PIC1 = new ImageIcon("img\\강아지1.png");
@@ -104,7 +150,7 @@ public class Frame_MyPage extends JPanel {
 
 		default:
 			JLabel dogpic = new JLabel("");
-			dogpic.setIcon(new ImageIcon("img//images.jpg"));
+			dogpic.setIcon(new ImageIcon("img//images2.png"));
 			dogpic.setHorizontalAlignment(SwingConstants.CENTER); // 사진 정렬 - 가운데
 			dogpic.setBounds(40, 40, 180, 160); // 사진 위치 조절 x,y,w,h
 			add(dogpic);
@@ -137,7 +183,10 @@ public class Frame_MyPage extends JPanel {
 		DmodifyBtn.setRolloverIcon(btndmo2);
 		DmodifyBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Frame_MyPage_UpdateDog(m, cart, history);
+				if (Frame_Home.save == false)
+					JOptionPane.showMessageDialog(null, "등록된 반려견이 없습니다");
+				else
+					new Frame_MyPage_UpdateDog(m, cart, history);
 			}
 		});
 		DmodifyBtn.setBounds(185, 230, 125, 40);
@@ -187,9 +236,20 @@ public class Frame_MyPage extends JPanel {
 		}
 
 		// 게시판
+		Color c1 = new Color(255, 156, 0);
+		Color c2 = new Color(255, 230, 129);
+
 		JTable table = new JTable(list, Heder);
+		table.getColumnModel().getColumn(0).setMaxWidth(200);
+		table.getColumnModel().getColumn(0).setMinWidth(120);
 		JScrollPane s = new JScrollPane(table);
-		s.setBounds(70, 310, 350, 220);
+		s.setBounds(40, 290, 400, 270);
+		JTableHeader theader = table.getTableHeader();
+		theader.setBackground(c1);
+		theader.setForeground(Color.WHITE);
+		theader.setFont(new Font("에스코어 드림 5 Medium", Font.BOLD, 15));
+		table.setBackground(c2);
+		table.setFont(new Font("에스코어 드림 5 Medium", Font.PLAIN, 12));
 		add(s);
 
 		ImageIcon btnwpmod1 = new ImageIcon("img//정보수정버튼1.png");
@@ -290,6 +350,8 @@ public class Frame_MyPage extends JPanel {
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
+						CustomDAO rd = new CustomDAO();
+						rd.removeCustomer(UserInfo.UserInfoMap.get(m.getId()));
 						Pwithdrawal.dispose();
 						Frame_Base.getInstance(new Frame_Login());
 						;

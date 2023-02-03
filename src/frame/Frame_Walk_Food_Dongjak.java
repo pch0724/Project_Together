@@ -68,7 +68,7 @@ public class Frame_Walk_Food_Dongjak extends JFrame {
 				+ "※ 다른 기본적인 페티켓을 지켜 주시기 바랍니다.");
 		Pdes1.setOpaque(true);
 		Pdes1.setBounds(520, 320, 420, 250);
-
+		Pdes1.setEditable(false);
 		Pdes1.setFont(font);
 		ff.add(Pdes1);
 
