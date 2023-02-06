@@ -1,6 +1,7 @@
 package frame;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -53,23 +54,26 @@ public class Frame_Diary extends JFrame {
       w.setLayout(null);
       ff.add(w);
       
-
+      //폰트
+      Font font = new Font("에스코어 드림 5 Medium", Font.PLAIN, 14);
       
       // 제목
       JLabel t = new JLabel("제목");
-      t.setBounds(10, 20, 30, 20);
+      t.setFont(font);
+      t.setBounds(15, 20, 40, 20);
       ff.add(t);
 
       // 제목입력상자
       JTextArea title = new JTextArea("",1,30);
       title.setBackground(c2);
-      title.setBounds(60, 20, 400, 20);
+      title.setBounds(60, 20, 418, 20);
       ff.add(title);
 
       // 본문
       setLayout(null);
       JLabel text = new JLabel("내용");
-      text.setBounds(10, 60, 30, 20);
+      text.setFont(font);
+      text.setBounds(15, 60, 30, 20);
       ff.add(text);
 
       // 본문 입력상자

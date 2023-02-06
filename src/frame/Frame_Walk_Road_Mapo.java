@@ -116,7 +116,7 @@ public class Frame_Walk_Road_Mapo extends JFrame {
 
       // =======================================================
 
-      Font font = new Font(Font.SANS_SERIF, Font.BOLD, 14);
+      Font font = new Font("에스코어 드림 5 Medium", Font.BOLD, 14);
       JTextArea Pdes = new JTextArea(
             "                    [ 마포구 하늘공원 메타세콰이어길 산책로 ]\r\n" + "\r\n" + "산책코스 : 평화의공원 주차장 \r\n"
                   + "– 월드컵공원 반려견놀이터 – 메타세콰이어길 – 하늘공원 진입로 \r\n" + "– 하늘계단 – 하늘공원 억새길 – 평화의공원 주차장\r\n" + "\r\n"
@@ -126,7 +126,7 @@ public class Frame_Walk_Road_Mapo extends JFrame {
             18, 42);
       Pdes.setOpaque(true);
       Pdes.setBounds(490, 320, 450, 250);
-
+      Pdes.setEditable(false);
       Pdes.setFont(font);
       pf.add(Pdes);
 

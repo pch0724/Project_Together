@@ -121,7 +121,7 @@ public class Frame_Walk_Food_Joong extends JFrame {
             + "남산둘레길 반려견과 산책후 들러주시면 감사하겠습니다.\r\n" + "주차장은 남산 공영주차장을 이용해 주세요.");
       Pdes1.setOpaque(true);
       Pdes1.setBounds(520, 320, 420, 250);
-
+      Pdes1.setEditable(false);
       Pdes1.setFont(font);
       ff.add(Pdes1);
 

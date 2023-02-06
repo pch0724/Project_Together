@@ -124,6 +124,7 @@ public class Frame_Walk_Food_Dobong extends JFrame {
             + "(의자들이 밝은 톤이라 자국이 생기면 지워지지 않아요)\r\n" + "4. 큰 대형견들 입장 시 목줄 착용과 의자 아래에 앉혀주세요");
       Pdes1.setOpaque(true);
       Pdes1.setBounds(520, 320, 420, 250);
+      Pdes1.setEditable(false);
       Pdes1.setFont(font);
       ff.add(Pdes1);
 

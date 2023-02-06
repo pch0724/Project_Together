@@ -122,7 +122,7 @@ public class Frame_Walk_Road_Dongdaemun extends JFrame {
             + "놀이터 분리여부 : 분리 없음       \r\n" + " \r\n" + " * 별도의 관리자가 없이 상시 운영되고 있다         |           주차 가능");
       Pdes.setOpaque(true);
       Pdes.setBounds(490, 320, 450, 250);
-
+      Pdes.setEditable(false);
       Pdes.setFont(font);
       pf.add(Pdes);
 

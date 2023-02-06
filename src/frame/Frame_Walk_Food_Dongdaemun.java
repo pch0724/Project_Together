@@ -117,7 +117,7 @@ public class Frame_Walk_Food_Dongdaemun extends JFrame {
             + "4. 분리된 애견동반공간 (야외입니다)\r\n" + "\r\n" + " * 주차장은 건물주차장 공동사용중이며 (무료), \r\n" + "   평일은 만차일경우가 많아요.");
       Pdes1.setOpaque(true);
       Pdes1.setBounds(520, 320, 420, 250);
-
+      Pdes1.setEditable(false);
       Pdes1.setFont(font);
       ff.add(Pdes1);
 

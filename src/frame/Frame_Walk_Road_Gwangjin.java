@@ -124,7 +124,7 @@ public class Frame_Walk_Road_Gwangjin extends JFrame {
             + "사람 음식물, 반려견 사료 및 간식 반입 금지\r\n" + "놀이터 분리여부 : 소형견, 대형견 분리             |            주차 가능");
       Pdes.setOpaque(true);
       Pdes.setBounds(490, 320, 450, 250);
-
+      Pdes.setEditable(false);
       Pdes.setFont(font);
       pf.add(Pdes);
 

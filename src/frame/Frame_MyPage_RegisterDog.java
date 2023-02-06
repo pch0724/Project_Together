@@ -48,10 +48,12 @@ public class Frame_MyPage_RegisterDog extends JFrame {
 		// jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jf.getContentPane().setLayout(null);
 		jf.getContentPane().setBackground(Color.WHITE);
-
+		Font font2 = new Font("에스코어 드림 5 Medium", Font.PLAIN, 14);
+		Font font3 = new Font("에스코어 드림 5 Medium", Font.PLAIN, 12);
 		// ==============================================
 
 		JLabel Jpic1 = new JLabel("프로필 선택");
+	    Jpic1.setFont(font2);
 		Jpic1.setBounds(115, 100, 90, 30);
 		Jpic1.setOpaque(true);
 		Jpic1.setBackground(Color.WHITE);
@@ -96,6 +98,7 @@ public class Frame_MyPage_RegisterDog extends JFrame {
 		// ==============================================
 		// 라벨[이름]
 		JLabel Jname1 = new JLabel("이름");
+		Jname1.setFont(font2);
 		Jname1.setBounds(115, 275, 40, 30);
 		Jname1.setOpaque(true);
 		Jname1.setBackground(Color.WHITE);
@@ -114,6 +117,7 @@ public class Frame_MyPage_RegisterDog extends JFrame {
 		JLabel Jage1 = new JLabel("나이");
 		Jage1.setBounds(115, 335, 40, 30);
 		Jage1.setOpaque(true);
+		Jage1.setFont(font2);
 		Jage1.setBackground(Color.WHITE);
 
 		// 텍스트 필드
@@ -129,6 +133,7 @@ public class Frame_MyPage_RegisterDog extends JFrame {
 		// 라벨 성별
 		JLabel Jgender1 = new JLabel("성별");
 		Jgender1.setOpaque(true);
+		Jgender1.setFont(font2);
 		Jgender1.setBackground(Color.WHITE);
 		Jgender1.setBounds(115, 395, 40, 30);
 
@@ -138,8 +143,10 @@ public class Frame_MyPage_RegisterDog extends JFrame {
 		Jgender.setBounds(105, 425, 240, 40);
 
 		JRadioButton JgenderFemale = new JRadioButton("암컷      ");
+		JgenderFemale.setFont(font3);
 		JgenderFemale.setBackground(Color.WHITE);
 		JRadioButton JgenderMale = new JRadioButton("수컷");
+		JgenderMale.setFont(font3);
 		JgenderMale.setBackground(Color.WHITE);
 		ButtonGroup JJgen = new ButtonGroup();
 
@@ -152,6 +159,7 @@ public class Frame_MyPage_RegisterDog extends JFrame {
 
 		JLabel Jchip1 = new JLabel("칩 등록 여부");
 		Jchip1.setOpaque(true);
+		Jchip1.setFont(font2);
 		Jchip1.setBackground(Color.WHITE);
 		Jchip1.setBounds(115, 465, 90, 30);
 
@@ -161,8 +169,10 @@ public class Frame_MyPage_RegisterDog extends JFrame {
 		Jchip.setBounds(105, 495, 240, 40);
 
 		JRadioButton JchipO = new JRadioButton("등록   ");
+		JchipO.setFont(font3);
 		JchipO.setBackground(Color.WHITE);
 		JRadioButton JchipX = new JRadioButton("미등록");
+		JchipX.setFont(font3);
 		JchipX.setBackground(Color.WHITE);
 		ButtonGroup JJchip = new ButtonGroup();
 

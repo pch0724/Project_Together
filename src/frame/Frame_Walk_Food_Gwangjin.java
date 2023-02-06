@@ -126,7 +126,7 @@ public class Frame_Walk_Food_Gwangjin extends JFrame {
             + "이용하시면 됩니다.");
       Pdes1.setOpaque(true);
       Pdes1.setBounds(520, 320, 420, 250);
-      
+      Pdes1.setEditable(false);      
       Pdes1.setFont(font);
        ff.add(Pdes1);
 

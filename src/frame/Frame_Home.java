@@ -36,6 +36,7 @@ public class Frame_Home extends JPanel {
 
 	public Frame_Home(MyInfo m, CartDAO cart, SellDAO history) {
 
+		Font font3 = new Font("에스코어 드림 5 Medium", Font.PLAIN, 13);
 		// JPanel 구조
 		setSize(500, 730);
 		setBackground(Color.WHITE);
@@ -55,10 +56,12 @@ public class Frame_Home extends JPanel {
 		add(logo);
 
 		// 산책일지 정보
+		Font font = new Font("에스코어 드림 5 Medium", Font.PLAIN, 16);
 		File file = new File(DIARY_FOLDER + "/" + m.getId());
 		File fileList[] = file.listFiles();
 		int fileLength = fileList.length;
 		JLabel a = new JLabel("산책정보: " + fileLength + "번 산책했어요!");
+		a.setFont(font);
 		a.setHorizontalAlignment(SwingConstants.CENTER);
 		a.setBounds(115, 105, 250, 30);
 		a.setOpaque(true);
@@ -193,7 +196,7 @@ public class Frame_Home extends JPanel {
 			// TextArea
 			JTextArea n = new JTextArea(
 					di.getdName() + "\r\n" + "\r\n" + di.getdAge() + "\r\n" + "\r\n" + di.getdGender() + "\r\n" +  "\r\n" + di.getdChip());
-
+			n.setFont(font3);
 			n.setBounds(285, 158, 130, 130);
 			n.setOpaque(true);
 			n.setBackground(Color.white);

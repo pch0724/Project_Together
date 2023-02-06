@@ -40,6 +40,8 @@ public class Frame_MyPage extends JPanel {
 
 	public Frame_MyPage(MyInfo m, CartDAO cart, SellDAO history) {
 
+		Font font3 = new Font("에스코어 드림 5 Medium", Font.PLAIN, 13);
+		
 		// 기본 패널 설정
 		setLayout(null);
 		// JPanel nav = new JPanel();
@@ -88,6 +90,7 @@ public class Frame_MyPage extends JPanel {
 		} else {
 			JTextArea Dinfo = new JTextArea(di.getdName() + "\r\n" + "\r\n" + di.getdAge() + "\r\n"
 					+ "\r\n" + di.getdGender() + "\r\n" + "\r\n" + di.getdChip());
+			Dinfo.setFont(font3);
 			Dinfo.setBounds(330, 80, 190, 130);
 			Dinfo.setOpaque(true);
 			Dinfo.setBackground(Color.white);
