@@ -351,7 +351,9 @@ public class Frame_MyPage extends JPanel {
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						CustomDAO rd = new CustomDAO();
-						rd.removeCustomer(UserInfo.UserInfoMap.get(m.getId()));
+						
+						rd.removeCustomer(m.toString());
+						//System.out.println(m.toString());
 						Pwithdrawal.dispose();
 						Frame_Base.getInstance(new Frame_Login());
 						;

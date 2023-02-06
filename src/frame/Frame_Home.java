@@ -219,12 +219,12 @@ public class Frame_Home extends JPanel {
 		});
 		
 		// 추천산책로사진
-		ImageIcon walk1 = new ImageIcon("img\\광진1.png");
-		ImageIcon walk2 = new ImageIcon("img\\도봉1.png");
-		ImageIcon walk3 = new ImageIcon("img\\동대문1.png");
-		ImageIcon walk4 = new ImageIcon("img\\동작1.png");
-		ImageIcon walk5 = new ImageIcon("img\\마포1.png");
-		ImageIcon walk6 = new ImageIcon("img\\중구1.png");
+		ImageIcon walk1 = new ImageIcon("img\\산 광진5.png");
+		ImageIcon walk2 = new ImageIcon("img\\산 도봉5.png");
+		ImageIcon walk3 = new ImageIcon("img\\산 동대문5.png");
+		ImageIcon walk4 = new ImageIcon("img\\산 동작5.png");
+		ImageIcon walk5 = new ImageIcon("img\\산 마포5.png");
+		ImageIcon walk6 = new ImageIcon("img\\산 중구5.png");
 		
 		
 		// 추천산책로
@@ -234,7 +234,7 @@ public class Frame_Home extends JPanel {
 			workphoto1.setIcon(walk1);
 			workphoto1.setBounds(20, 365, 450, 300);
 			workphoto1.setOpaque(true);
-			workphoto1.setBackground(Color.LIGHT_GRAY);
+			workphoto1.setBackground(Color.white);
 			add(workphoto1);
 			
 			break;
@@ -244,7 +244,7 @@ public class Frame_Home extends JPanel {
 			workphoto2.setIcon(walk2);
 			workphoto2.setBounds(20, 365, 450, 300);
 			workphoto2.setOpaque(true);
-			workphoto2.setBackground(Color.LIGHT_GRAY);
+			workphoto2.setBackground(Color.white);
 			add(workphoto2);
 			
 			break;
@@ -254,7 +254,7 @@ public class Frame_Home extends JPanel {
 			workphoto3.setIcon(walk3);
 			workphoto3.setBounds(20, 365, 450, 300);
 			workphoto3.setOpaque(true);
-			workphoto3.setBackground(Color.LIGHT_GRAY);
+			workphoto3.setBackground(Color.white);
 			add(workphoto3);
 			
 			break;
@@ -264,7 +264,7 @@ public class Frame_Home extends JPanel {
 			workphoto4.setIcon(walk4);
 			workphoto4.setBounds(20, 365, 450, 300);
 			workphoto4.setOpaque(true);
-			workphoto4.setBackground(Color.LIGHT_GRAY);
+			workphoto4.setBackground(Color.white);
 			add(workphoto4);
 			
 			break;
@@ -274,7 +274,7 @@ public class Frame_Home extends JPanel {
 			workphoto5.setIcon(walk5);
 			workphoto5.setBounds(20, 365, 450, 300);
 			workphoto5.setOpaque(true);
-			workphoto5.setBackground(Color.LIGHT_GRAY);
+			workphoto5.setBackground(Color.white);
 			add(workphoto5);
 			
 			break;
@@ -284,7 +284,7 @@ public class Frame_Home extends JPanel {
 			workphoto6.setIcon(walk6);
 			workphoto6.setBounds(20, 365, 450, 300);
 			workphoto6.setOpaque(true);
-			workphoto6.setBackground(Color.LIGHT_GRAY);
+			workphoto6.setBackground(Color.white);
 			add(workphoto6);
 			
 			break;

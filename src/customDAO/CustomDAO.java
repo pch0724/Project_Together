@@ -1,8 +1,7 @@
 package customDAO;
 
-import java.util.*;
-
-import customDAO.CustomerInfo;
+import java.io.File;
+import java.util.ArrayList;
 
 public class CustomDAO {
 
@@ -70,14 +69,37 @@ public class CustomDAO {
 
 	}
 
-	public boolean removeCustomer(MyInfo myInfo) {
+	public boolean removeCustomer(String id) {
 
-		while (UserInfo.UserInfoMap.containsKey(myInfo)) {
-			UserInfo.UserInfoMap.remove(myInfo);
-			return true;
+		for (int i = 0; i < customList.size(); i++) {
+			if (customList.get(i).getId().equals(id)) {
+				customList.remove(i);
+				File targetFolder = new File("./Diary/"+id);
+				boolean isDelete = deleteDirectoryAndFiles(targetFolder);
+				return false;
+			}
 		}
-		return false;
+
+		return true;
+
 	}
+    private boolean deleteDirectoryAndFiles(File targetFolder) {
+        if(!targetFolder.exists()) {
+            return false;
+        }
+        
+        File[] files = targetFolder.listFiles();
+        for(File file : files) {
+            if(file.isDirectory()) {
+                deleteDirectoryAndFiles(file);
+            }
+            file.delete();
+        }
+        
+        return targetFolder.delete();
+    }	
+	
+	
 
 	public String findId(String name) {
 

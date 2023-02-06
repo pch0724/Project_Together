@@ -219,6 +219,7 @@ public class Frame_MyPage_RegisterDog extends JFrame {
 
 						h.save = true;
 						jf.dispose();
+						Frame_Base.getInstance(new Frame_Home(m, cart, history));
 
 					} else if (Jname2.getText().equals("")) {
 						JOptionPane.showMessageDialog(null, "이름을 입력하세요.");

@@ -1,4 +1,4 @@
-package frame;
+ package frame;
 
 import java.awt.Button;
 import java.awt.Color;
@@ -72,7 +72,6 @@ public class Frame_Walk extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new Frame_Walk_Food_Gwangjin();
 				new Frame_Walk_Road_Gwangjin();
 			}
 		});
@@ -88,7 +87,6 @@ public class Frame_Walk extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new Frame_Walk_Food_Dongdaemun();
 				new Frame_Walk_Road_Dongdaemun();
 			}
 		});
@@ -104,7 +102,6 @@ public class Frame_Walk extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new Frame_Walk_Food_Dobong();
 				new Frame_Walk_Road_Dobong();
 			}
 		});
@@ -120,7 +117,6 @@ public class Frame_Walk extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new Frame_Walk_Food_Joong();
 				new Frame_Walk_Road_Joong();
 			}
 		});
@@ -136,7 +132,6 @@ public class Frame_Walk extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new Frame_Walk_Food_Dongjak();
 				new Frame_Walk_Road_Dongjak();
 			}
 		});
@@ -152,7 +147,6 @@ public class Frame_Walk extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new Frame_Walk_Food_Mapo();
 				new Frame_Walk_Road_Mapo();
 			}
 		});
