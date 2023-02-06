@@ -82,7 +82,48 @@ public class Frame_Home extends JPanel {
 		JButton picin4 = new JButton(PIC4);
 		picin4.setBounds(317, 140, 90, 90);
 		picin4.setBorderPainted(false);
+		
+		// TextArea 부가 도구
+		ImageIcon nTag = new ImageIcon("img\\nametag.png");
+		Image img1 = nTag.getImage();
+		img1.getScaledInstance(50, 25, Image.SCALE_SMOOTH);
+		
+		ImageIcon aTag = new ImageIcon("img\\agetag.png");
+		Image img2 = nTag.getImage();
+		img2.getScaledInstance(50, 25, Image.SCALE_SMOOTH);
+		
+		ImageIcon gTag = new ImageIcon("img\\gendertag.png");
+		Image img3 = nTag.getImage();
+		img3.getScaledInstance(50, 25, Image.SCALE_SMOOTH);
+		
+		ImageIcon cTag = new ImageIcon("img\\chiptag.png");			
+		Image img4 = nTag.getImage();
+		img4.getScaledInstance(50, 25, Image.SCALE_SMOOTH);
 
+		JLabel name = new JLabel(nTag);
+		JLabel age = new JLabel(aTag);
+		JLabel gender = new JLabel(gTag);
+		JLabel chip = new JLabel(cTag);
+		
+		name.setBounds(200, 155, 80, 32);
+		age.setBounds(200, 185, 80, 32);
+		gender.setBounds(200, 215, 80, 32);
+		chip.setBounds(200, 245, 80, 32);
+		
+		name.setOpaque(true);
+		name.setBackground(Color.black);
+		age.setOpaque(true);
+		age.setBackground(Color.red);
+		gender.setOpaque(true);
+		gender.setBackground(Color.black);
+		chip.setOpaque(true);
+		chip.setBackground(Color.red);
+		
+		add(name);
+		add(age);
+		add(gender);
+		add(chip);
+		
 		if (save == false) {
 			
 			// 반려동물 사진
@@ -95,9 +136,11 @@ public class Frame_Home extends JPanel {
 			petphoto.setBackground(Color.white);
 			add(petphoto);
 
+			
+			
 			// 내용
-			JTextArea n = new JTextArea("a");
-			n.setBounds(275, 145, 130, 130);
+			JTextArea n = new JTextArea("" + "\r\n" + "\r\n" + ""  + "\r\n" + "\r\n" + ""  + "\r\n" + "\r\n" + "");
+			n.setBounds(285, 158, 130, 130);
 			n.setOpaque(true);
 			n.setBackground(Color.white);
 			n.setEditable(false);
@@ -146,32 +189,12 @@ public class Frame_Home extends JPanel {
 				add(dogpic);
 				break;
 			}
-
-			// TextArea 부가 도구
-			ImageIcon nTag = new ImageIcon("img\\nametag.png");
-			Image img1 = nTag.getImage();
-			img1.getScaledInstance(fileLength, fileLength, fileLength);
-			
-			ImageIcon aTag = new ImageIcon("img\\agetag.png");
-			Image img2 = nTag.getImage();
-			img2.getScaledInstance(fileLength, fileLength, fileLength);
-			
-			ImageIcon gTag = new ImageIcon("img\\gendertag.png");
-			Image img3 = nTag.getImage();
-			img3.getScaledInstance(fileLength, fileLength, fileLength);
-			
-			ImageIcon cTag = new ImageIcon("img\\chiptag.png");			
-			Image img4 = nTag.getImage();
-			img4.getScaledInstance(fileLength, fileLength, fileLength);
-			
-			
-			
 			
 			// TextArea
 			JTextArea n = new JTextArea(
-					"사랑스런 우리 " + di.getdName() + "\r\n" + "\r\n" + di.getdAge() + "살이에요" + "\r\n" + "\r\n" + "성별 : " + di.getdGender() + "\r\n" +  "\r\n" + "등록여부 : " + di.getdChip());
+					di.getdName() + "\r\n" + "\r\n" + di.getdAge() + "\r\n" + "\r\n" + di.getdGender() + "\r\n" +  "\r\n" + di.getdChip());
 
-			n.setBounds(275, 145, 130, 130);
+			n.setBounds(285, 158, 130, 130);
 			n.setOpaque(true);
 			n.setBackground(Color.white);
 			n.setEditable(false);

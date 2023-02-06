@@ -86,8 +86,8 @@ public class Frame_MyPage extends JPanel {
 			Dinfo.setEditable(false);
 			add(Dinfo);
 		} else {
-			JTextArea Dinfo = new JTextArea("이름 :" + di.getdName() + "\r\n" + "\r\n" + "나이 : " + di.getdAge() + "\r\n"
-					+ "\r\n" + "성별 : " + di.getdGender() + "\r\n" + "\r\n" + "등록여부 : " + di.getdChip());
+			JTextArea Dinfo = new JTextArea(di.getdName() + "\r\n" + "\r\n" + di.getdAge() + "\r\n"
+					+ "\r\n" + di.getdGender() + "\r\n" + "\r\n" + di.getdChip());
 			Dinfo.setBounds(330, 80, 190, 130);
 			Dinfo.setOpaque(true);
 			Dinfo.setBackground(Color.white);
