@@ -89,10 +89,21 @@ public class Frame_Login extends JPanel {
       btnPwFind.setBorderPainted(false); // 버튼의 외곽선 없에기
       btnPwFind.setRolloverIcon(ImgPwFind2);
 
-      btnLogin.setBounds(80,370,130, 30);
-      btnInit.setBounds(250,370,130, 30);
-      btnIdFind.setBounds(80,410,130, 30);
-      btnPwFind.setBounds(250,410,130, 30);
+      btnLogin.setBounds(90,370,130, 30);
+      btnInit.setBounds(260,370,130, 30);
+      btnIdFind.setBounds(90,410,130, 30);
+      btnPwFind.setBounds(260,410,130, 30);
+      
+      ImageIcon logophoto3 = new ImageIcon("img\\로그인3.png");
+      Image img1 = logophoto3.getImage();
+      Image changelogophoto2 = img1.getScaledInstance(400, 300, Image.SCALE_SMOOTH);
+      ImageIcon logophoto4 = new ImageIcon(changelogophoto2);
+      JLabel logo1 = new JLabel(logophoto4);
+      logo1.setHorizontalAlignment(SwingConstants.CENTER);// 사진정렬-가운데
+      logo1.setBounds(40, 500, 400, 300);
+      logo1.setOpaque(true);
+      logo1.setBackground(Color.GRAY);
+      add(logo1);
 
       //add(btn);
       add(btnLogin);
@@ -105,7 +116,7 @@ public class Frame_Login extends JPanel {
       userText.setText("아이디");
       userText.setFont(font);
       userText.setForeground(Color.GRAY);
-      userText.setBounds(150, 289, 150, 30);
+      userText.setBounds(164, 289, 150, 30);
 
       userText.addFocusListener(new FocusListener() {
 
@@ -131,7 +142,7 @@ public class Frame_Login extends JPanel {
       add(userText);
 
       passText = new JPasswordField(20);
-      passText.setBounds(150, 319, 150, 30);
+      passText.setBounds(164, 319, 150, 30);
       passText.setFont(font);
       passText.setText("비밀번호");
 

@@ -296,6 +296,11 @@ public class Frame_MyPage extends JPanel {
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						logout.dispose();
+						di.setdName("");
+						di.setdAge("");
+						di.setdGender("");
+						di.setdChip("");
+						di.setdPhoto(0);
 						Frame_Base.getInstance(new Frame_Login());
 						;
 					}
@@ -355,6 +360,11 @@ public class Frame_MyPage extends JPanel {
 						rd.removeCustomer(m.toString());
 						//System.out.println(m.toString());
 						Pwithdrawal.dispose();
+						di.setdName("");
+						di.setdAge("");
+						di.setdGender("");
+						di.setdChip("");
+						di.setdPhoto(0);
 						Frame_Base.getInstance(new Frame_Login());
 						;
 					}

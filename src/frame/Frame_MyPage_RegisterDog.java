@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.io.File;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
@@ -29,6 +30,7 @@ import customDAO.UserInfo;
 
 public class Frame_MyPage_RegisterDog extends JFrame {
 
+	private String Dog_FOLDER = "Dog";
 	DogInfo di = new DogInfo();
 	Frame_Home h = new Frame_Home();
 
@@ -216,10 +218,10 @@ public class Frame_MyPage_RegisterDog extends JFrame {
 						} else if (picinC4.isSelected()) {
 							di.setdPhoto(4);
 						} // 사진
-
+						
 						h.save = true;
 						jf.dispose();
-						Frame_Base.getInstance(new Frame_Home(m, cart, history));
+						Frame_Base.getInstance(new Frame_MyPage(m, cart, history));
 
 					} else if (Jname2.getText().equals("")) {
 						JOptionPane.showMessageDialog(null, "이름을 입력하세요.");

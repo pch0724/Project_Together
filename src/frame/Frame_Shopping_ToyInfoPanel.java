@@ -36,6 +36,7 @@ public class Frame_Shopping_ToyInfoPanel extends JPanel {
 	List<ImageIcon> itemImg;
 	
 	Font font = new Font("에스코어 드림 5 Medium", Font.PLAIN, 15);
+	Font font2 = new Font("에스코어 드림 5 Medium", Font.PLAIN, 12);
 	String str; 
 	
 	public Frame_Shopping_ToyInfoPanel(Items item, MyInfo m, CartDAO c, SellDAO history) {
@@ -127,11 +128,13 @@ public class Frame_Shopping_ToyInfoPanel extends JPanel {
 		JLabel countLabel = new JLabel("수량");
 		countLabel.setSize(80, 20);
 		countLabel.setLocation(350, 310);
+		countLabel.setFont(font2);
 		add(countLabel);
 
 		countField = new JTextField(20);
 		countField.setSize(80, 20);
 		countField.setLocation(400, 310);
+		countField.setText("1");
 		add(countField);
 		
 		TextArea info = new TextArea("\n  ★상품명" + "\n" + "   " + item.getName() + "\n\n" + "  ★상품가격" + "\n" + "   "

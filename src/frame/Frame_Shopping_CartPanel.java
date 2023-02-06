@@ -32,6 +32,7 @@ public class Frame_Shopping_CartPanel extends JPanel {
 	ArrayList<JPanel> pgNum = new ArrayList<>();
 	JPanel pa;
 	Font font=new Font("에스코어 드림 5 Medium", Font.PLAIN, 15);
+	Font font2=new Font("에스코어 드림 5 Medium", Font.PLAIN, 12);
 	int partMoney = 0;
 	int payMoney = 0;
 	// int pageBtn = 0;
@@ -143,7 +144,7 @@ public class Frame_Shopping_CartPanel extends JPanel {
 						// 이미지
 						ImageIcon newIcon = new ImageIcon(newImg);
 						JLabel img = new JLabel(newIcon);
-						img.setBounds(50, 90 + ((i % 4) * 110), 200, 100);
+						img.setBounds(20, 90 + ((i % 4) * 110), 200, 100);
 						pgNum.get(Integer.parseInt(pageBtn.getText()) - 1).add(img);
 
 						box.add(new JCheckBox());
@@ -173,13 +174,16 @@ public class Frame_Shopping_CartPanel extends JPanel {
 						JLabel itemInfo = new JLabel("상품 가격 : " + CartDAO.cartMap.get(m.getId()).get(i).getPrice()
 								* CartDAO.cartMap.get(m.getId()).get(i).getCnt());
 						JLabel cntInfo = new JLabel("수량 ");
+						nameInfo.setFont(font2);
+						itemInfo.setFont(font2);
+						cntInfo.setFont(font2);
 
 						JTextField cntText = new JTextField();
-
-						nameInfo.setBounds(220, 90 + ((i % 4) * 110), 200, 15);
-						itemInfo.setBounds(220, 115 + ((i % 4) * 110), 200, 15);
-						cntInfo.setBounds(220, 140 + ((i % 4) * 110), 100, 15);
-						cntText.setBounds(270, 135 + ((i % 4) * 110), 60, 20);
+						/////////////
+						nameInfo.setBounds(190, 90 + ((i % 4) * 110), 200, 15);
+						itemInfo.setBounds(190, 115 + ((i % 4) * 110), 200, 15);
+						cntInfo.setBounds(190, 140 + ((i % 4) * 110), 100, 15);
+						cntText.setBounds(240, 135 + ((i % 4) * 110), 60, 20);
 
 						itemInfo.putClientProperty("id", CartDAO.cartMap.get(m.getId()).get(i).getId());
 
@@ -191,14 +195,20 @@ public class Frame_Shopping_CartPanel extends JPanel {
 						pgNum.get(Integer.parseInt(pageBtn.getText()) - 1).add(cntInfo);
 						pgNum.get(Integer.parseInt(pageBtn.getText()) - 1).add(cntText);
 
-						JButton removeBtn = new JButton("삭제");
-
-						removeBtn.setBounds(420, 102 + ((i % 4) * 115), 65, 50);
+						
+						
+						RoundedButton removeBtn = new RoundedButton("삭제");
+						Color c1 = new Color(255,108,0);
+						removeBtn.setFont(font2);
+						removeBtn.setBackground(c1);
+						removeBtn.setFont(font2);
+						
+						removeBtn.setBounds(390, 102 + ((i % 4) * 115), 65, 50);
 						removeBtn.putClientProperty("id", CartDAO.cartMap.get(m.getId()).get(i).getId());
 						pgNum.get(Integer.parseInt(pageBtn.getText()) - 1).add(removeBtn);
-						removeBtn.setBackground(Color.WHITE);
+						//removeBtn.setBackground(Color.WHITE);
 						removeBtn.addActionListener(new ActionListener() {
-
+						
 							@Override
 							public void actionPerformed(ActionEvent e) {
 								int id = Integer.parseInt(String.valueOf((removeBtn.getClientProperty("id"))));
@@ -207,11 +217,13 @@ public class Frame_Shopping_CartPanel extends JPanel {
 								}
 							}
 						});
+						
+						RoundedButton editBtn = new RoundedButton("변경");
+						editBtn.setFont(font2);
+						editBtn.setBackground(c1);
+						editBtn.setFont(font2);
 
-						JButton editBtn = new JButton("변경");
-						editBtn.setBackground(Color.WHITE);
-
-						editBtn.setBounds(350, 102 + ((i % 4) * 115), 65, 50);
+						editBtn.setBounds(320, 102 + ((i % 4) * 115), 65, 50);
 						editBtn.putClientProperty("id", CartDAO.cartMap.get(m.getId()).get(i).getId());
 						pgNum.get(Integer.parseInt(pageBtn.getText()) - 1).add(editBtn);
 
@@ -244,14 +256,14 @@ public class Frame_Shopping_CartPanel extends JPanel {
 						// 이미지
 						ImageIcon newIcon = new ImageIcon(newImg);
 						JLabel img = new JLabel(newIcon);
-						img.setBounds(50, 90 + ((i % 4) * 110), 200, 100);
+						img.setBounds(20, 90 + ((i % 4) * 110), 200, 100);
 						pgNum.get(Integer.parseInt(pageBtn.getText()) - 1).add(img);
 
 						box.add(new JCheckBox());
 						box.get(i).setBounds(16, 127 + ((i % 4) * 110), 20, 20);
 						box.get(i).setBackground(Color.WHITE);
 						pgNum.get(Integer.parseInt(pageBtn.getText()) - 1).add(box.get(i));
-
+						
 						box.get(i).addItemListener(new ItemListener() {
 
 							@Override
@@ -266,24 +278,27 @@ public class Frame_Shopping_CartPanel extends JPanel {
 										partMoney += sel * CartDAO.cartMap.get(m.getId()).get(k).getCnt()
 												* CartDAO.cartMap.get(m.getId()).get(k).getPrice();
 									}
+
 								}
 							}
 						});
-
 						JLabel nameInfo = new JLabel("상품명 : " + CartDAO.cartMap.get(m.getId()).get(i).getName()); // 상품명
 						JLabel itemInfo = new JLabel("상품 가격 : " + CartDAO.cartMap.get(m.getId()).get(i).getPrice()
 								* CartDAO.cartMap.get(m.getId()).get(i).getCnt());
 						JLabel cntInfo = new JLabel("수량 ");
-
+						nameInfo.setFont(font2);
+						itemInfo.setFont(font2);
+						cntInfo.setFont(font2);
 						JTextField cntText = new JTextField();
 						/*
 						JLabel sizeInfo = new JLabel("사이즈");
 						Choice size = new Choice();
 						 */
-						nameInfo.setBounds(300, 90 + ((i % 4) * 110), 200, 15);
-						itemInfo.setBounds(300, 115 + ((i % 4) * 110), 200, 15);
-						cntInfo.setBounds(300, 140 + ((i % 4) * 110), 100, 15);
-						cntText.setBounds(350, 135 + ((i % 4) * 110), 60, 20);
+						/////////////////
+						nameInfo.setBounds(190, 90 + ((i % 4) * 110), 200, 15);
+						itemInfo.setBounds(190, 115 + ((i % 4) * 110), 200, 15);
+						cntInfo.setBounds(190, 140 + ((i % 4) * 110), 100, 15);
+						cntText.setBounds(240, 135 + ((i % 4) * 110), 60, 20);
 
 						itemInfo.putClientProperty("id", CartDAO.cartMap.get(m.getId()).get(i).getId());
 
@@ -317,14 +332,17 @@ public class Frame_Shopping_CartPanel extends JPanel {
 						pgNum.get(Integer.parseInt(pageBtn.getText()) - 1).add(itemInfo);
 						pgNum.get(Integer.parseInt(pageBtn.getText()) - 1).add(cntInfo);
 						pgNum.get(Integer.parseInt(pageBtn.getText()) - 1).add(cntText);
-					
-
-						JButton removeBtn = new JButton("삭제");
-
-						removeBtn.setBounds(500, 102 + ((i % 4) * 115), 65, 50);
+						
+						RoundedButton removeBtn = new RoundedButton("삭제");
+						Color c1 = new Color(255,108,0);
+						removeBtn.setFont(font2);
+						removeBtn.setBackground(c1);
+						removeBtn.setFont(font2);
+						
+						removeBtn.setBounds(390, 102 + ((i % 4) * 115), 65, 50);
 						removeBtn.putClientProperty("id", CartDAO.cartMap.get(m.getId()).get(i).getId());
 						pgNum.get(Integer.parseInt(pageBtn.getText()) - 1).add(removeBtn);
-
+						
 						removeBtn.addActionListener(new ActionListener() {
 
 							@Override
@@ -335,10 +353,11 @@ public class Frame_Shopping_CartPanel extends JPanel {
 								}
 							}
 						});
-
-						JButton editBtn = new JButton("변경");
-						editBtn.setBackground(new Color(245,245,245));
-						editBtn.setBounds(430, 102 + ((i % 4) * 115), 65, 50);
+						RoundedButton editBtn = new RoundedButton("변경");
+						editBtn.setFont(font2);
+						editBtn.setBackground(c1);
+						editBtn.setFont(font2);
+						editBtn.setBounds(320, 102 + ((i % 4) * 115), 65, 50);
 						editBtn.putClientProperty("id", CartDAO.cartMap.get(m.getId()).get(i).getId());
 						pgNum.get(Integer.parseInt(pageBtn.getText()) - 1).add(editBtn);
 
@@ -385,7 +404,10 @@ public class Frame_Shopping_CartPanel extends JPanel {
 		
 		// 총 결제 금액
 		payMoney = cart.totalMoney(m.getId());
-
+		
+		
+		
+		
 		JPanel bottomSet = new JPanel();
 
 		bottomSet.setBounds(5, 660, 475, 75);
@@ -532,5 +554,7 @@ public class Frame_Shopping_CartPanel extends JPanel {
 			
 		
 	}
+
+
 
 }

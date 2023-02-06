@@ -22,7 +22,7 @@ public class Frame_Shopping extends JPanel {
 
 	public Frame_Shopping() {
 	}
-	
+
 	public Frame_Shopping(MyInfo m, CartDAO cart, SellDAO history) {
 		setLayout(null);
 		setSize(500, 730);
@@ -41,14 +41,33 @@ public class Frame_Shopping extends JPanel {
 		logo.setBackground(Color.GRAY);
 		add(logo);
 
-		ImageIcon ms= new ImageIcon("img\\메인.gif");
+		ImageIcon ms = new ImageIcon("img\\메인.gif");
 		JLabel cateBtn = new JLabel(ms);
 		cateBtn.setBackground(Color.WHITE);
 		cateBtn.setSize(500, 480);
 		cateBtn.setLocation(0, 80);
 		add(cateBtn);
+		JLabel plist1 = new JLabel("  간식");
+		plist1.setBounds(80, 640, 50, 20);
+		plist1.setFont(new Font("에스코어 드림 5 Medium", Font.PLAIN, 12));
 
-		
+		JLabel plist2 = new JLabel("장난감");
+		plist2.setBounds(180, 640, 50, 20);
+		plist2.setFont(new Font("에스코어 드림 5 Medium", Font.PLAIN, 12));
+
+		JLabel plist3 = new JLabel("배변용품");
+		plist3.setBounds(270, 640, 50, 20);
+		plist3.setFont(new Font("에스코어 드림 5 Medium", Font.PLAIN, 12));
+
+		JLabel plist4 = new JLabel("일회용품");
+		plist4.setBounds(370, 640, 50, 20);
+		plist4.setFont(new Font("에스코어 드림 5 Medium", Font.PLAIN, 12));
+
+		add(plist1);
+		add(plist2);
+		add(plist3);
+		add(plist4);
+
 		ImageIcon cart1 = new ImageIcon("img\\장바구니1.png");
 		ImageIcon cart2 = new ImageIcon("img\\장바구니2.png");
 		JButton cartBtn = new JButton(cart1);
@@ -59,14 +78,13 @@ public class Frame_Shopping extends JPanel {
 		cartBtn.setLocation(410, 0);
 		add(cartBtn);
 		cartBtn.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Frame_Base.getInstance(new Frame_Shopping_CartPanel(m,cart,history));
-				
+				Frame_Base.getInstance(new Frame_Shopping_CartPanel(m, cart, history));
+
 			}
 		});
-		
 
 		ImageIcon snack = new ImageIcon("img\\간식1.png");
 		ImageIcon scnak2 = new ImageIcon("img\\간식2.png");
@@ -85,8 +103,7 @@ public class Frame_Shopping extends JPanel {
 
 			}// snack으로 연결
 		});
-		
-		
+
 		ImageIcon toy = new ImageIcon("img\\놀이1.png");
 		ImageIcon toy2 = new ImageIcon("img\\놀이2.png");
 		JButton product2Btn = new JButton(toy);
@@ -100,7 +117,7 @@ public class Frame_Shopping extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Frame_Base.getInstance(new  Frame_Shopping_Toy(m, cart, history));
+				Frame_Base.getInstance(new Frame_Shopping_Toy(m, cart, history));
 
 			}// toy로 연결
 		});
@@ -112,7 +129,7 @@ public class Frame_Shopping extends JPanel {
 		product3Btn.setBorderPainted(false); // 버튼의 외곽선 없에기
 		product3Btn.setRolloverIcon(poo2);
 		product3Btn.setSize(100, 100);
-		product3Btn.setLocation(product1Btn.getX()+200, product1Btn.getY());
+		product3Btn.setLocation(product1Btn.getX() + 200, product1Btn.getY());
 		add(product3Btn);
 		product3Btn.addActionListener(new ActionListener() {
 
@@ -122,8 +139,7 @@ public class Frame_Shopping extends JPanel {
 
 			}// clean으로 연결
 		});
-		
-		
+
 		ImageIcon walk = new ImageIcon("img\\산책1.png");
 		ImageIcon walk2 = new ImageIcon("img\\산책2.png");
 		JButton product4Btn = new JButton(walk);

@@ -23,7 +23,7 @@ public class Frame_Shopping_Toy extends JPanel {
 		setLayout(null);
 		setSize(500, 730);
 		setBackground(Color.WHITE);
-		Font font = new Font("맑은고딕", Font.BOLD, 15);
+		Font font = new Font("에스코어 드림 5 Medium", Font.PLAIN, 15);
 
 		// 로고 라벨
 		ImageIcon logophoto = new ImageIcon("img\\투개더로고2.png");

@@ -137,6 +137,7 @@ public class Frame_Diary extends JFrame {
                   maintext.setText("");
                }
                ff.dispose();
+               Frame_Base.getInstance(new Frame_Home(m, cart, history));
             }
          }
       });

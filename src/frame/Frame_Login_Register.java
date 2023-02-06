@@ -27,6 +27,7 @@ import customDAO.MyInfo;
 
 public class Frame_Login_Register extends JFrame {
 
+   private String DOG_FOLDER = "Dog";
    private String DIARY_FOLDER = "Diary";
    
    public Frame_Login_Register() {
@@ -145,6 +146,7 @@ public class Frame_Login_Register extends JFrame {
                            addri, peti);
                      File dir = new File(DIARY_FOLDER + "/" + SID2.getText());
                      dir.mkdir();
+                     File dir2 = new File(DOG_FOLDER + "/" + SID2.getText());
                      JOptionPane.showMessageDialog(null, "가입완료");
 
                      sf.dispose();
